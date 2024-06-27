@@ -210,4 +210,34 @@ OR Using asnmap Fast&#x20;
 
 <table><thead><tr><th>Input</th><th>ASN</th><th width="150">DNS</th><th>IP</th><th>ORG</th></tr></thead><tbody><tr><td>Example</td><td><mark style="color:red;"><code>AS16509</code></mark></td><td><code>example.com</code></td><td><a href="https://bgp.he.net/ip/18.238.80.2">18.238.80.2</a> </td><td><mark style="color:red;"><code>Grab</code></mark></td></tr></tbody></table>
 
-\
+### Open-Source Code (1/2)
+
+* Manual
+  *   Github
+
+      * "Company" password
+      * "Company" secret&#x20;
+      * "Company" cerdentials
+      * "Company" tocken
+      * "Company" config
+      * "Company" key
+      * "Company" pass
+      * "Company"  login
+      * "Company" ftp
+      * "Company" ssh\_auth\_password
+      * "Company" pwd
+      * "Company"  security\_credentials #LDAB (AD)
+      * "Company"  connectionstring       #Data base
+      * "Company"  JDBC                            #Data base
+      * "Company"  send\_key,send\_keys
+
+
+* **Scripts**:
+  * Gitrob or Gitleaks
+
+### Shoden & censys.io
+
+* any device connected to internet
+  * server - router - iot devices
+* Using Dorks&#x20;
+  * hostname: uber.com
