@@ -109,11 +109,11 @@ theHarvester -d <domain-name> -b all
 
 
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>FOCA</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>FOCA</p></figcaption></figure>
 
 ### ✔️ Requisites
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Cached and archival sites**
   * archive.org
@@ -139,3 +139,75 @@ sudo cp waybackurls /usr/local/bin #run waybackurls in any PATH
 
 ### Whois Enumeration (1/2)
 
+* The owner of a domain name
+* IP address or range
+* Technical contacts
+* Expiration data of the domain
+
+### Whois Enumeration (2/2)
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+**For Example**
+
+{% embed url="https://whois.domaintools.com" %}
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+```
+whois <domain name>    
+```
+
+### amass & Sublister
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+* Classless inter-Domain Routing (CIDR)
+  * Ex: 163.144.128.0/24
+* An Autonomous Systen Number (ASN)
+  * Regional internet Registeries (RIRs)  AFRINIC, aRIN, lACNIC
+    * EX: 54115
+
+
+
+* find a List ASN numbers
+  * amass intel -org \<company name here>
+
+```bash
+amass intel -org <company name >
+```
+
+{% embed url="https://bgp.he.net" %}
+
+```bash
+curl -s http://ip-api.com/<ip>  | jq -r .as
+```
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+**Subdomian**
+
+* amass enum --active  -d \<domian >
+* amass enum --passive  -d  \<domain>
+* amass intel -asn \<asn number here>
+* amass intel -cidr <0.0.0.0/15>
+* amass intel -whois -d  \<domian>
+
+OR Using asnmap Fast&#x20;
+
+[**asnmap**](https://github.com/projectdiscovery/asnmap)\
+
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+* **ASN to CIDR** Lookup
+* **ORG to CIDR** Lookup
+* **DNS to CIDR** Lookup
+* **IP to CIDR** Lookup
+* **ASN/DNS/IP/ORG** input
+* **JSON/CSV/TEXT** output
+* STD **IN/OUT** support
+
+<table><thead><tr><th>Input</th><th>ASN</th><th width="150">DNS</th><th>IP</th><th>ORG</th></tr></thead><tbody><tr><td>Example</td><td><mark style="color:red;"><code>AS16509</code></mark></td><td><code>example.com</code></td><td><a href="https://bgp.he.net/ip/18.238.80.2">18.238.80.2</a> </td><td><mark style="color:red;"><code>Grab</code></mark></td></tr></tbody></table>
+
+\
