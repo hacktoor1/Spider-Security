@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Review Network Pentest](README.md)
+* [Spider Security](README.md)
 * [OS internals](os-internals/README.md)
   * [Windows internals](os-internals/windows-internals.md)
 * [OSCP](oscp/README.md)
@@ -17,7 +17,7 @@
     * [The Bash Environment](oscp/module-3-cli/the-bash-environment.md)
     * [Piping and Redirection](oscp/module-3-cli/piping-and-redirection.md)
     * [Text Searching and Manipulation](oscp/module-3-cli/text-searching-and-manipulation/README.md)
-      * [Regular ](https://www.notion.so/Regular-expressions-regex-b78b9b15e56b48849d260cf35695bc50?pvs=4)
+      * [Regular](https://www.notion.so/Regular-expressions-regex-b78b9b15e56b48849d260cf35695bc50?pvs=4)
     * [Managing Processes](oscp/module-3-cli/managing-processes.md)
     * [File and Command Monitoring](oscp/module-3-cli/file-and-command-monitoring.md)
   * [Module 4 (Practical Tools)](oscp/module-4-practical-tools/README.md)
