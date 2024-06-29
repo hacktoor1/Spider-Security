@@ -2,7 +2,7 @@
 
 ## HTTP Service
 
-<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption><p>Http service</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption><p>Http service</p></figcaption></figure>
 
 and listens by default on port 80. To start the **HTTP** service in Kali, we can use systemctl as we did when starting the SSH service, replacing the service name with “apache2”:
 

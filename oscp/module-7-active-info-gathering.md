@@ -51,6 +51,28 @@ Make Script to brute force sub using bash Script :&#x20;
 
 And can Make Brute Force all (A,AAAA,PTR,MX)
 
-* DNS Zone Transfers
-  * Full dump of the zone files.
-  * host -i \<domain name> \<dns server address>
+*   DNS Zone Transfers
+
+    * Full dump of the zone files.
+    * host -i \<domain name> \<dns server address>
+
+
+* Automate Tools
+  * DNSRecon => `dnsrecon -d megacorpone.com -t axfr`
+  *
+
+      <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Dnsrecon brute force&#x20;
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+* DNSEnum => dnsenum \<domain name>
+  *
+
+      <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+
+
+* Other tools
+  * fierce - DNSdumpster - Dnsmap - Metagoofil - foca - maltego - Dmitry - Recon-ng
