@@ -61,16 +61,16 @@ And can Make Brute Force all (A,AAAA,PTR,MX)
   * DNSRecon => `dnsrecon -d megacorpone.com -t axfr`
   *
 
-      <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+      <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Dnsrecon brute force&#x20;
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 * DNSEnum => dnsenum \<domain name>
   *
 
-      <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+      <figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
