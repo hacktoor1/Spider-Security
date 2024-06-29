@@ -47,6 +47,26 @@
   * [Module 23 (Powershell Empire)](oscp/module-23-powershell-empire.md)
   * [Module 24 Assembling the Pieces](oscp/module-24-assembling-the-pieces.md)
   * [Report Writing for Penetration Testers](oscp/report-writing-for-penetration-testers.md)
+
+## Reverse Eng & Malware dev
+
+* [The Art of assembly Language](reverse-eng-and-malware-dev/the-art-of-assembly-language/README.md)
+  * [Chapter 1: Hello, World of Assembly Languageel](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-1-hello-world-of-assembly-languageel.md)
+  * [Chapter 2: Data Representation](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-2-data-representation.md)
+  * [Chapter 3: Memory Access and Organization](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-3-memory-access-and-organization.md)
+  * [Chapter 4: Constants, Variables, and Data Types](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-4-constants-variables-and-data-types.md)
+  * [Chapter 5: Procedures and Units](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-5-procedures-and-units.md)
+  * [Chapter 6: Arithmetic](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-6-arithmetic.md)
+  * [Chapter 7: Low-Level Control Structures](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-7-low-level-control-structures.md)
+  * [Chapter 8: Advanced Arithmetic](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-8-advanced-arithmetic.md)
+  * [Chapter 9: Macros and the HLA Compile-Time Language](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-9-macros-and-the-hla-compile-time-language.md)
+  * [Chapter 10: Bit Manipulation](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-10-bit-manipulation.md)
+  * [Chapter 11: The String Instructions](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-11-the-string-instructions.md)
+  * [Chapter 12: Classes and Objects](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-12-classes-and-objects.md)
+  * [Appendix: ASCII Character Set](reverse-eng-and-malware-dev/the-art-of-assembly-language/appendix-ascii-character-set.md)
+
+***
+
 * [Windows internals](windows-internals/README.md)
   * [Topics in GitHub](https://github.com/hacktoor1/Windows-Internals.git)
   * [Chapter 1 Concepts and tools](windows-internals/chapter-1-concepts-and-tools.md)
