@@ -65,7 +65,7 @@ And can Make Brute Force all (A,AAAA,PTR,MX)
 
 Dnsrecon brute force&#x20;
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 * DNSEnum => dnsenum \<domain name>
   *
@@ -96,7 +96,151 @@ clint => nc nvlp 1234
 
 <figure><img src="../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
 
-Attcker => nc -nvv -w  192.168.1.1 1234-1236
+Attcker => `nc -nvv -w  192.168.1.1 1234-1236`
 
 <figure><img src="../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
+```bash
+sudo  iptables -nvL
+
+sudo  iptables -z
+
+#rule
+#source
+sudo iptables -I INPUT 1 -s 192.168.1.8 -j ACCEPT
+#clint 
+sudo iptables -I OUTPUT 1 -d 192.168.1.8 -j ACCEPT  
+```
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+* Port Scanning  Wth nmap&#x20;
+  * Accountability for Our Traffic
+  * TCP Connect Scanning
+  *
+
+
+
+> How check FW With out any Soc team catch U
+>
+> use sudo command  beacuse can change low level Traffic
+>
+> Ex : sudo nmap 192.168.1.4 -p 25 -sT
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+> `-sT` => Connect Scanning
+>
+> `-sS` => SYN Scanning
+>
+> `-sA` => ACK Scanning
+>
+> `-sF`  => Fen Scanning
+
+UDP Scanning
+
+```bash
+sudo nmap 192.168.1.4 -sU -p 
+```
+
+
+
+### Nmap SEN
+
+```
+nmap -sn 192.168.1.1/24 -v 
+```
+
+### **OS fingerprinting**
+
+```bash
+nmap 192.168.1.4 -O
+```
+
+
+
+**Banner Grabbing/Service Enumeration**
+
+```
+nmap nmap 192.168.1.4 -sV
+```
+
+`-sV` => Service Scanning
+
+### **Nmap Scripting Engine (NSE)**
+
+```bash
+sudo nmap --script=/usr/share/nmap/scripts/dns-zone-transfer.nse ns2.megacorpone.com  -p 53
+```
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+```bash
+sudo nmap 192.168.1.4 --top-ports=100 -sV -sC 
+```
+
+### **Masscan**
+
+```
+suoo masscan -p80,53 192.168.1.4 --rate=1000 --interface WlanX --router-mac <macaddress>
+```
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+### SMB Enumeration == eternal blue
+
+### nbtscan&#x20;
+
+make scanning to show **NetBOIS**&#x20;
+
+```bash
+sudo nbtscan -r 192.168.1.1/24
+```
+
+How can show file use -v => verbose
+
+```bash
+sudo nbtscan -r 192.168.1.1/24 -v
+```
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+### smbclinet
+
+{% hint style="danger" %}
+With Passweord Protected ON
+{% endhint %}
+
+<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="success" %}
+With Passweord Protected OFF
+{% endhint %}
+
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+### SMPMAP
+
+<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+### enum4linux
+
+```bash
+sudo enum4linux 192.168.1.4
+```
+
+
+
+Nmap NSE Secipting SMB
+
+```bash
+sudo namp  192.168.1.6 --sV -P T:139,445 U:137 --script="smb-enum-*"
+```
+
+```bash
+sudo namp  192.168.1.6 --sV -P T:139,445 U:137 --script="smb-vuln-*" 
+```
+
+```bash
+sudo namp  192.168.1.6 --sV -P T:139,445 U:137 --script="dns-nsec-enum.nse" 
+```
