@@ -107,8 +107,12 @@ echo "The variable name =  ${name} will not be printed because it is a local var
 > remembering to set the executable permission using chmod, and run it using the following command: <mark style="color:red;">./local\_scope\_variable.sh</mark>
 >
 > <mark style="color:blue;">chmod</mark> +x script.sh => -x to be execution&#x20;
+
+> <mark style="color:red;">**Note**</mark>&#x20;
 >
->
+> Use <mark style="color:red;">**`/dev/nul`**</mark>l with caution. You may miss out on important errors if you choose to redirect output to it. When in doubt, redirect standard streams such as standard output and standard error to a dedicated log file instead.
+
+
 
 | Operator | Description |
 | -------- | ----------- |
