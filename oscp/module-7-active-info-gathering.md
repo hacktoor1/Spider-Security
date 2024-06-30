@@ -76,3 +76,27 @@ Dnsrecon brute force&#x20;
 
 * Other tools
   * fierce - DNSdumpster - Dnsmap - Metagoofil - foca - maltego - Dmitry - Recon-ng
+
+
+
+### Port Scanning
+
+* TCP / UDP Scanning
+  * **TCP**
+  * **UDP**
+* Three way Handshake
+
+<figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption><p>Three way Handshake</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+
+Ex :&#x20;
+
+clint => nc nvlp 1234
+
+<figure><img src="../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+
+Attcker => nc -nvv -w  192.168.1.1 1234-1236
+
+<figure><img src="../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+
