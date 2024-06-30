@@ -7,6 +7,8 @@
   * [WriteUps](oscp/writeups/README.md)
     * [HTB](oscp/writeups/htb/README.md)
       * [BoardLight](oscp/writeups/htb/boardlight.md)
+    * [THM](oscp/writeups/thm/README.md)
+      * [BLUE](oscp/writeups/thm/blue.md)
   * [Module 1 (General Info)](oscp/module-1-general-info.md)
   * [Module 2 (Getting Kali)](oscp/module-2-getting-kali/README.md)
     * [Leason 1 - Booting Up Kali Linux](oscp/module-2-getting-kali/leason-1-booting-up-kali-linux.md)
