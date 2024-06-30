@@ -4,6 +4,8 @@ description: 'OS: Windows'
 
 # BLUE
 
+**بسم الله الرحمن الرحيم**
+
 <figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 
 ### Recon
@@ -59,7 +61,19 @@ My connection was cut off  there was a problem with vpn
 
 <figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
+but in my PC <mark style="color:red;">**FAIl**</mark>
 
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+&#x20;i will try search I Found exploit [https://github.com/3ndG4me/AutoBlue-MS17-010](https://github.com/3ndG4me/AutoBlue-MS17-010)
+
+```bash
+git clone  https://github.com/3ndG4me/AutoBlue-MS17-010
+cd AutoBlue-MS17-010/shellcode 
+./shell_prep.sh
+```
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Escalate
 
