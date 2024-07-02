@@ -79,7 +79,7 @@ wfuzz -z file,wordlist/general/common.txt -b cookie=value1 -b cookie2=value2 htt
 ## **Exploiting Web-based Vulnerabilities**
 
 * **Cross Site Scripting (XSS)**
-* **Reflected XSS**
+* [**Reflected XSS**](module-9-web-application-attacks/cross-site-scripting-xss/)
 * **Stored  XSS**
 * **DOM XSS**
 * **self XSS**

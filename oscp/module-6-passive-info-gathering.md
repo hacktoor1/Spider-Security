@@ -27,7 +27,7 @@
 
 
 
-### User Information Gathering
+## User Information Gathering
 
 *   Employee;s personal information such as:
 
@@ -105,7 +105,7 @@ theHarvester -d <domain-name> -b all
 \
 
 
-### [FOCA](https://github.com/ElevenPaths/FOCA?tab=readme-ov-file) (Fingerprinting Organizations with Collected Archives)
+## [FOCA](https://github.com/ElevenPaths/FOCA?tab=readme-ov-file) (Fingerprinting Organizations with Collected Archives)
 
 
 
@@ -137,14 +137,14 @@ sudo cp waybackurls /usr/local/bin #run waybackurls in any PATH
 
 
 
-### Whois Enumeration (1/2)
+## Whois Enumeration&#x20;
 
 * The owner of a domain name
 * IP address or range
 * Technical contacts
 * Expiration data of the domain
 
-### Whois Enumeration (2/2)
+
 
 <figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 

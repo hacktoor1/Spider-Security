@@ -1,6 +1,6 @@
 # Module 7 ( Active Info Gathering)
 
-### DNS Enumeration
+## DNS Enumeration
 
 * What is DNS
 * interacring with a DNS Tracffic
@@ -114,10 +114,10 @@ sudo iptables -I OUTPUT 1 -d 192.168.1.8 -j ACCEPT
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-* Port Scanning  Wth nmap&#x20;
-  * Accountability for Our Traffic
-  * TCP Connect Scanning
-  *
+*   Port Scanning  Wth nmap&#x20;
+
+    * Accountability for Our Traffic
+    * TCP Connect Scanning
 
 
 

@@ -120,19 +120,169 @@ Simple JS payload
 <script>alert('OSCP+EWAPTXv2')</script>
 ```
 
-Mitigation Code
-
 <figure><img src="../../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
 
+### Stored XSS
+
+```php
+
+<?php
+if(isset($_POST["c"])) {
+    $c = $_POST['c'];
+    echo 'your commit is '.$c.' Thanks';
+}
+?>
+<cneter>
+    <form action="" method="post">
+        <label aria-hidden="true">Write Commint</label>
+        <input type="text" name="c" id="c">
+         <input type="submit" value="Submit">
+    </form>
+</cneter>
+```
 
 
-### How To PenTest?
-
-### How to Bypass Protection
 
 
 
-### Escalating the Attack
+### Mitiegstion Code
+
+Use htmlentities() Function => PHP
+
+**use escape() Function = PYTHON**
+
+use escapeHtml() Function = JS
+
+{% tabs %}
+{% tab title="PHP" %}
+```php
+from flask import Flask, request, escape
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET"])
+def search():
+    # Get the user input from the query parameters
+    qq = request.args.get("qq")
+    
+    # Escape the user input to prevent XSS
+    result = f"Result Found {escape(qq)}" if qq else ""
+    
+    # Create the HTML form with the result safely included
+    form_html = '''
+    <center>
+        <form action="" method="get">
+            <label aria-hidden="true">Search Anything</label>
+            <input type="text" name="qq" id="qq">
+            <input type="submit" value="Search">
+        </form>
+        <div>{}</div>
+    </center>
+    '''.format(result)
+    
+    return form_html
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+message = "hello world"
+print(message)
+```
+{% endtab %}
+
+{% tab title="JavaScript" %}
+```javascript
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Function to escape HTML entities
+function escapeHtml(unsafe) {
+    return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+}
+
+app.get('/', (req, res) => {
+    const qq = req.query.qq;
+    const result = qq ? `Result Found ${escapeHtml(qq)}` : '';
+    const formHtml = `
+    <center>
+        <form action="" method="get">
+            <label aria-hidden="true">Search Anything</label>
+            <input type="text" name="qq" id="qq">
+            <input type="submit" value="Search">
+        </form>
+        <div>${result}</div>
+    </center>
+    `;
+    res.send(formHtml);
+});
+
+app.listen(port, () => {
+    console.log(`App listening at http://localhost:${port}`);
+});
+
+```
+{% endtab %}
+{% endtabs %}
+
+```bash
+$string = $_GET['search'] ;
+
+
+$regex = "/{|}|src|confirm|prompt|write|<|>|alert|print/" ;
+
+?>
+<script>
+    
+    window.test = {
+        site: "Night",
+    page: {
+        name : "<?php echo  preg_replace( $regex, '' ,$string) ?>" ;    
+    }
+}    
+
+</script>
+
+<center>
+<form method="GET" >    
+<label aria-hidden="true">Search For Anything</label>
+    <input type="text" placeholder="Enter Something" name="search" >
+    <button type="submit">Send</button>
+</form>    
+
+</center>
+```
+
+
+
+Additional Security Measures
+
+1.  **Content Security Policy (CSP)**
+
+    ```php
+    header("Content-Security-Policy: default-src 'self'; script-src 'self'; object-src 'none';");
+     
+    ```
+
+
+
+## How To PenTest?
+
+## How to Bypass Protection
+
+
+
+## Escalating the Attack
 
