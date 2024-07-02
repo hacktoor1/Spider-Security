@@ -24,7 +24,7 @@ Cross-Site Scripting (XSS) is a type of security vulnerability typically found i
 
 ### How Does It Happen?
 
-### Reflected XSS <a href="#types" id="types"></a>
+### [Reflected XSS](cross-site-scripting-xss.md#types) <a href="#types" id="types"></a>
 
 > **The malicious script is reflected off a web server, such as in an error message or a search result, and executed immediately as part of the response.**
 
@@ -120,7 +120,7 @@ Simple JS payload
 <script>alert('OSCP+EWAPTXv2')</script>
 ```
 
-
+Mitigation Code
 
 <figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
 
@@ -136,6 +136,3 @@ Simple JS payload
 
 ### Escalating the Attack
 
-
-
-### Mitigation

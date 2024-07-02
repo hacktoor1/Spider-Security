@@ -34,6 +34,7 @@
   * [Module 8 (Vulnerability Scanning)](oscp/module-8-vulnerability-scanning.md)
   * [Module 9 (Web Application Attacks)](oscp/module-9-web-application-attacks.md)
     * [Cross Site Scripting (XSS)](oscp/module-9-web-application-attacks/cross-site-scripting-xss.md)
+    * [Page](oscp/module-9-web-application-attacks/page.md)
   * [Module 10 ( Intro Buffer OverFlow)](oscp/module-10-intro-buffer-overflow.md)
   * [Module 11 (Widows Buffer OverFlow)](oscp/module-11-widows-buffer-overflwo.md)
   * [Module 12 (Linux Buffer OverFlows)](oscp/module-12-linux-buffer-overflows.md)
