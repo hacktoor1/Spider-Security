@@ -12,7 +12,7 @@ Cross-site scripting (XSS) is a vulnerability that allows attackers to inject ma
 
 Cross-Site Scripting (XSS) is a type of security vulnerability typically found in web applications. It allows attackers to inject malicious scripts into content from otherwise trusted websites. These scripts can then be executed in the context of the user's browser, leading to various potential attacks including data theft, session hijacking, and defacement of websites.
 
-### Types
+## Types
 
 #### Types of XSS Attacks
 
@@ -22,9 +22,9 @@ Cross-Site Scripting (XSS) is a type of security vulnerability typically found i
 4. **DOM XSS**
 5. **Self XSS**
 
-### How Does It Happen?
+#### How Does It Happen?
 
-### [Reflected XSS](cross-site-scripting-xss.md#types) <a href="#types" id="types"></a>
+### Reflected XSS <a href="#types" id="types"></a>
 
 > **The malicious script is reflected off a web server, such as in an error message or a search result, and executed immediately as part of the response.**
 
@@ -106,11 +106,11 @@ app.listen(port, () => {
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
 
 I will try use some tags to test rxss <mark style="color:red;">**`'><h1>Hacked</h1>`**</mark>
 
-<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
 
 Ok this search Vulnerable HTML injection &&  RXSS
 
@@ -122,15 +122,15 @@ Simple JS payload
 
 Mitigation Code
 
-<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### How To PenTest?
 
-### How to Bypasss Protection
+### How to Bypass Protection
 
 
 
