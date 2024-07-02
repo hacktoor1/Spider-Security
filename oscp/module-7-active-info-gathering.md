@@ -61,7 +61,7 @@ And can Make Brute Force all (A,AAAA,PTR,MX)
   * DNSRecon => `dnsrecon -d megacorpone.com -t axfr`
   *
 
-      <figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+      <figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Dnsrecon brute force&#x20;
 
@@ -127,7 +127,7 @@ sudo iptables -I OUTPUT 1 -d 192.168.1.8 -j ACCEPT
 >
 > Ex : sudo nmap 192.168.1.4 -p 25 -sT
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 > `-sT` => Connect Scanning
 >
