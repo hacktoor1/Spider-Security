@@ -5,6 +5,8 @@
   * [Windows internals](os-internals/windows-internals.md)
 * [OSCP](oscp/README.md)
   * [WriteUps](oscp/writeups/README.md)
+    * [PentesterLabs](oscp/writeups/pentesterlabs/README.md)
+      * [Recon](oscp/writeups/pentesterlabs/recon.md)
     * [HTB](oscp/writeups/htb/README.md)
       * [BoardLight](oscp/writeups/htb/boardlight.md)
     * [THM](oscp/writeups/thm/README.md)
