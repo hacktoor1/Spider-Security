@@ -65,12 +65,12 @@ And can Make Brute Force all (A,AAAA,PTR,MX)
 
 Dnsrecon brute force&#x20;
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 * DNSEnum => dnsenum \<domain name>
   *
 
-      <figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+      <figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -112,7 +112,7 @@ sudo iptables -I INPUT 1 -s 192.168.1.8 -j ACCEPT
 sudo iptables -I OUTPUT 1 -d 192.168.1.8 -j ACCEPT  
 ```
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 *   Port Scanning  Wth nmap&#x20;
 
@@ -173,7 +173,7 @@ nmap nmap 192.168.1.4 -sV
 sudo nmap --script=/usr/share/nmap/scripts/dns-zone-transfer.nse ns2.megacorpone.com  -p 53
 ```
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 sudo nmap 192.168.1.4 --top-ports=100 -sV -sC 
@@ -185,7 +185,7 @@ sudo nmap 192.168.1.4 --top-ports=100 -sV -sC
 suoo masscan -p80,53 192.168.1.4 --rate=1000 --interface WlanX --router-mac <macaddress>
 ```
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SMB Enumeration
 
@@ -203,7 +203,7 @@ How can show file use -v => verbose
 sudo nbtscan -r 192.168.1.1/24 -v
 ```
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### smbclinet
 
@@ -211,17 +211,17 @@ sudo nbtscan -r 192.168.1.1/24 -v
 With Passweord Protected ON
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 With Passweord Protected OFF
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SMPMAP
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### enum4linux
 
