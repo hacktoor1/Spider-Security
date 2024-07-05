@@ -1,22 +1,26 @@
 # local file inclusion & remote file inclusion
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+How does it Happend ?
+
+
 
 * Directory Traversal / Path Traversal
   * list or  read file/Dir only
 
 in bWAPP
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 can't execute file&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Local File inclusion (LFI)
   * can read and execute file local
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### php wrapper local file inclusion
 
@@ -47,7 +51,7 @@ make Simple server
 php -S <IP>:<PORT>
 ```
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 make simple code php to test  shell.txt
 
@@ -87,7 +91,11 @@ attacker Machine first listening......
 nc -nvlp <port>
 ```
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+### How to find Them <a href="#blind-interesting-lfi2rce-files" id="blind-interesting-lfi2rce-files"></a>
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### Blind - Interesting - LFI2RCE file <a href="#blind-interesting-lfi2rce-files" id="blind-interesting-lfi2rce-files"></a>
 
