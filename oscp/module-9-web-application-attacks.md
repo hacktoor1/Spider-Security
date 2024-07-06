@@ -76,11 +76,17 @@ wfuzz -z file,wordlist/general/common.txt -b cookie=value1 -b cookie2=value2 htt
 
 
 
-## **Exploiting Web-based Vulnerabilities**
+## OWASP Top Ten
 
-* **Cross Site Scripting (XSS)**
-* [**Reflected XSS**](module-9-web-application-attacks/cross-site-scripting-xss.md)
-* **Stored  XSS**
-* **DOM XSS**
-* **self XSS**
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
+1. **A01:2021-Broken Access Control**
+2. **A02:2021-Cryptographic Failures**&#x20;
+3. **A03:2021-Injection**
+4. **A04:2021-Insecure Design**&#x20;
+5. **A05:2021-Security Misconfiguration**
+6. **A06:2021-Vulnerable and Outdated Components**
+7. **A07:2021-Identification and Authentication Failures**&#x20;
+8. **A08:2021-Software and Data Integrity Failures**&#x20;
+9. **A09:2021-Security Logging and Monitoring Failures**&#x20;
+10. **A10:2021-Server-Side Request Forgery**

