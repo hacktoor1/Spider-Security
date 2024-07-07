@@ -39,7 +39,7 @@
     * [local file inclusion & remote file inclusion](oscp/module-9-web-application-attacks/local-file-inclusion-and-remote-file-inclusion/README.md)
       * [Exploit LFI](oscp/module-9-web-application-attacks/local-file-inclusion-and-remote-file-inclusion/exploit-lfi.md)
     * [SQL injection](oscp/module-9-web-application-attacks/sql-injection/README.md)
-      * [Blind Boolean based SQL](oscp/module-9-web-application-attacks/sql-injection/blind-boolean-based-sql.md)
+      * [Blind Boolean based SQL & Evasion Techniques](oscp/module-9-web-application-attacks/sql-injection/blind-boolean-based-sql-and-evasion-techniques.md)
       * [SQL](oscp/module-9-web-application-attacks/sql-injection/sql.md)
       * [Login bypass List](oscp/module-9-web-application-attacks/sql-injection/login-bypass-list.md)
     * [File upload](oscp/module-9-web-application-attacks/file-upload.md)

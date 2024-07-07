@@ -11,7 +11,7 @@
 show databases;
 ```
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Insert Statement <a href="#insert-statement" id="insert-statement"></a>
 
@@ -282,7 +282,7 @@ having username='A%'
 
 in DVWA
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 ### SQLMAP
 
