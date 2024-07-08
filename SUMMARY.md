@@ -77,6 +77,8 @@
   * [Chapter 11: The String Instructions](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-11-the-string-instructions.md)
   * [Chapter 12: Classes and Objects](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-12-classes-and-objects.md)
   * [Appendix: ASCII Character Set](reverse-eng-and-malware-dev/the-art-of-assembly-language/appendix-ascii-character-set.md)
+* [Reverse Code Engineering](reverse-eng-and-malware-dev/reverse-code-engineering/README.md)
+  * [Windows architecture](reverse-eng-and-malware-dev/reverse-code-engineering/windows-architecture.md)
 
 ***
 
