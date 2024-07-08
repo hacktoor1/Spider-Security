@@ -5,6 +5,8 @@
   * [Windows internals](os-internals/windows-internals.md)
 * [OSCP](oscp/README.md)
   * [WriteUps](oscp/writeups/README.md)
+    * [PortSwigger](oscp/writeups/portswigger/README.md)
+      * [SQL injection labs](oscp/writeups/portswigger/sql-injection-labs.md)
     * [PentesterLabs](oscp/writeups/pentesterlabs/README.md)
       * [Recon](oscp/writeups/pentesterlabs/recon.md)
     * [HTB](oscp/writeups/htb/README.md)
