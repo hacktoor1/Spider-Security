@@ -52,5 +52,5 @@ go to intruder  > cluster bomb
 <figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
 
 <pre><code>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-<strong>8 o i q h j 3 w 6 k 9 b f y p f q 7 1 j 1                         
+<strong>8oiqhj3w6k9bfypfq71j1                         8
 </strong></code></pre>
