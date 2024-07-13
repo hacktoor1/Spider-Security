@@ -1,6 +1,6 @@
 # Module 10 ( Intro Buffer OverFlow)
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Architecture Fundamentals (Numbers)
 
@@ -67,4 +67,93 @@ printf, sprintf, strcat, strcpy, and gets.
 [\
 ](https://aidenpearce369.medium.com/?source=post\_page-----670765bf405a--------------------------------)
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+
+The buffer space grows towards the Base Pointer (BP) and Instruction Pointer (IP) from lower memory to higher memory
+
+\
+
+
+<figure><img src="../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
+
+Below Base Pointer (BP) there will be Instruction Pointer (IP)/Return Address
+
+The stack components of the program are always stored above the Base Pointer (BP)
+
+
+
+### Intro to BOF
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+### Buffer Oveflow&#x20;
+
+Ex  Code&#x20;
+
+```c
+#include <stdio.h>
+int main(int argc,char  *argv[]){
+    Buffer[8];
+    strcpy(Buffer, argv[1]);
+    return 0;
+}
+```
+
+* Step1: open Immuntiy Debbuger&#x20;
+
+<figure><img src="../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
+
+* Step2 run the app
+* Step3&#x20;
+
+Main Code&#x20;
+
+```asm6502
+00401500  /$ 55             PUSH EBP
+00401501  |. 89E5           MOV EBP,ESP
+00401503  |. 83E4 F0        AND ESP,FFFFFFF0
+00401506  |. 83EC 20        SUB ESP,20
+
+00401509  |. E8 72090000    CALL Buffer.00401E80
+0040150E  |. 8B45 0C        MOV EAX,DWORD PTR SS:[EBP+C]             
+00401511  |. 83C0 04        ADD EAX,4                               
+00401514  |. 8B00           MOV EAX,DWORD PTR DS:[EAX]              
+00401516  |. 894424 04      MOV DWORD PTR SS:[ESP+4],EAX            
+0040151A  |. 8D4424 18      LEA EAX,DWORD PTR SS:[ESP+18]            
+0040151E  |. 890424         MOV DWORD PTR SS:[ESP],EAX
+               
+00401521  |. E8 D2100000    CALL <JMP.&msvcrt.strcpy>   #strcpy           
+00401526  |. B8 00000000    MOV EAX,0
+0040152B  |. C9             LEAVE
+0040152C  \. C3             RETN
+```
+
+### Register
+
+```asm6502
+Instruaction pointer  EIP = 
+Stack Pointer         ESP = 
+Base  Pointer         EBP =
+```
+
+
+
+
+
+
+
+
+
+
+
+Security Implementations
+
+* What is the vulnerable Functions?
+  * gets
+  * scanf
+  * sprintf
+  * Strcpy
+* what is the security implementations ?
+  * ASLR , Dep Canary...
+* How to bypass it ?
+  * SHE, ret to libc , etc...
