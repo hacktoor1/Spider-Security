@@ -475,7 +475,7 @@ IN DVWA DEMO
 http://192.168.2.5/dvwa/vulnerabilities/sqli/?id=1
 ```
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
 
 i will use <mark style="color:red;">**`OR 6=6#`**</mark> to test &#x20;
 
@@ -562,7 +562,7 @@ B0000000000M!!
 
 <figure><img src="../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 [WriteUP](https://medium.com/@secureica/hooking-victims-to-browser-exploitation-framework-beef-using-reflected-and-stored-xss-859266c5a00a)
 
@@ -573,13 +573,13 @@ use auxiliary/server/capture/http_javascript_keylogger
 run
 ```
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### XSS Session Hijacking
 
 Stored XSS + Session Hijacking
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
 
 Weak Session IDs Source&#x20;
 
@@ -637,7 +637,7 @@ in the code if last\_session exist make last\_session = 0
 ')-alert('a
 ```
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
 
 Exploit using Arithmetic Operators
 
