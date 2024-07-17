@@ -1,5 +1,9 @@
 # Module 11 (Widows Buffer OverFlow)
 
+{% file src="../../.gitbook/assets/Buffer OverFlow.xmind" %}
+MindMap
+{% endfile %}
+
 ## Discovering The Vulnerability
 
 * **Source Code Review**
@@ -244,7 +248,7 @@ Repeat the same steps
 badchar make terminit your Shellcode
 
 ```
-#\x00\0xa\0xd\x25\x26\x3d
+"\x00\x0a\x0d\x25\x26\x2b\x3d"
 ```
 {% endhint %}
 
@@ -269,7 +273,7 @@ find the dll with out badchar
 convert address to Latin indin = 0x10090C83
 
 ```bash
-"\x00\x0a\x0d\x25\x26\x2b\x3d"
+\x83\x0c\x09\x10
 ```
 
 ### **Finding Vulnerable Modules**
