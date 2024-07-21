@@ -18,7 +18,7 @@ We can use client mode to connect to any TCP/UDP port, allowing us to:
 
 Netcat first released in 1995(!) by _Hobbit_ is one of the “original” network penetration testing tools and is so versatile that it lives up to the author’s designation as a hacker’s “Swiss army knife”. The clearest definition of Netcat is from _Hobbit_ himself: a simple “utility which reads and writes data across network connections, using TCP or UDP protocols
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 OK!
 
