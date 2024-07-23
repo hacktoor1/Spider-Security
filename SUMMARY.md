@@ -1,8 +1,6 @@
 # Table of contents
 
 * [Spider Security](README.md)
-* [OS internals](os-internals/README.md)
-  * [Windows internals](os-internals/windows-internals.md)
 * [OSCP](oscp/README.md)
   * [WriteUps](oscp/writeups/README.md)
     * [PortSwigger](oscp/writeups/portswigger/README.md)
@@ -99,5 +97,3 @@
 * [MacOs X internals ⇒ Soon](macos-x-internals-soon.md)
 * [WriteUps](writeups.md)
 * [Course Materials](course-materials.md)
-* [OSCP Machine List](oscp-machine-list.md)
-* [CTF](ctf.md)
