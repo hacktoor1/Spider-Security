@@ -9,6 +9,7 @@
       * [Recon](oscp/writeups/pentesterlabs/recon.md)
     * [HTB](oscp/writeups/htb/README.md)
       * [BoardLight](oscp/writeups/htb/boardlight.md)
+      * [Lame](oscp/writeups/htb/lame.md)
     * [THM](oscp/writeups/thm/README.md)
       * [BLUE](oscp/writeups/thm/blue.md)
   * [Module 1 (General Info)](oscp/module-1-general-info.md)
