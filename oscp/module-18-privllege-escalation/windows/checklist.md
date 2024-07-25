@@ -1,6 +1,8 @@
-# Checklist - Local Windows Privilege Escalation
+# Checklist
 
+{% hint style="success" %}
 ### **Best tool to look for Windows local privilege escalation vectors:** [**WinPEAS**](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS)
+{% endhint %}
 
 ### System Info
 

