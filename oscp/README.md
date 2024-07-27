@@ -48,14 +48,6 @@ layout:
   24. **24.Cheatsheet(Old)** [https://liodeus.github.io/2020/09/18/OSCP-personal-cheatsheet.html#amazing-tool-for-shell-generation](https://liodeus.github.io/2020/09/18/OSCP-personal-cheatsheet.html#amazing-tool-for-shell-generation)
   25. **25.OSCP Cheatsheet** [https://gitlab.com/lagarian.smith/oscp-cheat-sheet/-/blob/master/OSCP\_Notes.md](https://gitlab.com/lagarian.smith/oscp-cheat-sheet/-/blob/master/OSCP\_Notes.md)
 
-WriteUps
-
-Course Materials
-
-[OSCP Machine List](https://www.notion.so/OSCP-Machine-List-43e10db0d05340928da6ed28641117c5?pvs=4)
-
-[CTF](https://www.notion.so/CTF-68202a6f0a8348b58e31cdf25653c716?pvs=4)
-
 
 
 
