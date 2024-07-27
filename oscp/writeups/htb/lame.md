@@ -8,7 +8,7 @@
 
 How many of the nmap top 1000 TCP ports are open on the remote host?
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>4 Ports Open</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>4 Ports Open</p></figcaption></figure>
 
 i will see the port open FTP - 21 with \
 login Anonymous \
@@ -19,7 +19,7 @@ Password Anonymous
 ftp 10.10.10.3
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 

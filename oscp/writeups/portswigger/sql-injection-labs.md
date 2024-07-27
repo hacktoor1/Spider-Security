@@ -60,6 +60,6 @@ go to intruder  > cluster bomb
 8oiqhj3w6k9bfypfq7j1
 ```
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 offfffffffffffffffffffffff! :smile: :tada:
