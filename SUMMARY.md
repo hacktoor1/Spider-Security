@@ -72,6 +72,7 @@
   * [Module 23 (Powershell Empire)](offensive-security/oscp/module-23-powershell-empire.md)
   * [Module 24 Assembling the Pieces](offensive-security/oscp/module-24-assembling-the-pieces.md)
   * [Report Writing for Penetration Testers](offensive-security/oscp/report-writing-for-penetration-testers.md)
+  * [Course Materials](offensive-security/oscp/course-materials.md)
 
 ## Reverse Eng & Malware dev
 
@@ -105,5 +106,3 @@
   * [Chapter 7. Security](windows-internals/chapter-7.-security.md)
 * [Linux internals ⇒ Soon](linux-internals-soon.md)
 * [MacOs X internals ⇒ Soon](macos-x-internals-soon.md)
-* [WriteUps](writeups.md)
-* [Course Materials](course-materials.md)
