@@ -76,6 +76,18 @@
 
 ## Reverse Eng & Malware dev
 
+* [Internals](reverse-eng-and-malware-dev/internals/README.md)
+  * [Windows internals](reverse-eng-and-malware-dev/internals/windows-internals/README.md)
+    * [Topics in GitHub](https://github.com/hacktoor1/Windows-Internals.git)
+    * [Chapter 1 Concepts and tools](reverse-eng-and-malware-dev/internals/windows-internals/chapter-1-concepts-and-tools.md)
+    * [Chapter 2. System architecture](reverse-eng-and-malware-dev/internals/windows-internals/chapter-2.-system-architecture.md)
+    * [Chapter 3. Processes and jobs](reverse-eng-and-malware-dev/internals/windows-internals/chapter-3.-processes-and-jobs.md)
+    * [Chapter 4. Threads](reverse-eng-and-malware-dev/internals/windows-internals/chapter-4.-threads.md)
+    * [Chapter 5. Memory management](reverse-eng-and-malware-dev/internals/windows-internals/chapter-5.-memory-management.md)
+    * [Chapter 6. I/O system](reverse-eng-and-malware-dev/internals/windows-internals/chapter-6.-i-o-system.md)
+    * [Chapter 7. Security](reverse-eng-and-malware-dev/internals/windows-internals/chapter-7.-security.md)
+  * [Linux internals ⇒ Soon](reverse-eng-and-malware-dev/internals/linux-internals-soon.md)
+  * [MacOs X internals ⇒ Soon](reverse-eng-and-malware-dev/internals/macos-x-internals-soon.md)
 * [The Art of assembly Language](reverse-eng-and-malware-dev/the-art-of-assembly-language/README.md)
   * [Chapter 1: Hello, World of Assembly Languageel](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-1-hello-world-of-assembly-languageel.md)
   * [Chapter 2: Data Representation](reverse-eng-and-malware-dev/the-art-of-assembly-language/chapter-2-data-representation.md)
@@ -93,17 +105,6 @@
 * [Reverse Code Engineering](reverse-eng-and-malware-dev/reverse-code-engineering/README.md)
   * [Windows architecture](reverse-eng-and-malware-dev/reverse-code-engineering/windows-architecture.md)
 
-***
+## cheat sheet
 
-* [Internals](internals/README.md)
-  * [Windows internals](internals/windows-internals/README.md)
-    * [Topics in GitHub](https://github.com/hacktoor1/Windows-Internals.git)
-    * [Chapter 1 Concepts and tools](internals/windows-internals/chapter-1-concepts-and-tools.md)
-    * [Chapter 2. System architecture](internals/windows-internals/chapter-2.-system-architecture.md)
-    * [Chapter 3. Processes and jobs](internals/windows-internals/chapter-3.-processes-and-jobs.md)
-    * [Chapter 4. Threads](internals/windows-internals/chapter-4.-threads.md)
-    * [Chapter 5. Memory management](internals/windows-internals/chapter-5.-memory-management.md)
-    * [Chapter 6. I/O system](internals/windows-internals/chapter-6.-i-o-system.md)
-    * [Chapter 7. Security](internals/windows-internals/chapter-7.-security.md)
-  * [Linux internals ⇒ Soon](internals/linux-internals-soon.md)
-  * [MacOs X internals ⇒ Soon](internals/macos-x-internals-soon.md)
+* [OSCP\_Notes](cheat-sheet/oscp\_notes.md)
