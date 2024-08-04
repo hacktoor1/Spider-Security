@@ -17,7 +17,7 @@ description: >-
 **using nmap** \
 
 
-<figure><img src="../../../../../.gitbook/assets/image.png" alt=""><figcaption><p>open ports</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1).png" alt=""><figcaption><p>open ports</p></figcaption></figure>
 
 {% code overflow="wrap" %}
 ```bash
@@ -39,7 +39,7 @@ A user-defined function (UDF) is a [function](https://en.wikipedia.org/wiki/Func
 mysql -u root
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```sql
 use mysql;

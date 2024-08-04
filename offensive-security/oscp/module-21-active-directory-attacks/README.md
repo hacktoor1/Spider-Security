@@ -1,0 +1,195 @@
+# Module 21 (Active Directory Attacks)
+
+### AD OverFlow
+
+Active directory is just like a phone book, Basically used to store series of information in relation to what is called an object , could be printers, computers, users etc
+
+AD also serves as an identity management service in the sense that, take for example you change your password in a particular system then all systems in that particular network, password's, get changed too, so now you change your password on one system and you can still login on other system with that same password
+
+In active directory Authentication happens with kerberos or kerberos ticket
+
+![](https://i.imgur.com/3PA0Ogb.png)
+
+Active directory is commonly used in banks and 95% of fortune 1000 companies and the major reason why it is vulnerable in the wild are due to misconfigurations, bad setup etc
+
+![](https://i.imgur.com/ihBjo17.png)
+
+### Physical Active Directory Components
+
+![](https://i.imgur.com/r8LCjYP.png)
+
+1. Domain Controllers: A domain controller is a type of server that processes user requests for authentication within a computer [domain](https://www.techtarget.com/whatis/definition/domain). Domain [controllers](https://www.techtarget.com/whatis/definition/controller) are most commonly used in Windows Active Directory ([AD](https://www.techtarget.com/searchwindowsserver/definition/Active-Directory)) domains but are also used with other types of identity management systems.
+
+![](https://i.imgur.com/iOUQHz2.png)
+
+2. AD DS Data Store : Contain database files for users, services and applications also stores information about user accounts, such as names, passwords, phone numbers, and so on, and enables other authorized users on the same network to access this information. it also stores a very important file called **Ntds.dit**
+
+![](https://i.imgur.com/Jzd7UAu.png)
+
+### Logical Active Directory Components
+
+![](https://i.imgur.com/r8LCjYP.png)
+
+1. AD DS Schema : You can think of it as a rule book or a blue print, which defines every type of object that can be stored within our directory (Objects are normally defined as either resources, such as printers or computers, or security principals, such as users or groups.)
+
+![](https://i.imgur.com/kdCAfUs.png)
+
+2. Domains : could be defined as a collection of objects within a Microsoft Active Directory network. an example of a domain could be google.com, hackersploit.org etc, we need where to manage our objects (Printers and computers) that is where the domain comes in
+
+![](https://i.imgur.com/xcPSX8N.png)
+
+3. Trees : A tree is a hierarchy of domains, Just like subdomains could be drive.google.com, question.hackersploit.org
+
+![](https://i.imgur.com/y9TzJet.png)
+
+4. Forests : a forest is a set or collection of trees in an active directory
+
+![](https://i.imgur.com/pigpqyr.png)
+
+5. Organizational Units (OU's) : is a subdivision within an Active Directory into which you can place users, groups, computers, and other organizational units. They represent functional or ad-hoc groupings, such as committee, a task force, a project management organization, a class (for education) and so on. also objects lived within an OU
+
+![](https://i.imgur.com/4jvmYHH.png)
+
+6. Trusts : Is a method of connecting two distinct Active Directory domains (or forests) to allow users in one domain to authenticate against resources in the other.
+
+![](https://i.imgur.com/cBcAsLZ.png)
+
+7. Objects : An object is **a single element, such as a user, group, application or device such as a printer**. Objects are normally defined as either resources, such as printers or computers, or security principals, such as users or groups.
+
+![](https://i.imgur.com/2aWO5mU.png)
+
+### AD Components <a href="#a-d-components" id="a-d-components"></a>
+
+**Domain Controller**
+
+* Server with AD DS server role.
+* Hosts a copy of the AD DS directory store.
+* Provides authentication and authorization services.
+* Replicates updates to other domain controllers.
+* Allows administrative access to manage resources.
+
+**AD DS Data Store**
+
+* Consists of the Ntds.dit file (password hashes, sensitive information).
+* Stored in the %SystemRoot%\NTDS folder on all domain controllers.
+
+**AD Logical Components**
+
+* **Schema:**
+  * Defines objects that can be stored in the directory.
+  * Enforces rules about object creation and configuration.
+* **Domains:**
+  * Group and manage objects in an organization.
+  * May include child domains and trusts with other domains.
+* **Trees:**
+  * Hierarchy of domains in AD DS.
+  * Can have child domains.
+  * Creates two-way transitive trust with other domains.
+* **Forests:**
+  * Collection of Trees.
+  * Shares common schema and configuration.
+  * Enables trusts between domains in the forest.
+  * Shares enterprise admin, schema admins groups.
+* **Organizational Units (OUs):**
+  * Containers that can contain users, groups, computers, and other OUs.
+* **Trusts:**
+  * Provide mechanisms for users to gain access.
+* **Objects:**
+  * Users, contacts, groups, computers, printers, shared folders, etc.
+
+#### NTLM => NT LAN Manager Authentication
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>NTLM Auth Work</p></figcaption></figure>
+
+### Kerberos Authentication
+
+Kerberos authentication is the default authentication protocol for any recent version of Windows. Users who log into a service using Kerberos will be assigned tickets. Think of tickets as proof of a previous authentication. Users with tickets can present them to a service to demonstrate they have already authenticated into the network before and are therefore enabled to use it.
+
+When Kerberos is used for authentication, the following process happens:
+
+1.  The user sends their username and a timestamp encrypted using a key derived from their password to the **Key Distribution Center (KDC)**, a service usually installed on the Domain Controller in charge of creating Kerberos tickets on the network.
+
+    The KDC will create and send back a **Ticket Granting Ticket (TGT)**, which will allow the user to request additional tickets to access specific services. The need for a ticket to get more tickets may sound a bit weird, but it allows users to request service tickets without passing their credentials every time they want to connect to a service. Along with the TGT, a **Session Key** is given to the user, which they will need to generate the following requests.
+
+    Notice the TGT is encrypted using the&#x20;
+
+    Kerberos Authentication
+
+    Kerberos authentication is the default authentication protocol for any recent version of Windows. Users who log into a service using Kerberos will be assigned tickets. Think of tickets as proof of a previous authentication. Users with tickets can present them to a service to demonstrate they have already authenticated into the network before and are therefore enabled to use it.
+
+    When Kerberos is used for authentication, the following process happens:
+
+    1.  The user sends their username and a timestamp encrypted using a key derived from their password to the **Key Distribution Center (KDC)**, a service usually installed on the Domain Controller in charge of creating Kerberos tickets on the network.
+
+        The KDC will create and send back a **Ticket Granting Ticket (TGT)**, which will allow the user to request additional tickets to access specific services. The need for a ticket to get more tickets may sound a bit weird, but it will enable users to request service tickets without passing their credentials every time they want to connect to a service. Along with the TGT, a **Session Key** is given to the user, which they will need to generate the following requests.
+
+        Notice the **TGT** is encrypted using the <mark style="color:red;">**krbtgt**</mark> account's password hash, and therefore the user can't access its contents. It is essential to know that the encrypted TGT includes a copy of the Session Key as part of its contents, and the KDC has no need to store the Session Key as it can recover a copy by decrypting the TGT if needed.
+    2.
+
+        ![Kerberos step 1](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/d36f5a024c20fb480cdae8cd09ddc09f.png)
+    3.  When a user wants to connect to a service on the network like a share, website or database, they will use their TGT to ask the KDC for a **Ticket Granting Service (TGS)**. TGS are tickets that allow connection only to the specific service they were created for. To request a TGS, the user will send their username and a timestamp encrypted using the Session Key, along with the TGT and a **Service Principal Name (SPN),** which indicates the service and server name we intend to access.
+
+        As a result, the KDC will send us a TGS along with a **Service Session Key**, which we will need to authenticate to the service we want to access. The TGS is encrypted using a key derived from the **Service Owner Hash**. The Service Owner is the user or machine account that the service runs under. The TGS contains a copy of the Service Session Key on its encrypted contents so that the Service Owner can access it by decrypting the TGS.
+    4.
+
+        ![Kerberos step 2](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/84504666e78373c613d3e05d176282dc.png)
+    5. The TGS can then be sent to the desired service to authenticate and establish a connection. The service will use its configured account's password hash to decrypt the TGS and validate the Service Session Key.
+
+    ![Kerberos step 3](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/8fbf08d03459c1b792f3b6efa4d7f285.png)
+
+    &#x20;account's password hash, and therefore the user can't access its contents. It is essential to know that the encrypted TGT includes a copy of the Session Key as part of its contents, and the KDC has no need to store the Session Key as it can recover a copy by decrypting the TGT if needed.
+2.
+
+    ![Kerberos step 1](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/d36f5a024c20fb480cdae8cd09ddc09f.png)
+3.  When a user wants to connect to a service on the network like a share, website or database, they will use their TGT to ask the KDC for a **Ticket Granting Service (TGS)**. TGS are tickets that allow connection only to the specific service they were created for. To request a TGS, the user will send their username and a timestamp encrypted using the Session Key, along with the TGT and a **Service Principal Name (SPN),** which indicates the service and server name we intend to access.
+
+    As a result, the KDC will send us a TGS along with a **Service Session Key**, which we will need to authenticate to the service we want to access. The TGS is encrypted using a key derived from the **Service Owner Hash**. The Service Owner is the user or machine account that the service runs under. The TGS contains a copy of the Service Session Key on its encrypted contents so that the Service Owner can access it by decrypting the TGS.
+4.
+
+    ![Kerberos step 2](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/84504666e78373c613d3e05d176282dc.png)
+5. The TGS can then be sent to the desired service to authenticate and establish a connection. The service will use its configured account's password hash to decrypt the TGS and validate the Service Session Key.
+
+![Kerberos step 3](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/8fbf08d03459c1b792f3b6efa4d7f285.png)
+
+## Trees, Forests and Trusts
+
+So far, we have discussed how to manage a single domain, the role of a Domain Controller and how it joins computers, servers and users.
+
+![Single Domain](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/69f2441bbafd4cfe57a101d87f3c5950.png)
+
+As companies grow, so do their networks. Having a single domain for a company is good enough to start, but in time some additional needs might push you into having more than one.
+
+### Trees
+
+Imagine, for example, that suddenly your company expands to a new country. The new country has different laws and regulations that require you to update your GPOs to comply. In addition, you now have IT people in both countries, and each IT team needs to manage the resources that correspond to each country without interfering with the other team. While you could create a complex OU structure and use delegations to achieve this, having a huge AD structure might be hard to manage and prone to human errors.
+
+Luckily for us, Active Directory supports integrating multiple domains so that you can partition your network into units that can be managed independently. If you have two domains that share the same namespace (`thm.local` in our example), those domains can be joined into a **Tree**.
+
+If our `thm.local` domain was split into two subdomains for UK and US branches, you could build a tree with a root domain of `thm.local` and two subdomains called `uk.thm.local` and `us.thm.local`, each with its AD, computers and users:
+
+![Tree](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/abea24b7979676a1dcc0c568054544c8.png)
+
+This partitioned structure gives us better control over who can access what in the domain. The IT people from the UK will have their own DC that manages the UK resources only. For example, a UK user would not be able to manage US users. In that way, the Domain Administrators of each branch will have complete control over their respective DCs, but not other branches' DCs. Policies can also be configured independently for each domain in the tree.
+
+A new security group needs to be introduced when talking about trees and forests. The Enterprise Admins group will grant a user administrative privileges over all of an enterprise's domains. Each domain would still have its Domain Admins with administrator privileges over their single domains and the Enterprise Admins who can control everything in the enterprise.\
+
+
+### Forests
+
+The domains you manage can also be configured in different namespaces. Suppose your company continues growing and eventually acquires another company called `MHT Inc.` When both companies merge, you will probably have different domain trees for each company, each managed by its own IT department. The union of several trees with different namespaces into the same network is known as a **forest**.
+
+![Forest](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/03448c2faf976db890118d835000bab7.png)
+
+### Trust Relationships
+
+Having multiple domains organised in trees and forest allows you to have a nice compartmentalised network in terms of management and resources. But at a certain point, a user at THM UK might need to access a shared file in one of MHT ASIA servers. For this to happen, domains arranged in trees and forests are joined together by **trust relationships**.
+
+In simple terms, having a trust relationship between domains allows you to authorise a user from domain `THM UK` to access resources from domain `MHT EU`.
+
+The simplest trust relationship that can be established is a **one-way trust relationship**. In a one-way trust, if `Domain AAA` trusts `Domain BBB`, this means that a user on BBB can be authorised to access resources on AAA:
+
+![Trusts](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/af95eb1a4b6c672491d8989f79c00200.png)
+
+The direction of the one-way trust relationship is contrary to that of the access direction.
+
+**Two-way trust relationships** can also be made to allow both domains to mutually authorise users from the other. By default, joining several domains under a tree or a forest will form a two-way trust relationship.
