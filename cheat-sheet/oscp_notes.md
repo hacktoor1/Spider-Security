@@ -680,7 +680,7 @@ cadaver http://target
 
 ### Unknown ports
 
-* `amap -d 10.11.1.111 8000`
+* `nmap -d 10.11.1.111 8000`
 * netcat: makes connections to ports. Can echo strings or give shells: `nc -nv 10.11.1.111 110`
 * sfuzz: can connect to ports, udp or tcp, refrain from closing a connection, using basic HTTP configurations
 * Try zone transfer for subdomains: `dig axfr @10.11.1.111 hostname.box`, `dnsenum 10.11.1.111`, `dnsrecon -d domain.com -t axfr`
@@ -1129,9 +1129,9 @@ XXE OOB
 - All at the same time.
 ```
 
-### Password brute force - last resort
+## Password brute force - last resort
 
-Offline local resources
+### Offline local resources
 
 ```bash
 cewl
@@ -1168,7 +1168,7 @@ https://github.com/Mebus/cupp
 git clone https://github.com/sc0tfree/mentalist.git
 ```
 
-Hashcat
+### Hashcat
 
 ```bash
 https://hashcat.net/wiki/doku.php?id=example_hashes // m parameter
@@ -1184,7 +1184,7 @@ hashcat -m 400 'hash$'/home/kali/rockyou.txt // Wordpress
 
 ```
 
-Online crackers
+### Online crackers
 
 ```
 https://hashkiller.co.uk/Cracker
@@ -1285,9 +1285,9 @@ except:
 s.close()
 ```
 
-### Find exploits - Searchsploit and google
+### Find exploits - Searchsploit and Google
 
-Where there are many exploits for a software, use google. It will automatically sort it by popularity.
+Where there are many exploits for software, use Google. It will automatically sort it by popularity.
 
 ```bash
 site:exploit-db.com apache 2.4.7
