@@ -77,6 +77,7 @@
   * [Module 24 Assembling the Pieces](offensive-security/oscp/module-24-assembling-the-pieces.md)
   * [Report Writing for Penetration Testers](offensive-security/oscp/report-writing-for-penetration-testers.md)
   * [Course Materials](offensive-security/oscp/course-materials.md)
+* [Page](offensive-security/page.md)
 
 ## Reverse Eng & Malware dev
 
