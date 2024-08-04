@@ -1,34 +1,6 @@
-# Page
-
-[Skip to content](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups#start-of-content)
-
-### Navigation Menu
-
-
-
-* [devanshba](https://github.com/devanshbatham)evanshbatham/Awesome-Bugbounty-Writeups
-
-&#x20;master[**1** Branch](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups/branches)[**0** Tags](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups/tags)t
-
-### Add file
-
-Add fileCode
-
-### Folders and files <a href="#folders-and-files" id="folders-and-files"></a>
-
-| Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                                                                       |             |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| <h3>Latest commit</h3><p><a href="https://github.com/devanshbatham"><img src="https://avatars.githubusercontent.com/u/28016517?v=4&#x26;size=40" alt="devanshbatham"></a><a href="https://github.com/devanshbatham/Awesome-Bugbounty-Writeups/commits?author=devanshbatham">devanshbatham</a><a href="https://github.com/devanshbatham/Awesome-Bugbounty-Writeups/commit/72010067cd49196f8f45b9137d1c0d06ad5ba915">Update README.md</a><a href="https://github.com/devanshbatham/Awesome-Bugbounty-Writeups/commit/72010067cd49196f8f45b9137d1c0d06ad5ba915">7201006</a> · last year</p><h3>History</h3><p><a href="https://github.com/devanshbatham/Awesome-Bugbounty-Writeups/commits/master/">59 Commits</a></p> |                                                                                                                                       |             |
-| ![](https://chrome-extension/bggfcpfjbdkhfhfmkjpbhnkhnpjjeomc/folder-resource.svg)[static](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups/tree/master/static)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | [Create \_\_init\_\_.py](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups/commit/4c229bf0c9122d6c16afc1334cb82f85e463884e) | 4 years ago |
-| ![](https://chrome-extension/bggfcpfjbdkhfhfmkjpbhnkhnpjjeomc/readme.svg)[README.md](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups/blob/master/README.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | [Update README.md](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups/commit/72010067cd49196f8f45b9137d1c0d06ad5ba915)       | last year   |
-
-### Repository files navigation
-
-* [README](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups)
+# WriteUps
 
 ### Contents
-
-
 
 * [Cross Site Scripting (XSS)](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups#cross-site-scripting-xss)
 * [Cross Site Request Forgery (CSRF)](https://github.com/devanshbatham/Awesome-Bugbounty-Writeups#cross-site-request-forgery-csrf)
