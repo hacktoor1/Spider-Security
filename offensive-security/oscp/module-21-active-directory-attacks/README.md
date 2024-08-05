@@ -193,3 +193,52 @@ The simplest trust relationship that can be established is a **one-way trust rel
 The direction of the one-way trust relationship is contrary to that of the access direction.
 
 **Two-way trust relationships** can also be made to allow both domains to mutually authorise users from the other. By default, joining several domains under a tree or a forest will form a two-way trust relationship.
+
+
+
+### Recon Active Directory (No creds/sessions) <a href="#recon-active-directory-no-creds-sessions" id="recon-active-directory-no-creds-sessions"></a>
+
+If you just have access to an AD environment but you don't have any credentials/sessions you could:
+
+* **Pentest the network:**
+  * Scan the network, find machines and open ports and try to **exploit vulnerabilities** or **extract credentials**
+  *
+
+      Enumerating DNS could give information about key servers in the domain as web, printers, shares, vpn, media, etc.
+
+{% code overflow="wrap" %}
+```bash
+gobuster dns -d domain.local -t 25 -w /opt/Seclist/Discovery/DNS/subdomain-top2000.txt
+```
+{% endcode %}
+
+* **Check for null and Guest access on smb services** (this won't work on modern Windows versions):
+
+```bash
+enum4linux -a -u "" -p "" <DC IP> && enum4linux -a -u "guest" -p "" <DC IP>
+
+smbmap -u "" -p "" -P 445 -H <DC IP> && smbmap -u "guest" -p "" -P 445 -H <DC IP>
+
+smbclient -U '%' -L //<DC IP> && smbclient -U 'guest%' -L //
+```
+
+* A more detailed guide on how to enumerate a SMB server can be found here:
+
+{% embed url="https://h3ckt0r.gitbook.io/0xsec/cheat-sheet/oscp_notes#port-139-445-smb" %}
+Port 139/445 - SMB
+{% endembed %}
+
+* **Enumerate Ldap**
+
+```bash
+nmap -n -sV --script "ldap* and not brute" -p 389 <DC IP>
+```
+
+* A more detailed guide on how to enumerate LDAP can be found here (pay **special attention to the anonymous access**):
+
+{% embed url="https://h3ckt0r.gitbook.io/0xsec/cheat-sheet/oscp_notes#ldap-389-636" %}
+LDAP - 389/636
+{% endembed %}
+
+[\
+](https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap)

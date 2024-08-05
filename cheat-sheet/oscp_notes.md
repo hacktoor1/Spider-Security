@@ -452,7 +452,55 @@ snmp-check 10.11.1.111 -c public|private|community
 
 ```
 
-### LDAP - 389,636
+### LDAP - 389,636,3268, 3269
+
+The use of **LDAP** (Lightweight Directory Access Protocol) is mainly for locating various entities such as organizations, individuals, and resources like files and devices within networks, both public and private. It offers a streamlined approach compared to its predecessor, DAP, by having a smaller code footprint.
+
+```
+PORT    STATE SERVICE REASON
+389/tcp open  ldap    syn-ack
+636/tcp open  tcpwrapped
+```
+
+#### LDAP Data Interchange Format <a href="#ldap-data-interchange-format" id="ldap-data-interchange-format"></a>
+
+LDIF (LDAP Data Interchange Format) defines the directory content as a set of records. It can also represent update requests (Add, Modify, Delete, Rename).
+
+Copy
+
+```bash
+dn: dc=local
+dc: local
+objectClass: dcObject
+
+dn: dc=moneycorp,dc=local
+dc: moneycorp
+objectClass: dcObject
+objectClass: organization
+
+dn ou=it,dc=moneycorp,dc=local
+objectClass: organizationalUnit
+ou: dev
+
+dn: ou=marketing,dc=moneycorp,dc=local
+objectClass: organizationalUnit
+Ou: sales
+
+dn: cn= ,ou= ,dc=moneycorp,dc=local
+objectClass: personalData
+cn:
+sn:
+gn:
+uid:
+ou:
+mail: pepe@hacktricks.xyz
+phone: 23627387495
+```
+
+* Lines 1-3 define the top level domain local
+* Lines 5-8 define the first level domain moneycorp (moneycorp.local)
+* Lines 10-16 define 2 organizational units: dev and sales
+* Lines 18-26 create an object of the domain and assign attributes with values
 
 ```bash
 ldapsearch -h 10.11.1.111 -p 389 -x -b "dc=mywebsite,dc=com"
