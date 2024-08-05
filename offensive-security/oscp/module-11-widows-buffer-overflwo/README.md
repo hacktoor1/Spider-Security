@@ -236,7 +236,7 @@ s.close()
 
 EX:-
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 Repeat the same steps
@@ -254,7 +254,7 @@ badchar make terminit your Shellcode
 
 After Remove Badchar
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -304,7 +304,7 @@ Now we will find the address pushed on the stack when R.dll is called in the app
 
 !mona find -s "\xff\xe4" -m R.dll
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ![](https://www.cobalt.io/hs-fs/hubfs/Screenshot%202023-04-17%20at%201.33.53%20PM.png?width=706\&height=231\&name=Screenshot%202023-04-17%20at%201.33.53%20PM.png)
 

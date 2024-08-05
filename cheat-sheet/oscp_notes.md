@@ -466,8 +466,6 @@ PORT    STATE SERVICE REASON
 
 LDIF (LDAP Data Interchange Format) defines the directory content as a set of records. It can also represent update requests (Add, Modify, Delete, Rename).
 
-Copy
-
 ```bash
 dn: dc=local
 dc: local

