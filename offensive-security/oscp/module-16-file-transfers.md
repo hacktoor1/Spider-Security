@@ -294,4 +294,13 @@ cat data.txt
 
 <figure><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6LU-K471evwFOeojlIiC0uJE84Wz0_3Z1oJcKP8h59pDfqQ2CEmpoj79KEs9G4Vxf-UhR4OR3SumX-nPUwbaBARiN6bLC520x8IOMnOuHFAbLe52HQTI0jFIkost4qII280ajayN66Dse9KTpjUTy_LzzhnYnvsMzxzFUuDokAG5O3bYQRegrQ2C_Uskw/s16000/74.png" alt=""><figcaption></figcaption></figure>
 
-\
+### PSCP  (Windows to linux)
+
+{% code overflow="wrap" %}
+```
+sudo apt install putty-tools
+sudo pscp Administrator@<IP_WIN>:/Users/Administrator/Downloads/20240806021013_loot.zip ~/PATH/To/Savefile-in_Lnux/
+```
+{% endcode %}
+
+<figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
