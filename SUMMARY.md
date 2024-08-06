@@ -74,8 +74,6 @@
     * [adbasics\_v1.2](offensive-security/oscp/module-21-active-directory-attacks/adbasics\_v1.2.md)
   * [Module 22 (Metasploit Framwork)](offensive-security/oscp/module-22-metasploit-framwork.md)
   * [Module 23 (Powershell Empire)](offensive-security/oscp/module-23-powershell-empire.md)
-  * [Module 24 Assembling the Pieces](offensive-security/oscp/module-24-assembling-the-pieces.md)
-  * [Report Writing for Penetration Testers](offensive-security/oscp/report-writing-for-penetration-testers.md)
   * [Course Materials](offensive-security/oscp/course-materials.md)
 
 ## Reverse Eng & Malware dev
