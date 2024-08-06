@@ -96,6 +96,7 @@
 * [ ] Can you **read or modify sudoers files**?
 * [ ] Can you **modify /etc/ld.so.conf.d/**?
 * [ ] **OpenBSD DOAS** command
+* ### Find SUID Files&#x20;
 
 #### Capabilities
 
