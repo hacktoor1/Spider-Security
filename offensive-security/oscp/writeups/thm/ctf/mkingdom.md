@@ -2,6 +2,8 @@
 
 <figure><img src="../../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
+{% embed url="https://tryhackme.com/r/room/mkingdom" %}
+
 > **Reconnaissance**
 
 ```
