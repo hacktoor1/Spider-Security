@@ -18,6 +18,7 @@
         * [Day 1 — Linux PrivEsc](offensive-security/oscp/writeups/thm/walkthroughs/day-1-linux-privesc.md)
       * [CTF](offensive-security/oscp/writeups/thm/ctf/README.md)
         * [BLUE](offensive-security/oscp/writeups/thm/ctf/blue.md)
+        * [mKingdom](offensive-security/oscp/writeups/thm/ctf/mkingdom.md)
   * [Module 1 (General Info)](offensive-security/oscp/module-1-general-info.md)
   * [Module 2 (Getting Kali)](offensive-security/oscp/module-2-getting-kali/README.md)
     * [Leason 1 - Booting Up Kali Linux](offensive-security/oscp/module-2-getting-kali/leason-1-booting-up-kali-linux.md)
