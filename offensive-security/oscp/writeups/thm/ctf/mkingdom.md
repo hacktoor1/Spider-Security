@@ -1,6 +1,8 @@
 # mKingdom
 
-Reconnaissance
+<figure><img src="../../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+> **Reconnaissance**
 
 ```
 nmap -sC -sV -Pn -T4 10.10.x.x
@@ -258,9 +260,9 @@ But i don't cat the flag
 
 <figure><img src="../../../../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
 
-i will move file to /tmp
+i will move file to /tmp&#x20;
 
-<figure><img src="../../../../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (206).png" alt=""><figcaption></figcaption></figure>
 
 I ran linpeas again as mario, and found that /etc/hosts is writable
 
@@ -272,7 +274,7 @@ I modified the /etc/hosts file to add my **attacking machine IP** and **mkingdom
 
 <figure><img src="../../../../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../../.gitbook/assets/image (205).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 > Exploit Used
 
