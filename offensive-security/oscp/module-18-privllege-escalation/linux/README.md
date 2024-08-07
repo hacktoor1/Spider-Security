@@ -7,16 +7,8 @@
 ```bash
 python -c 'import pty;pty.spawn("/bin/bash");'  
 ctrl z  
-echo $TERM  
-stty -a  
-stty raw -echo  
-fg  
+stty raw -echo; fg; ls; export SHELL=/bin/bash; export TERM=screen; stty rows 38 columns 116; reset;
 
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH  
-export TERM=xterm256-color  
-export SHELL=bash  
-
-stty rows \<> colums \<>  
 ```
 
 ### Restricted bash
