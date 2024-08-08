@@ -19,6 +19,12 @@ In Linux, a process goes through several stages during its lifetime. Understandi
 
 <figure><img src="../../../.gitbook/assets/image (9) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
+### pstree <a href="#types-of-linux-processes" id="types-of-linux-processes"></a>
+
+```
+pstree -p -s PID
+```
+
 ### Types of Linux Processes <a href="#types-of-linux-processes" id="types-of-linux-processes"></a>
 
 Processes are classified into 2 types in Linux Distributions:
