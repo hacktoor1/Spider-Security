@@ -110,5 +110,5 @@
 
 ## cheat sheet
 
-* [OSCP\_Notes](cheat-sheet/oscp\_notes.md)
+* [Pentest\_Notes](cheat-sheet/pentest\_notes.md)
 * [WriteUps](cheat-sheet/writeups.md)
