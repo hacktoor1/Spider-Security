@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Spider Security](README.md)
-* [Copy of Cross Site Scripting (XSS)](copy-of-cross-site-scripting-xss.md)
 
 ## offensive security
 
@@ -81,6 +80,7 @@
 ## AppSec
 
 * [EWAPTX](appsec/ewaptx/README.md)
+  * [Untitled](appsec/ewaptx/untitled.md)
   * [XSS\_HTML Injection](appsec/ewaptx/xss\_html-injection.md)
 
 ## Reverse Eng & Malware dev
