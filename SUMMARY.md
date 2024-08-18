@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Spider Security](README.md)
+* [Copy of Cross Site Scripting (XSS)](copy-of-cross-site-scripting-xss.md)
 
 ## offensive security
 
@@ -76,6 +77,11 @@
   * [Module 22 (Metasploit Framwork)](offensive-security/oscp/module-22-metasploit-framwork.md)
   * [Module 23 (Powershell Empire)](offensive-security/oscp/module-23-powershell-empire.md)
   * [Course Materials](offensive-security/oscp/course-materials.md)
+
+## AppSec
+
+* [EWAPTX](appsec/ewaptx/README.md)
+  * [XSS\_HTML Injection](appsec/ewaptx/xss\_html-injection.md)
 
 ## Reverse Eng & Malware dev
 
