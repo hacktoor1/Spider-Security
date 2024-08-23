@@ -78,7 +78,7 @@ wfuzz -z file,wordlist/general/common.txt -b cookie=value1 -b cookie2=value2 htt
 
 ## OWASP Top Ten
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 1. **A01:2021-Broken Access Control**
 2. **A02:2021-Cryptographic Failures**&#x20;

@@ -80,8 +80,18 @@
 ## AppSec
 
 * [EWAPTX](appsec/ewaptx/README.md)
-  * [Untitled](appsec/ewaptx/untitled.md)
+  * [SqlI](appsec/ewaptx/sqli/README.md)
+    * [Information\_schema](appsec/ewaptx/sqli/information\_schema.md)
+    * [WriteUps](appsec/ewaptx/sqli/writeups.md)
+  * [SSTI & CSTI](appsec/ewaptx/ssti-and-csti.md)
   * [XSS\_HTML Injection](appsec/ewaptx/xss\_html-injection.md)
+  * [CORS Attack](appsec/ewaptx/cors-attack.md)
+  * [Clickjacking](appsec/ewaptx/clickjacking.md)
+  * [Open redirect](appsec/ewaptx/open-redirect.md)
+  * [JSONP](appsec/ewaptx/jsonp.md)
+  * [Local File Inclusion (LFI) &&](appsec/ewaptx/local-file-inclusion-lfi-and-and.md)
+  * [HTTP Host header attacks](appsec/ewaptx/http-host-header-attacks.md)
+  * [CSRF](appsec/ewaptx/csrf.md)
 
 ## Reverse Eng & Malware dev
 
