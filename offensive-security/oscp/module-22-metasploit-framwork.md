@@ -162,3 +162,9 @@ exploit -j -z
 ```bash
 sudo msfconsole -r setup.rc
 ```
+
+privEsc
+
+```bash
+post/multi/manage/shell_to_meterpreter
+```
