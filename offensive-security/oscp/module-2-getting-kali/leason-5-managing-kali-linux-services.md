@@ -2,7 +2,7 @@
 
 ## HTTP Service
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Http service</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>Http service</p></figcaption></figure>
 
 and listens by default on port 80. To start the **HTTP** service in Kali, we can use systemctl as we did when starting the SSH service, replacing the service name with “apache2”:
 
@@ -207,7 +207,7 @@ Using `systemctl`, you can manage and **monitor services**, **sockets**, **devic
 
 **SSH Service**
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The Secure SHell (SSH)43 service is most commonly used to remotely access a computer, using a secure, encrypted protocol. The SSH service is TCP-based and listens by default on port 22. To start the SSH service in Kali, we run systemctl with the start option followed by the service name (ssh in this example)
 
