@@ -1,6 +1,6 @@
 # Module 10 ( Intro Buffer OverFlow)
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Architecture Fundamentals (Numbers)
 
@@ -67,7 +67,7 @@ printf, sprintf, strcat, strcpy, and gets.
 [\
 ](https://aidenpearce369.medium.com/?source=post\_page-----670765bf405a--------------------------------)
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The buffer space grows towards the Base Pointer (BP) and Instruction Pointer (IP) from lower memory to higher memory
 

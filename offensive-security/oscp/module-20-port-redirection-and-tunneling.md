@@ -44,9 +44,9 @@ ssh -N -L [bind_address:]port:host:hostport [username@address]
 sudo ssh -L 127.0.0.1:80:192.168.1.19:80 victim@192.168.1.10
 ```
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SSH Remote Port Forwarding (reverse tunneling)
 
@@ -54,7 +54,7 @@ sudo ssh -L 127.0.0.1:80:192.168.1.19:80 victim@192.168.1.10
 <strong>sudo ssh -R  8080:127.0.0.1:80 attacker@192.168.1.8 
 </strong></code></pre>
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### SSH Dynamic Port Forwarding
 
