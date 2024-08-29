@@ -15,6 +15,7 @@
       * [Lame](offensive-security/oscp/writeups/htb/lame.md)
     * [THM](offensive-security/oscp/writeups/thm/README.md)
       * [Walkthroughs](offensive-security/oscp/writeups/thm/walkthroughs/README.md)
+        * [Attacktive Directory](offensive-security/oscp/writeups/thm/walkthroughs/attacktive-directory.md)
         * [LineKernel](offensive-security/oscp/writeups/thm/walkthroughs/linekernel.md)
         * [Day 1 — Linux PrivEsc](offensive-security/oscp/writeups/thm/walkthroughs/day-1-linux-privesc.md)
       * [CTF](offensive-security/oscp/writeups/thm/ctf/README.md)

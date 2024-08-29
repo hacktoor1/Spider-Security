@@ -69,7 +69,7 @@ POS (if data json use Content-Type = application/json)
 
 I will try to find this vuln Uing Burpsuit Come with me!
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 in this request allow credentials if
 
@@ -79,11 +79,11 @@ in this request allow credentials if
 
 * Map the application • Test the application for dynamic generation • Does it reflect the user-supplied ACAO header? • Does it only validate on the start/end of a specific string? • Does it allow the null origin? \* or yourdoamin,com • Does it restrict the protocol? HTTP or https | 80,8080 or any think • Does it allow credentials?
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Click exploit B000000000M!
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Mitigation
 
