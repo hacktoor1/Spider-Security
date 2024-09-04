@@ -16,7 +16,11 @@ sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="/GRUB_CMDLINE_LINUX_DEFAULT="noexec=o
 ```
 {% endcode %}
 
+compile C
 
+```bash
+gcc -m32 -fno-stack-protector -g -z execstack -no-pie -o exploit exploit.c
+```
 
 \
 **1. Install Dependencies**
