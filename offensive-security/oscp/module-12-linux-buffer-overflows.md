@@ -8,6 +8,14 @@ Steps
 4. FInding a Return Address
 5. Getting Shell
 
+disable aslr dep
+
+{% code overflow="wrap" %}
+```bash
+sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="/GRUB_CMDLINE_LINUX_DEFAULT="noexec=off /' /etc/default/grub && echo 0 | sudo tee /proc/sys/kernel/randomize_va_space && sudo update-grub
+```
+{% endcode %}
+
 
 
 \
