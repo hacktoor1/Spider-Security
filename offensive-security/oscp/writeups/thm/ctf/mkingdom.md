@@ -1,6 +1,6 @@
 # mKingdom
 
-<figure><img src="../../../../../.gitbook/assets/image (7) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (7) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://tryhackme.com/r/room/mkingdom" %}
 
@@ -276,7 +276,7 @@ I modified the /etc/hosts file to add my **attacking machine IP** and **mkingdom
 
 <figure><img src="../../../../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 > Exploit Used
 
