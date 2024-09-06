@@ -19,6 +19,7 @@
         * [LineKernel](offensive-security/oscp/writeups/thm/walkthroughs/linekernel.md)
         * [Day 1 — Linux PrivEsc](offensive-security/oscp/writeups/thm/walkthroughs/day-1-linux-privesc.md)
       * [CTF](offensive-security/oscp/writeups/thm/ctf/README.md)
+        * [Page](offensive-security/oscp/writeups/thm/ctf/page.md)
         * [BLUE](offensive-security/oscp/writeups/thm/ctf/blue.md)
         * [mKingdom](offensive-security/oscp/writeups/thm/ctf/mkingdom.md)
         * [RazorBlack](offensive-security/oscp/writeups/thm/ctf/razorblack.md)
