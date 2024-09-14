@@ -80,6 +80,18 @@
   * [Module 22 (Metasploit Framwork)](offensive-security/oscp/module-22-metasploit-framwork.md)
   * [Module 23 (Powershell Empire)](offensive-security/oscp/module-23-powershell-empire.md)
   * [Course Materials](offensive-security/oscp/course-materials.md)
+* [Red Teaming](offensive-security/red-teaming/README.md)
+  * [Red Team Fundamentals](offensive-security/red-teaming/red-team-fundamentals/README.md)
+    * [Red Team Fundamentals](offensive-security/red-teaming/red-team-fundamentals/red-team-fundamentals.md)
+    * [Red Team EngagementsRed Team Engagements](offensive-security/red-teaming/red-team-fundamentals/red-team-engagementsred-team-engagements.md)
+    * [Red Team Threat IntelRed Team Threat Intel](offensive-security/red-teaming/red-team-fundamentals/red-team-threat-intelred-team-threat-intel.md)
+    * [Red Team OPSECRed Team OPSEC](offensive-security/red-teaming/red-team-fundamentals/red-team-opsecred-team-opsec.md)
+    * [Intro to C2](offensive-security/red-teaming/red-team-fundamentals/intro-to-c2.md)
+  * [Initial Access](offensive-security/red-teaming/initial-access.md)
+  * [Post Compromise](offensive-security/red-teaming/post-compromise.md)
+  * [Host Evasions](offensive-security/red-teaming/host-evasions.md)
+  * [Network Security Evasion](offensive-security/red-teaming/network-security-evasion.md)
+  * [Compromising Active Directory](offensive-security/red-teaming/compromising-active-directory.md)
 
 ## AppSec
 
