@@ -43,7 +43,7 @@ ffuf -H "Host: FUZZ.board.htb"  -u http://10.10.11.11/ -w /usr/share/seclists/Di
 
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
 
 See i found the Subdomain crm.10.10.11.11
 
@@ -53,7 +53,7 @@ See i found the Subdomain crm.10.10.11.11
 
 **I Found the crm  panel**
 
-<figure><img src="../../../../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 Ok Now Found the Dolibarr version 17.0.0 and i Search in Google to get any CVE&#x20;
 

