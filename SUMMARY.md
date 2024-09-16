@@ -105,7 +105,7 @@
   * [Clickjacking](appsec/ewaptx/clickjacking.md)
   * [Open redirect](appsec/ewaptx/open-redirect.md)
   * [JSONP](appsec/ewaptx/jsonp.md)
-  * [Local File Inclusion (LFI) &&](appsec/ewaptx/local-file-inclusion-lfi-and-and.md)
+  * [LFI && LFD && RFI](appsec/ewaptx/lfi-and-and-lfd-and-and-rfi.md)
   * [HTTP Host header attacks](appsec/ewaptx/http-host-header-attacks.md)
   * [CSRF](appsec/ewaptx/csrf.md)
 
@@ -143,4 +143,5 @@
 ## cheat sheet
 
 * [Pentest\_Notes](cheat-sheet/pentest\_notes.md)
+* [Linux BOF & Wireless Attacks](cheat-sheet/linux-bof-and-wireless-attacks.md)
 * [WriteUps](cheat-sheet/writeups.md)
