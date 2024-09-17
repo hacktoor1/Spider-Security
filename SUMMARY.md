@@ -108,6 +108,8 @@
   * [LFI && LFD && RFI](appsec/ewaptx/lfi-and-and-lfd-and-and-rfi.md)
   * [HTTP Host header attacks](appsec/ewaptx/http-host-header-attacks.md)
   * [CSRF](appsec/ewaptx/csrf.md)
+  * [XML injection](appsec/ewaptx/xml-injection.md)
+  * [XML external entity (XXE) injection](appsec/ewaptx/xml-external-entity-xxe-injection.md)
 
 ## Reverse Eng & Malware dev
 

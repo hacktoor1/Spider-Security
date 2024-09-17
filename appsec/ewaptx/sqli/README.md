@@ -164,7 +164,7 @@ OOB techniques rely on the database server’s ability to communicate with exter
 * **Inferential SQL Injection:** Similar to Blind SQLi, this method involves making logical guesses about the data structure and content.**Mitigation:** Use WAFs and ensure applications do not reveal any hints in their responses.
 * **Second Order SQL Injection:** Occurs when user input is stored and later executed as a SQL query.**Mitigation:** Always sanitize user inputs, even when they are not immediately used in database queries.
 
-## SQl To REC or Types of  DB Get REC
+## SQl To RCE or Types of  DB Get RCE
 
 ### 1.MySQL
 
