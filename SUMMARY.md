@@ -8,6 +8,7 @@
   * [WriteUps](offensive-security/oscp/writeups/README.md)
     * [PortSwigger](offensive-security/oscp/writeups/portswigger/README.md)
       * [SQL injection labs](offensive-security/oscp/writeups/portswigger/sql-injection-labs.md)
+      * [Exploiting XXE to retrieve data by repurposing a local DTD](offensive-security/oscp/writeups/portswigger/exploiting-xxe-to-retrieve-data-by-repurposing-a-local-dtd.md)
     * [PentesterLabs](offensive-security/oscp/writeups/pentesterlabs/README.md)
       * [Recon](offensive-security/oscp/writeups/pentesterlabs/recon.md)
     * [HTB](offensive-security/oscp/writeups/htb/README.md)
