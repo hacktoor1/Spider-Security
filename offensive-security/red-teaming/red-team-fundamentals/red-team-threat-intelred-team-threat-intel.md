@@ -14,4 +14,4 @@ To aid in consuming CTI and collecting TTPs, red teams will often use threat int
 
 #### **TIBER-EU** (**T**hreat **I**ntelligence-**b**ased **E**thical **R**ed Teaming)
 
-<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>

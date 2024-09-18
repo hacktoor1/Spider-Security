@@ -111,6 +111,7 @@
   * [CSRF](appsec/ewaptx/csrf.md)
   * [XML injection](appsec/ewaptx/xml-injection.md)
   * [XML external entity (XXE) injection](appsec/ewaptx/xml-external-entity-xxe-injection.md)
+  * [APIs &  JWT attacks](appsec/ewaptx/apis-and-jwt-attacks.md)
 
 ## Reverse Eng & Malware dev
 
