@@ -201,7 +201,13 @@ TITY h3ckt00r SYSTEM "file:///etc/passwd">
 ]>
 ```
 
+## How TO Test XXE **Methodology**
 
+1. Find XXE Data Entry Point
+2. Change the XML object to anything.
+3. Try to declare a reference entity or parameter entity. **`<!DOCTYPE hacktor [ <!ENTITY xxe  SYSTEM "Hello">]>`**&#x20;
+4. test Blind get server and add reference&#x20;
+5. if now XML format test **Xinclude**&#x20;
 
 ## **Mitigation and** Prevention
 
