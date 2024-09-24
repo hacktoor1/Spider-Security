@@ -112,6 +112,8 @@
   * [XML injection](appsec/ewaptx/xml-injection.md)
   * [XML external entity (XXE) injection](appsec/ewaptx/xml-external-entity-xxe-injection.md)
   * [APIs &  JWT attacks](appsec/ewaptx/apis-and-jwt-attacks.md)
+  * [Insecure Deserialization](appsec/ewaptx/insecure-deserialization.md)
+  * [Page 1](appsec/ewaptx/page-1.md)
 
 ## Reverse Eng & Malware dev
 
