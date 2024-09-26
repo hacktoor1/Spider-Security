@@ -97,6 +97,7 @@
 ## AppSec
 
 * [EWAPTX](appsec/ewaptx/README.md)
+  * [PHP Type Juggling](appsec/ewaptx/php-type-juggling.md)
   * [SqlI](appsec/ewaptx/sqli/README.md)
     * [Information\_schema](appsec/ewaptx/sqli/information\_schema.md)
     * [WriteUps](appsec/ewaptx/sqli/writeups.md)
@@ -113,7 +114,6 @@
   * [XML external entity (XXE) injection](appsec/ewaptx/xml-external-entity-xxe-injection.md)
   * [APIs &  JWT attacks](appsec/ewaptx/apis-and-jwt-attacks.md)
   * [Insecure Deserialization](appsec/ewaptx/insecure-deserialization.md)
-  * [Page 1](appsec/ewaptx/page-1.md)
 
 ## Reverse Eng & Malware dev
 
