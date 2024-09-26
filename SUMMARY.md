@@ -97,7 +97,7 @@
 ## AppSec
 
 * [EWAPTX](appsec/ewaptx/README.md)
-  * [PHP Type Juggling](appsec/ewaptx/php-type-juggling.md)
+  * [PHP Type Juggling](appsec/ewaptx/page-1.md)
   * [SqlI](appsec/ewaptx/sqli/README.md)
     * [Information\_schema](appsec/ewaptx/sqli/information\_schema.md)
     * [WriteUps](appsec/ewaptx/sqli/writeups.md)
