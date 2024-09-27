@@ -24,7 +24,7 @@ coverY: 0
 **Penetration tests** might start by scanning for vulnerabilities as a regular vulnerability assessment but provide further information on how an attacker can chain vulnerabilities to achieve specific goals. While it focuses on <mark style="color:blue;">**identifying**</mark> vulnerabilities and establishing measures to <mark style="color:blue;">**protect**</mark> the network, it also considers the network as a whole ecosystem and how an attacker could profit from interactions between its components.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Advanced Persistent Threats and why Regular Pentesting is not Enough?
 

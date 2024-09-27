@@ -283,7 +283,7 @@ impacket-GetUserSPNs hacktor.local/abdo:Sql@server -dc-ip 192.168.1.5 -request
 impacket-GetNPUsers hacktor.local/abdo -dc-ip 192.168.1.5
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 the attack don't work if  **"Don't Require Kerberos preauthentication**"

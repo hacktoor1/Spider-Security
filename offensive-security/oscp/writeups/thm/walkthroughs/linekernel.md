@@ -231,7 +231,7 @@ find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u
 export PATH=/tmp:$PATH
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Privilege Escalation: NFS
 

@@ -198,9 +198,9 @@ JWTs are composed of three parts, separated by dots:
 * **Structure:** Similar to JWS, a JWE consists of a header and a payload. However, in JWE, the payload (and optionally the header) is encrypted, providing confidentiality. The resulting encrypted payload is then signed to ensure the integrity of the encrypted content.
 * **Use Case:** JWE is used when you want to secure the confidentiality of the information within a JWT especially when transmitting sensitive data
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>JWT</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>JWT</p></figcaption></figure>
 
 ### JWT Attacks
 
