@@ -20,7 +20,7 @@ description: Server-Side Attacks
 
 ## How use Sqlmap
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 sqlmap -r req.txt --dbs --random-agent --risk 3 --level 5

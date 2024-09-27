@@ -4,8 +4,6 @@ description: Advanced Attack
 
 # Insecure Deserialization
 
-<figure><img src="../../.gitbook/assets/image (240).png" alt=""><figcaption></figcaption></figure>
-
 ### Serialization&#x20;
 
 >
@@ -586,7 +584,61 @@ java --add-opens=java.xml/com.sun.org.apache.xalan.internal.xsltc.trax=ALL-UNNAM
 
 PHP Example Using PHPGGC:
 
+```bash
+phpggc Symfony/RCE4 exec 'rm /home/carlos/morale.txt' | base64 -w0
 ```
-```
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+#### Working with Pre-built Gadget Chains
+
+* **Tools**: Use tools like <mark style="color:red;">**`ysoserial`**</mark> for Java or <mark style="color:red;">**`PHPGGC`**</mark> for **PHP** to generate serialized objects that exploit known gadget chains.
+* **Universal Chains**: Use universal chains like <mark style="color:red;">**`URLDNS`**</mark> in Java for detection, triggering DNS lookups to confirm deserialization.
+* **Documentation**: Look for documented exploits or pre-built chains online if a dedicated tool is unavailable.
+
+**Detecting Gadget Chains**:
+
+* **Universal Chains**: Tools like <mark style="color:red;">**`URLDNS`**</mark> and <mark style="color:red;">**`JRMPClient`**</mark> can help detect deserialization by causing detectable side effects like DNS lookups or TCP connections.
+* **Source Code Review**: Manual inspection of available classes and their methods can reveal potential gadgets, especially focusing on magic methods like <mark style="color:red;">**`__wakeup()`**</mark> or <mark style="color:red;">**`readObject()`**</mark>.
+
+**Custom Gadget Chains**:
+
+* **Manual Construction**: If no pre-built chain is available, analyze the application’s classes and methods to create a custom chain based on identified gadgets.
+
+{% hint style="success" %}
+Using gadget chains, attackers manipulate serialized objects to pass data through a series of pre-existing methods, leading to dangerous operations. This often involves starting the chain with a magic method and using intermediate gadgets to funnel data into a "sink gadget" where the attack is realized.
+{% endhint %}
+
+### Create Your Own Gadget Chain Exploit
+
+1. **Source Code Access**: Obtain access to the application's source code. This is crucial for identifying classes that contain magic methods invoked during deserialization.
+2. **Identify Magic Methods**: Search for classes with magic methods (<mark style="color:red;">**`__wakeup()`**</mark>, <mark style="color:red;">**`__destruct()`**</mark>, etc.) that are automatically invoked during deserialization. These methods are potential entry points for your exploit.
+3. **Assess Magic Method Code**: Analyze the code within these magic methods. Determine if they directly dangerously manipulate user-controllable attributes. Even if they don't appear exploitable alone, they can serve as a starting point (kick-off gadget) for your gadget chain.
+4. **Follow Method Invocations**: Study any methods invoked by the kick-off gadget. Look for methods that process or interact with user-controlled data. Each method invocation chain may lead you closer to a dangerous sink gadget where you can manipulate the data flow to achieve your exploit.
+5. **Track Data Access**: Keep track of which attributes and values you have access to as you follow the method invocations. This helps in crafting the serialized object payload later.
+6. **Identify Sink Gadgets**: A sink gadget is where your controlled data can cause significant harm. It could be a method that executes system commands, accesses sensitive files, or performs other risky operations based on its input.
+7. **Constructing the Payload**: Once you've mapped out the gadget chain within the application code, create a serialized object containing your malicious payload. This involves crafting a valid serialized object format matching the source code's class declaration.
+8. **Serialization Formats**: Depending on the language (e.g., PHP, Java), understand the serialization format you're working with. String-based formats (like PHP's `serialize()` output) is straightforward, but binary formats (like Java's serialized objects) may require deeper understanding and possibly custom serialization logic.
+9. **Testing and Refinement**: Test your exploit in a controlled environment to ensure it works as intended. Refine your gadget chain if necessary to optimize its effectiveness or to evade detection.
+10. **Secondary Vulnerabilities**: Look for opportunities to exploit secondary vulnerabilities or weaknesses in the application's security posture as you construct your gadget chain. This could amplify the impact of your exploit.
+
+### **PHAR Deserialization Attacks**
+
+PHAR (PHP Archive) files can be exploited for deserialization vulnerabilities in PHP, even without direct use of the unserialize() method. Here’s a detailed breakdown of how this exploitation works:
+
+1. **phar:// Stream Wrapper**: PHP supports various URL-style wrappers for accessing different protocols via file paths. The <mark style="color:red;">**`phar://`**</mark> wrapper specifically provides a stream interface for interacting with PHP Archive files (.phar).
+2. **Serialized Metadata**: PHAR files contain serialized metadata in their manifest files. When you perform any filesystem operation on a `phar://` stream, PHP implicitly deserializes this metadata.
+3. **Exploitation Vector**: By manipulating a <mark style="color:red;">**`phar://`**</mark> stream and passing it into a filesystem method, you can potentially trigger insecure deserialization. Methods like `file_exists()` are less obviously dangerous compared to methods like <mark style="color:red;">**`include()`**</mark> or <mark style="color:red;">**`fopen()`**</mark>, and may not have adequate protections.
+4. **Upload and Execution**: To execute this attack, you need to upload the PHAR file to the server. This can sometimes be achieved by disguising the PHAR file as another file type, such as a JPEG (polyglot file). PHP's stream handling does not check file extensions strictly, allowing the PHAR to be treated as an image file, bypassing validation checks.
+5. **Deserialization Trigger**: Once the PHAR file is accessed via a `phar://` stream, PHP deserializes its metadata. If the object's class is supported by the website, this can trigger the execution of `__wakeup()` or `__destruct()` magic methods defined in the class.
+6. **Magic Methods**: Both `__wakeup()` and <mark style="color:red;">**`__destruct()`**</mark> methods can be used as a starting point to initiate a gadget chain. These methods allow you to control the behaviour of the deserialization process, potentially leading to the execution of arbitrary code or further exploitation.
+
+#### Example Scenario
+
+Imagine a scenario where a website allows users to upload profile pictures. An attacker uploads a polyglot file that appears to be a harmless JPEG but is actually a PHAR file. When the website accesses this file using a `phar://` stream for display or processing, PHP deserializes its metadata. If the attacker has crafted the PHAR to include malicious code in its `__destruct()` method, this code could execute, leading to unauthorized actions on the server.
+
+PHAR deserialization thus presents a stealthy and potentially dangerous avenue for exploiting insecure deserialization in PHP applications, leveraging PHP's inherent file-handling capabilities and relaxed stream validation.
+
+
 
 [^1]: 

