@@ -1,5 +1,6 @@
 ---
 icon: redhat
+hidden: true
 cover: https://assets.tryhackme.com/img/paths/redteaming.svg
 coverY: 222
 layout:
