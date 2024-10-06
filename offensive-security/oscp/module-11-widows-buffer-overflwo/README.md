@@ -24,7 +24,7 @@ We will be covering the following 6 steps in detail for buffer overflow:
 
 ### **Fuzzing**&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (145).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (343).png" alt=""><figcaption></figcaption></figure>
 
 #### [Sync Breeze Enterprise 10.0.28](https://www.exploit-db.com/exploits/42928)
 
@@ -99,7 +99,7 @@ while c < 2000:
 
 
 
-<figure><img src="../../../.gitbook/assets/image (141).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (339).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 Fuzzing crashed at 800 bytes
@@ -115,7 +115,7 @@ Fuzzing crashed at 800 bytes
 msf-pattern_create -l 800
 ```
 
-<figure><img src="../../../.gitbook/assets/image (143).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (341).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -123,7 +123,7 @@ msf-pattern_create -l 800
 msf-pattern_offset -l 800 -q  <number of EIP>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (142).png" alt=""><figcaption><p>oFFSET </p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (340).png" alt=""><figcaption><p>oFFSET </p></figcaption></figure>
 
 ```python
 #!/usr/bin/python
@@ -153,11 +153,11 @@ print s.recv(1024)
 s.close()
 ```
 
-<figure><img src="../../../.gitbook/assets/image (144).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (342).png" alt=""><figcaption></figcaption></figure>
 
 add + 800 => inputBuffer ="A"\*780+'BBBB'+'C'\*(<mark style="color:red;">1500</mark>-780-4)
 
-<figure><img src="../../../.gitbook/assets/image (9) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (125).png" alt=""><figcaption></figcaption></figure>
 
 C = 2C4 =708
 
@@ -236,7 +236,7 @@ s.close()
 
 EX:-
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (127).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 Repeat the same steps
@@ -254,7 +254,7 @@ badchar make terminit your Shellcode
 
 After Remove Badchar
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -262,13 +262,13 @@ Jmp esp
 
 find the dll with out badchar
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (130).png" alt=""><figcaption></figcaption></figure>
 
 ```
 !mona find -s "\xff\xe4" -m "libspp.dll"
 ```
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>10090C83</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (131).png" alt=""><figcaption><p>10090C83</p></figcaption></figure>
 
 convert address to Latin indin = 0x10090C83
 
@@ -282,7 +282,7 @@ It's a crucial step. After finding EIP value, we have to find a vulnerable DLL f
 
 1\) Download Mona tool and copy Mona.py into \Immunity Debugger\PyCommands directory.
 
-<figure><img src="../../../.gitbook/assets/image (147).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (345).png" alt=""><figcaption></figcaption></figure>
 
 2\)Now, let's fire up the immunity debugger with our vulnerable application again!
 
@@ -304,7 +304,7 @@ Now we will find the address pushed on the stack when R.dll is called in the app
 
 !mona find -s "\xff\xe4" -m R.dll
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (129).png" alt=""><figcaption></figcaption></figure>
 
 ![](https://www.cobalt.io/hs-fs/hubfs/Screenshot%202023-04-17%20at%201.33.53%20PM.png?width=706\&height=231\&name=Screenshot%202023-04-17%20at%201.33.53%20PM.png)
 
@@ -348,9 +348,9 @@ sudo nc -nvlp 443
 
 ### **Exploitation**
 
-<figure><img src="../../../.gitbook/assets/image (8) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (1) (1) (1).png" alt=""><figcaption><p>FULL Exploit</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption><p>FULL Exploit</p></figcaption></figure>
 
 ## Buffer OverFlow Labs
 

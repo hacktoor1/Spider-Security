@@ -8,7 +8,7 @@
 Get-Help <command To neet Help>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (238).png" alt=""><figcaption></figcaption></figure>
 
 {% code title="In Linux Powershell" %}
 ```powershell
@@ -16,7 +16,7 @@ $PSVersionTable
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (56).png" alt=""><figcaption><p>Kali</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (239).png" alt=""><figcaption><p>Kali</p></figcaption></figure>
 
 {% code title="In Windows Powershell" %}
 ```powershell
@@ -24,7 +24,7 @@ $PSVersionTable
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (57).png" alt=""><figcaption><p>WIn</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (240).png" alt=""><figcaption><p>WIn</p></figcaption></figure>
 
 To get the list of Updates −
 
@@ -51,7 +51,7 @@ Cmdlets are way different from commands in other command-shell environments in t
 New-Item -Path '/home/kali/test' -ItemType Directory 
 ```
 
-<figure><img src="../../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (242).png" alt=""><figcaption></figcaption></figure>
 
 ```powershell
 New-Item -Path '/home/kali/test' -ItemType File
@@ -89,7 +89,7 @@ Get-Content 'T:\Users\H3ckt0r\Downloads\cacert.der'
 (Get-Content T:\Users\H3ckt0r\Downloads\cacert.der).length
 ```
 
-<figure><img src="../../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (243).png" alt=""><figcaption></figcaption></figure>
 
 **`Test-Path`** cmdlet is used to check existence of a folder.
 
@@ -97,7 +97,7 @@ Get-Content 'T:\Users\H3ckt0r\Downloads\cacert.der'
 Test-Path /home/kalis/
 ```
 
-<figure><img src="../../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (244).png" alt=""><figcaption></figcaption></figure>
 
 ### PowerCat
 

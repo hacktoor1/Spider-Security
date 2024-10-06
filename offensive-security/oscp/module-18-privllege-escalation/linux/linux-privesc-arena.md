@@ -1,6 +1,6 @@
 # Linux PrivEsc Arena
 
-<figure><img src="../../../../.gitbook/assets/image (166).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (364).png" alt=""><figcaption></figcaption></figure>
 
 Connection SSH&#x20;
 
@@ -14,7 +14,7 @@ Connection SSH&#x20;
 
 **/home/user/tools/linux-exploit-suggester/linux-exploit-suggester.sh**
 
-<figure><img src="../../../../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (365).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 [**https://github.com/dirtycow/dirtycow.github.io/blob/master/dirtyc0w.c**](https://github.com/dirtycow/dirtycow.github.io/blob/master/dirtyc0w.c)
@@ -22,7 +22,7 @@ Connection SSH&#x20;
 
 ### Privilege Escalation - Stored Passwords (Config Files & History)
 
-<figure><img src="../../../../.gitbook/assets/image (168).png" alt=""><figcaption><p>Config File</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (366).png" alt=""><figcaption><p>Config File</p></figcaption></figure>
 
 #### History!
 
@@ -36,7 +36,7 @@ Who was TCM trying to log in as?&#x20;
 
 Who was TCM trying to log in as?
 
-<figure><img src="../../../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (367).png" alt=""><figcaption></figcaption></figure>
 
 ```
 unshadow <PASSWORD-FILE> <SHADOW-FILE> > unshadowed.txt
@@ -84,7 +84,7 @@ void _init() {
     */
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (170).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (368).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 gcc -fPIC -shared -o /tmp/x.so x.c -nostartfiles
@@ -100,7 +100,7 @@ find / -type f -perm -04000 -ls 2>/dev/null
 strace /usr/local/bin/suid-so 2>&1 | grep -i -E "open|access|no such file"
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (171).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (369).png" alt=""><figcaption></figcaption></figure>
 
 Exploitation
 

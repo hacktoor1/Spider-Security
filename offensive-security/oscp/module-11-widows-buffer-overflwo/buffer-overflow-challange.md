@@ -48,7 +48,7 @@ while True:
 
 
 
-<figure><img src="../../../.gitbook/assets/image (146).png" alt=""><figcaption><p>python3 fuzzer.py<br>crached in 2000 </p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (344).png" alt=""><figcaption><p>python3 fuzzer.py<br>crached in 2000 </p></figcaption></figure>
 
 ### Crash Replication & Controlling EIP
 
@@ -87,7 +87,7 @@ in msfconsole
 
 
 
-<figure><img src="../../../.gitbook/assets/image (139).png" alt=""><figcaption><p>2000 Byte</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (337).png" alt=""><figcaption><p>2000 Byte</p></figcaption></figure>
 
 {% code overflow="wrap" %}
 ```
@@ -103,5 +103,5 @@ Get number of OFFSET
 ```
 {% endcode %}
 
-<figure><img src="../../../.gitbook/assets/image (140).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (338).png" alt=""><figcaption></figcaption></figure>
 

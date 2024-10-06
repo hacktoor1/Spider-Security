@@ -11,7 +11,7 @@
 host -t A  grab.com 
 ```
 
-<figure><img src="../../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (259).png" alt=""><figcaption></figcaption></figure>
 
 * PTR :&#x20;
   * Maps an ip to a hostname , "reverse" lookup/zone
@@ -38,7 +38,7 @@ host -t MX grab.com
   * host -t A \<hostname>
   *   can see admin.megacorpone.com but I will try to brute force hacktor.megacorpone.com&#x20;
 
-      <figure><img src="../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+      <figure><img src="../../.gitbook/assets/image (261).png" alt=""><figcaption></figcaption></figure>
 
 Make Script to brute force sub using bash Script :&#x20;
 
@@ -47,7 +47,7 @@ Make Script to brute force sub using bash Script :&#x20;
 
 ```
 
-<figure><img src="../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (262).png" alt=""><figcaption></figcaption></figure>
 
 And can Make Brute Force all (A,AAAA,PTR,MX)
 
@@ -61,16 +61,16 @@ And can Make Brute Force all (A,AAAA,PTR,MX)
   * DNSRecon => `dnsrecon -d megacorpone.com -t axfr`
   *
 
-      <figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+      <figure><img src="../../.gitbook/assets/image (176).png" alt=""><figcaption></figcaption></figure>
 
 Dnsrecon brute force&#x20;
 
-<figure><img src="../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
 
 * DNSEnum => dnsenum \<domain name>
   *
 
-      <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+      <figure><img src="../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -86,19 +86,19 @@ Dnsrecon brute force&#x20;
   * **UDP**
 * Three way Handshake
 
-<figure><img src="../../.gitbook/assets/image (80).png" alt=""><figcaption><p>Three way Handshake</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (263).png" alt=""><figcaption><p>Three way Handshake</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (264).png" alt=""><figcaption></figcaption></figure>
 
 Ex :&#x20;
 
 clint => nc nvlp 1234
 
-<figure><img src="../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (266).png" alt=""><figcaption></figcaption></figure>
 
 Attcker => `nc -nvv -w  192.168.1.1 1234-1236`
 
-<figure><img src="../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (265).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 sudo  iptables -nvL
@@ -112,7 +112,7 @@ sudo iptables -I INPUT 1 -s 192.168.1.8 -j ACCEPT
 sudo iptables -I OUTPUT 1 -d 192.168.1.8 -j ACCEPT  
 ```
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (162).png" alt=""><figcaption></figcaption></figure>
 
 *   Port Scanning  Wth nmap&#x20;
 
@@ -127,7 +127,7 @@ sudo iptables -I OUTPUT 1 -d 192.168.1.8 -j ACCEPT
 >
 > Ex : sudo nmap 192.168.1.4 -p 25 -sT
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (163).png" alt=""><figcaption></figcaption></figure>
 
 > `-sT` => Connect Scanning
 >
@@ -173,7 +173,7 @@ nmap nmap 192.168.1.4 -sV
 sudo nmap --script=/usr/share/nmap/scripts/dns-zone-transfer.nse ns2.megacorpone.com  -p 53
 ```
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (164).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 sudo nmap 192.168.1.4 --top-ports=100 -sV -sC 
@@ -185,7 +185,7 @@ sudo nmap 192.168.1.4 --top-ports=100 -sV -sC
 suoo masscan -p80,53 192.168.1.4 --rate=1000 --interface WlanX --router-mac <macaddress>
 ```
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (165).png" alt=""><figcaption></figcaption></figure>
 
 ### SMB Enumeration
 
@@ -203,7 +203,7 @@ How can show file use -v => verbose
 sudo nbtscan -r 192.168.1.1/24 -v
 ```
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (166).png" alt=""><figcaption></figcaption></figure>
 
 ### smbclinet
 
@@ -211,13 +211,13 @@ sudo nbtscan -r 192.168.1.1/24 -v
 With Passweord Protected ON
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (167).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 With Passweord Protected OFF
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (168).png" alt=""><figcaption></figcaption></figure>
 
 ### SMPMAP
 
@@ -226,7 +226,7 @@ smbmap -H 10.10.176.12 -u svc-admin -p management2005
 
 ```
 
-<figure><img src="../../.gitbook/assets/image (7) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (169).png" alt=""><figcaption></figcaption></figure>
 
 ### enum4linux
 
@@ -260,7 +260,7 @@ in first using nmap to scan rpc default  run in port 111
 nmap 192.168.1.4 -p 111 
 ```
 
-<figure><img src="../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (275).png" alt=""><figcaption></figcaption></figure>
 
 OK i will try use NSE  rpcinfo
 
@@ -268,7 +268,7 @@ OK i will try use NSE  rpcinfo
 nmap 192.168.1.4 -p 111 --script rpcinfo
 ```
 
-<figure><img src="../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (276).png" alt=""><figcaption></figcaption></figure>
 
 ### RPCINFO Tool
 
@@ -278,7 +278,7 @@ rpcinfo tool use to information about  rpc
 rpcinfo 192.168.1.4
 ```
 
-<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (277).png" alt=""><figcaption></figcaption></figure>
 
 step 2  using showmount tool
 
@@ -286,7 +286,7 @@ step 2  using showmount tool
 sudo showmount -e 192.168.1.4
 ```
 
-<figure><img src="../../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (278).png" alt=""><figcaption></figcaption></figure>
 
 **all Files and dir can pwd in my machine**
 
@@ -322,11 +322,11 @@ nc -nvv 192.168.1.4 25
 smtp-user-enum  -M VRFY -u root -t 192.168.1.4 -w 15
 ```
 
-<figure><img src="../../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (280).png" alt=""><figcaption></figcaption></figure>
 
 Using NMAP
 
-<figure><img src="../../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (281).png" alt=""><figcaption></figcaption></figure>
 
 ### SNMP Enumeration
 
@@ -345,7 +345,7 @@ To ensure that SNMP access works across manufacturers and with different client-
 
 #### **OID Example** <a href="#oid-example" id="oid-example"></a>
 
-<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (287).png" alt=""><figcaption></figcaption></figure>
 
 ### How do you read _an OID_?
 
@@ -402,7 +402,7 @@ There are 2 important versions of SNMP:
 
 go in windows machine turn on SNMP service  Turn on windows Feature&#x20;
 
-<figure><img src="../../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (282).png" alt=""><figcaption></figcaption></figure>
 
 run `.\services.msc`
 
@@ -410,7 +410,7 @@ run `.\services.msc`
 sudo nmap  -sU -p 161,162 --script=snmp-* 192.168.1.7
 ```
 
-<figure><img src="../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (284).png" alt=""><figcaption></figcaption></figure>
 
 161/udp <mark style="color:red;">open | filtered</mark> && 162/udp trap <mark style="color:red;">open | filtered</mark>
 
@@ -422,7 +422,7 @@ ok i will use **snmpbulkwalk**&#x20;
 snmpbulkwalk -c Public -v2c 192.168.1.7
 ```
 
-<figure><img src="../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (285).png" alt=""><figcaption></figcaption></figure>
 
 If you know a valid community string, you can access the data using **SNMPWalk** or **SNMP-Check**:
 
@@ -450,7 +450,7 @@ ex snmp-check&#x20;
 snmp-check 192.168.1.7 -p 161 -c Public 
 ```
 
-<figure><img src="../../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (288).png" alt=""><figcaption></figcaption></figure>
 
 ### HackTricks Automatic Commands <a href="#hacktricks-automatic-commands" id="hacktricks-automatic-commands"></a>
 

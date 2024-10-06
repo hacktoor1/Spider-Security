@@ -7,7 +7,7 @@ coverY: 0
 
 ## RESTful  API
 
-<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 * common&#x20;
 * Use JSON
@@ -28,7 +28,7 @@ Example in Real-world
 
 ## GraphQl
 
-<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 * New
 * Uses a custom query
@@ -140,7 +140,7 @@ __schema{
 
 ### SOAP
 
-<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 * Less common
 * Use XML
@@ -198,9 +198,9 @@ JWTs are composed of three parts, separated by dots:
 * **Structure:** Similar to JWS, a JWE consists of a header and a payload. However, in JWE, the payload (and optionally the header) is encrypted, providing confidentiality. The resulting encrypted payload is then signed to ensure the integrity of the encrypted content.
 * **Use Case:** JWE is used when you want to secure the confidentiality of the information within a JWT especially when transmitting sensitive data
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>JWT</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption><p>JWT</p></figcaption></figure>
 
 ### JWT Attacks
 
@@ -326,11 +326,11 @@ Public Key & Private Key
 
     * The recipient (server or client) uses the public key to verify the digital signature. This involves decrypting the signature with the public key and comparing it to a recalculated hash of the message. If they match, the signature is valid.
 
-    <figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 2\. Send a request containing the jwt header to the repeater and go the the JSON Web Token tab from the attack menu embed the created <mark style="color:red;">**JWK**</mark> and change the username
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 #### **JWKS Injection (CVE-2018-0114):**
 
@@ -371,7 +371,7 @@ JWK Sets like this are sometimes exposed publicly via a standard endpoint, such 
 
 * Using burp jwt Editor
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 2. Get the JWK
    1. right-click on the entry for the key that you just generated, then select Copy Public Key as JWK.
@@ -400,7 +400,7 @@ JWK Sets like this are sometimes exposed publicly via a standard endpoint, such 
    * At the bottom of the tab, click **Sign**, then select the RSA key that you generated.
    * Make sure that the **Don’t modify header** option is selected, then click **OK**. The modified token is now signed with the correct signature.
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 Ruby library Net::FTP (CVE-2017-17405)
 
@@ -496,11 +496,11 @@ SELECT secret FROM jwt_secrets WHERE key = 'any_key_does_not_exist' UNION SELECT
 
 JWTs can be signed using a range of different algorithms. Some of these, such as <mark style="color:red;">**HS256 (HMAC + SHA-256**</mark>) use a "**symmetric**" key. This means that the server uses a single key to both sign and verify the token. This needs to be kept secret, just like a password.
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 Other algorithms, such as <mark style="color:red;">**RS256 (RSA + SHA-256)**</mark> use an "**asymmetric**" key pair. This consists of a private key, which the server uses to sign the token, and a mathematically related public key that can be used to verify the signature.
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 As the names suggest, the private key must be kept secret, but the public key is often shared so that anybody can verify the signature of tokens issued by the server.
 

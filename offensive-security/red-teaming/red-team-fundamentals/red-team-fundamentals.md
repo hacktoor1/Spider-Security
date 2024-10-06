@@ -16,7 +16,7 @@ coverY: 0
 &#x20;**vulnerability assessment** focuses on scanning hosts for vulnerabilities as individual entities so that security deficiencies can be <mark style="color:blue;">**identified**</mark> and effective security measures can be deployed to <mark style="color:blue;">**protect**</mark> the network in a prioritized manner. Most of the work can be done with automated tools and performed by operators without requiring much technical knowledge.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (17).png" alt=""><figcaption><p>VA</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption><p>VA</p></figcaption></figure>
 
 ### Penetration Tests
 
@@ -24,13 +24,13 @@ coverY: 0
 **Penetration tests** might start by scanning for vulnerabilities as a regular vulnerability assessment but provide further information on how an attacker can chain vulnerabilities to achieve specific goals. While it focuses on <mark style="color:blue;">**identifying**</mark> vulnerabilities and establishing measures to <mark style="color:blue;">**protect**</mark> the network, it also considers the network as a whole ecosystem and how an attacker could profit from interactions between its components.
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 ### Advanced Persistent Threats and why Regular Pentesting is not Enough?
 
 Such limitations include:
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
 
 ### Red Team Engagements
 
@@ -41,7 +41,7 @@ Every red team engagement will start by defining clear goals, often referenced a
 <mark style="color:red;">**crown jewels**</mark> or <mark style="color:red;">**flags**</mark>
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 Red team engagements also improve on regular penetration tests by considering several attack surfaces:
 
@@ -71,4 +71,4 @@ Components of the kill chain are broken down in the table below.
 | Command & Control     | Control the compromised asset from a remote central controller                    | Empire, Cobalt Strike, etc.                      |
 | Actions on Objectives | Any end objectives: ransomware, data exfiltration, etc.                           | Conti, LockBit2.0, etc.                          |
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>

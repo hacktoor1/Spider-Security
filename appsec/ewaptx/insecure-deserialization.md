@@ -45,7 +45,7 @@ echo serialize($user);
 //O:4:"User":2:{s:8:"username";s:4:"test";s:6:"status";s:9:"not admin";}
 ```
 
-<figure><img src="../../.gitbook/assets/image (236).png" alt=""><figcaption><p>serialize() data</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (434).png" alt=""><figcaption><p>serialize() data</p></figcaption></figure>
 
 example how to add serialize in cookie
 
@@ -76,7 +76,7 @@ echo "Serialized and encoded cookie value: " . base64_decode($encodedData);
 ?>
 ```
 
-<figure><img src="../../.gitbook/assets/image (237).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (435).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 b: The\_Boolean;
@@ -126,7 +126,7 @@ echo "Email: " . $deserializedUser->email . "\n";
 
 The PHP code defines a <mark style="color:red;">**User**</mark> class with <mark style="color:red;">**name**</mark> and <mark style="color:red;">**email**</mark> properties. It demonstrates serialization by converting an instance of <mark style="color:red;">**User**</mark> into a string using <mark style="color:red;">**serialize()**</mark>, then deserializes it back into an object using <mark style="color:red;">**unserialize()**</mark>, displaying the reconstructed user's data.
 
-<figure><img src="../../.gitbook/assets/image (238).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (436).png" alt=""><figcaption></figcaption></figure>
 
 #### PHP Magic Methods
 
@@ -266,13 +266,13 @@ class serialize{
 ```
 {% endcode %}
 
-<figure><img src="../../.gitbook/assets/image (239).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (437).png" alt=""><figcaption></figcaption></figure>
 
 Using Some commands in Linux such as **Strings or haxdump**
 
 &#x20;
 
-<figure><img src="../../.gitbook/assets/image (241).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (439).png" alt=""><figcaption></figcaption></figure>
 
 the application  For Java serialized Objects, you should also look for base64 strings starting with <mark style="color:red;">**`rO0AB`**</mark>
 
@@ -303,7 +303,7 @@ class deserialize{
 
 
 
-<figure><img src="../../.gitbook/assets/image (242).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (440).png" alt=""><figcaption></figcaption></figure>
 
 insecure deserialization Conditions
 
@@ -328,7 +328,7 @@ Requerd:
 java -jar ysoserial-all.jar CommonsCollections1  "whomai" | base64 
 ```
 
-<figure><img src="../../.gitbook/assets/image (243).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (441).png" alt=""><figcaption></figcaption></figure>
 
 ## .NET Serialization
 

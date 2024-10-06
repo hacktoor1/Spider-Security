@@ -4,7 +4,7 @@
 
 ### How To  Works Processes in Linux ?
 
-<figure><img src="../../../.gitbook/assets/image (15) (1) (1).png" alt=""><figcaption><p>Procecces Worls</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (198).png" alt=""><figcaption><p>Procecces Worls</p></figcaption></figure>
 
 ### Stages of a Process in Linux <a href="#id00" id="id00"></a>
 
@@ -17,7 +17,7 @@ In Linux, a process goes through several stages during its lifetime. Understandi
 5. **Terminated:** The process enters the "terminated" state when it has completed its execution or has been terminated by a signal. At this stage, the process data structures are removed, and its resources are freed.
 6. **Zombie:** A process enters the "zombie" state when it has completed its execution but its parent process has not yet read its exit status. At this stage, the process details still have an entry in the process table, but it does not execute any instructions. The zombie process is removed from the process table when its parent process reads its exit status.
 
-<figure><img src="../../../.gitbook/assets/image (9) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (192).png" alt=""><figcaption></figcaption></figure>
 
 ### pstree <a href="#types-of-linux-processes" id="types-of-linux-processes"></a>
 
@@ -60,7 +60,7 @@ There are several [commands](https://unstop.com/blog/linux-commands) used in pro
 
 The built-in jobs utility lists the jobs that are running in the current terminal session, while `fg` returns a job to the foreground. These commands are shown in action below:
 
-<figure><img src="../../../.gitbook/assets/image (10) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (193).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 ping -c 400 ::1 > ping_results.txt

@@ -1,6 +1,6 @@
 # Netcat
 
-<figure><img src="../../../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
 
 * **Connecting to TCP/UDP Port**
 
@@ -18,7 +18,7 @@ We can use client mode to connect to any TCP/UDP port, allowing us to:
 
 Netcat first released in 1995(!) by _Hobbit_ is one of the “original” network penetration testing tools and is so versatile that it lives up to the author’s designation as a hacker’s “Swiss army knife”. The clearest definition of Netcat is from _Hobbit_ himself: a simple “utility which reads and writes data across network connections, using TCP or UDP protocols
 
-<figure><img src="../../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (189).png" alt=""><figcaption></figcaption></figure>
 
 OK!
 
@@ -159,11 +159,11 @@ There are many ways, but I will Just One Way Using Netcat&#x20;
 
 > You Will Compress The File And Then Transfer The Compressed File Which Holds A Lot Of Data
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (214).png" alt=""><figcaption></figcaption></figure>
 
 I've turned on **Netcat** From My <mark style="color:red;">**Termux**</mark> In My Phone I brought the shell using the methods we learned above , Now let's see the contents of this Camera folder
 
-<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption><p>It seems to hold a lot of sensitive data</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (215).png" alt=""><figcaption><p>It seems to hold a lot of sensitive data</p></figcaption></figure>
 
 
 
@@ -171,7 +171,7 @@ I've turned on **Netcat** From My <mark style="color:red;">**Termux**</mark> In 
 tar -cvzf cam.zip Camera
 ```
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (216).png" alt=""><figcaption></figcaption></figure>
 
 In Attacker Machine After Bring control Using <mark style="color:red;">**Termux**</mark> Open New Session Using Netcat
 
@@ -179,11 +179,11 @@ In Attacker Machine After Bring control Using <mark style="color:red;">**Termux*
 ncat -lnvp 8080 < cam.zip
 ```
 
-<figure><img src="../../../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (218).png" alt=""><figcaption></figcaption></figure>
 
 And In Same Attacker Machine , Open New Tap And Get File Zip
 
-<figure><img src="../../../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (217).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:red;">**Then unzip it and all the data has been simply brought into one compressed file**</mark>
 
@@ -196,7 +196,7 @@ What if I discussed the same idea?
 
 **You will have all this information at your fingertips:**
 
-![](<../../../.gitbook/assets/image (36).png>) \
+![](<../../../.gitbook/assets/image (219).png>) \
 **Inside these folders there is a lot of sensitive information and files**
 {% endhint %}
 
@@ -311,7 +311,7 @@ With can also use Bash to initiate a reverse shell from the target host to the a
 
 Advenced Usage (Relay)
 
-<figure><img src="../../../.gitbook/assets/image (13) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
 
 We will explain it with a simple example:
 

@@ -10,13 +10,13 @@ Examine Layers captured by Wireshark
 
 > Here it has successfully captured Layer 2 > Layer 3 > Layer 4 and then Layer 7 information.
 
-<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (251).png" alt=""><figcaption></figcaption></figure>
 
 Ethernet Header (Data Link)
 
-<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (252).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (70).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (253).png" alt=""><figcaption></figcaption></figure>
 
 TCP Header (Transport Layer)
 
@@ -30,7 +30,7 @@ TCP Header (Transport Layer)
 
 Different Types of TCP flags
 
-<figure><img src="../../../.gitbook/assets/image (71).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (254).png" alt=""><figcaption></figcaption></figure>
 
 ### Password Sniffing
 
@@ -40,9 +40,9 @@ Different Types of TCP flags
 
 * &#x20;Hypertext Transfer Protocol (HTTP). It usually works on port 80/TCP
 
-<figure><img src="../../../.gitbook/assets/image (72).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (255).png" alt=""><figcaption></figcaption></figure>
 
 > <mark style="color:red;">**Capture HTTPS Password need a RSA Key To Dencrypt Application Data over TLS or SSL**</mark>
 
-<figure><img src="../../../.gitbook/assets/image (73).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (256).png" alt=""><figcaption></figcaption></figure>
 

@@ -11,7 +11,7 @@ uselistener http
 info
 ```
 
-<figure><img src="../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (376).png" alt=""><figcaption></figcaption></figure>
 
 Starting the listener:
 
@@ -37,7 +37,7 @@ set OutFile stage.hta
 execute
 ```
 
-<figure><img src="../../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (378).png" alt=""><figcaption></figcaption></figure>
 
 ### Lateral Movement
 

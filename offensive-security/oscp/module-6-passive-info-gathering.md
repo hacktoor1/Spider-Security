@@ -109,11 +109,11 @@ theHarvester -d <domain-name> -b all
 
 
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>FOCA</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption><p>FOCA</p></figcaption></figure>
 
 ### ✔️ Requisites
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
 
 * **Cached and archival sites**
   * archive.org
@@ -146,13 +146,13 @@ sudo cp waybackurls /usr/local/bin #run waybackurls in any PATH
 
 
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (178).png" alt=""><figcaption></figcaption></figure>
 
 **For Example**
 
 {% embed url="https://whois.domaintools.com" %}
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (179).png" alt=""><figcaption></figcaption></figure>
 
 ```
 whois <domain name>    
@@ -160,7 +160,7 @@ whois <domain name>
 
 ### amass & Sublister
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (180).png" alt=""><figcaption></figcaption></figure>
 
 * Classless inter-Domain Routing (CIDR)
   * Ex: 163.144.128.0/24
@@ -183,7 +183,7 @@ amass intel -org <company name >
 curl -s http://ip-api.com/<ip>  | jq -r .as
 ```
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (181).png" alt=""><figcaption></figcaption></figure>
 
 **Subdomian**
 
@@ -198,7 +198,7 @@ OR Using asnmap Fast&#x20;
 [**asnmap**](https://github.com/projectdiscovery/asnmap)\
 
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (182).png" alt=""><figcaption></figcaption></figure>
 
 * **ASN to CIDR** Lookup
 * **ORG to CIDR** Lookup

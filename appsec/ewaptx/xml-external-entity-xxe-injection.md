@@ -4,7 +4,7 @@ description: https://app.beeceptor.com/
 
 # XML external entity (XXE) injection
 
-<figure><img src="../../.gitbook/assets/image (233).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (431).png" alt=""><figcaption></figcaption></figure>
 
 #### Identifying
 
@@ -30,7 +30,7 @@ description: https://app.beeceptor.com/
 </check>
 ```
 
-<figure><img src="../../.gitbook/assets/image (235).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (433).png" alt=""><figcaption></figcaption></figure>
 
 ## Blind Data Exfiltration
 
@@ -130,7 +130,7 @@ in Server
 ```
 {% endcode %}
 
-<figure><img src="../../.gitbook/assets/image (234).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (432).png" alt=""><figcaption></figcaption></figure>
 
 ### Automated OOB Exfiltration
 

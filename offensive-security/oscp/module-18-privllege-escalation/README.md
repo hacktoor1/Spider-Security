@@ -15,7 +15,7 @@
       * ps aux => linux
     * Enumeration Network&#x20;
 
-    <figure><img src="../../../.gitbook/assets/image (153).png" alt=""><figcaption><p>open ports</p></figcaption></figure>
+    <figure><img src="../../../.gitbook/assets/image (351).png" alt=""><figcaption><p>open ports</p></figcaption></figure>
 
 
 

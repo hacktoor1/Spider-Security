@@ -26,11 +26,11 @@ SSH tunnelling is a popular tunneling technique that is often used to securely c
 
 PPTP and L2TP are tunneling protocols that are often used to create virtual private networks (VPNs). VPNs allow you to create a secure connection between your computer and a remote network, even if you are connected to the internet through an untrusted network.
 
-<figure><img src="../../.gitbook/assets/image (173).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (371).png" alt=""><figcaption></figcaption></figure>
 
 Attack Simulation
 
-<figure><img src="../../.gitbook/assets/image (174).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (372).png" alt=""><figcaption></figcaption></figure>
 
 * SSH Tunneling&#x20;
   * SSH Remote Port Forwarding
@@ -44,9 +44,9 @@ ssh -N -L [bind_address:]port:host:hostport [username@address]
 sudo ssh -L 127.0.0.1:80:192.168.1.19:80 victim@192.168.1.10
 ```
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (101).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (100).png" alt=""><figcaption></figcaption></figure>
 
 ### SSH Remote Port Forwarding (reverse tunneling)
 
@@ -54,7 +54,7 @@ sudo ssh -L 127.0.0.1:80:192.168.1.19:80 victim@192.168.1.10
 <strong>sudo ssh -R  8080:127.0.0.1:80 attacker@192.168.1.8 
 </strong></code></pre>
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (102).png" alt=""><figcaption></figcaption></figure>
 
 ### SSH Dynamic Port Forwarding
 
@@ -62,7 +62,7 @@ sudo ssh -L 127.0.0.1:80:192.168.1.19:80 victim@192.168.1.10
 ssh -D 8080 vps@112.125.1.54
 ```
 
-<figure><img src="../../.gitbook/assets/image (175).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (373).png" alt=""><figcaption></figcaption></figure>
 
 ### **Bash** <a href="#bash" id="bash"></a>
 

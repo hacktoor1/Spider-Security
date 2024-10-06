@@ -18,7 +18,7 @@ nmap -sC -sV 10.10.11.11
 
 \-sC  => Scan with default NSE scripts. Considered useful for discovery and safe
 
-<figure><img src="../../../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (207).png" alt=""><figcaption></figcaption></figure>
 
 After the **nmap** scan we can see an apache server listening on port 80:
 
@@ -28,13 +28,13 @@ Lets add this to our host file:
 sudo nano /etc/hosts
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (208).png" alt=""><figcaption></figcaption></figure>
 
 
 
 Lets first try to do a directory search to try to find any hidden files/**directory's**. I will use **gobuster**  to do this:
 
-<figure><img src="../../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (210).png" alt=""><figcaption></figcaption></figure>
 
 Make subdomain enumeration Using **FFUF**
 
@@ -43,17 +43,17 @@ ffuf -H "Host: FUZZ.board.htb"  -u http://10.10.11.11/ -w /usr/share/seclists/Di
 
 ```
 
-<figure><img src="../../../../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (199).png" alt=""><figcaption></figcaption></figure>
 
 See i found the Subdomain crm.10.10.11.11
 
-<figure><img src="../../../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (208).png" alt=""><figcaption></figcaption></figure>
 
 
 
 **I Found the crm  panel**
 
-<figure><img src="../../../../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
 
 Ok Now Found the Dolibarr version 17.0.0 and i Search in Google to get any CVE&#x20;
 
@@ -77,23 +77,23 @@ nc -nvlp 9000
 \
 First I provided a listener and then executed the exploit.py file. Then I provided the credentials as well as my attacker ip and the listening port. After executing, I successfully got a reverse shell
 
-<figure><img src="../../../../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
 
 
 
 B0000000M!
 
-<figure><img src="../../../../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (202).png" alt=""><figcaption></figcaption></figure>
 
 I cat Found in pass or Cardantional&#x20;
 
 put i see the user name larissa
 
-<figure><img src="../../../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>
 
 I found the main database password in the file.
 
-<figure><img src="../../../../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/image (22).png" alt=""><figcaption><p>User Own</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (205).png" alt=""><figcaption><p>User Own</p></figcaption></figure>
 

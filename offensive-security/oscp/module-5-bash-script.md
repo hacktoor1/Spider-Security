@@ -6,7 +6,7 @@ description: Black Hat Bash book
 
 
 
-<figure><img src="../../.gitbook/assets/image (75).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (258).png" alt=""><figcaption></figcaption></figure>
 
 ### Intro to Bash Scripting&#x20;
 
@@ -41,7 +41,7 @@ $ABC
 &QAID
 ```
 
-<figure><img src="../../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (257).png" alt=""><figcaption></figcaption></figure>
 
 ### Debugging in Bash
 

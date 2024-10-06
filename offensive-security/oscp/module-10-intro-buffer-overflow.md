@@ -1,6 +1,6 @@
 # Module 10 ( Intro Buffer OverFlow)
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
 
 ## Architecture Fundamentals (Numbers)
 
@@ -67,14 +67,14 @@ printf, sprintf, strcat, strcpy, and gets.
 [\
 ](https://aidenpearce369.medium.com/?source=post\_page-----670765bf405a--------------------------------)
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
 
 The buffer space grows towards the Base Pointer (BP) and Instruction Pointer (IP) from lower memory to higher memory
 
 \
 
 
-<figure><img src="../../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (336).png" alt=""><figcaption></figcaption></figure>
 
 Below Base Pointer (BP) there will be Instruction Pointer (IP)/Return Address
 
@@ -84,7 +84,7 @@ The stack components of the program are always stored above the Base Pointer (BP
 
 ### Intro to BOF
 
-<figure><img src="../../.gitbook/assets/image (11) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
 
 ### Buffer Oveflow&#x20;
 
@@ -101,7 +101,7 @@ int main(int argc,char  *argv[]){
 
 * Step1: open Immuntiy Debbuger&#x20;
 
-<figure><img src="../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (335).png" alt=""><figcaption></figcaption></figure>
 
 * Step2 run the app
 * Step3&#x20;

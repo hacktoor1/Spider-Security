@@ -412,9 +412,9 @@ http://vulnerable-website.com/index.php?page=../../../../var/log/apache2/access.
 * Mail logs (`/var/log/mail.log`).
 * User logins (`/var/log/auth.log`).
 
-<figure><img src="../../.gitbook/assets/image (231).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (429).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (232).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (430).png" alt=""><figcaption></figcaption></figure>
 
 ### SSH Login Log Poisoning
 
