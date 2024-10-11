@@ -116,6 +116,7 @@
   * [APIs &  JWT attacks](appsec/ewaptx/apis-and-jwt-attacks.md)
   * [Insecure Deserialization](appsec/ewaptx/insecure-deserialization.md)
   * [OAUTH 2.0 authentication vulnerabilities](appsec/ewaptx/oauth-2.0-authentication-vulnerabilities.md)
+  * [Host Header Injection](appsec/ewaptx/host-header-injection.md)
 
 ## Reverse Eng & Malware dev
 
