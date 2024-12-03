@@ -107,7 +107,7 @@ Fuzzing crashed at 800 bytes
 
 ### **Finding Offset**
 
-#### **(**msf-pattern\_create**)**
+#### **(**&#x6D;sf-pattern\_creat&#x65;**)**
 
 
 
@@ -165,10 +165,10 @@ C = 2C4 =708
 
 Bad characters:&#x20;
 
-* <mark style="color:red;">**00**</mark>** for NULL**
-* <mark style="color:red;">**0A**</mark>** for Line Feed n**
-* <mark style="color:red;">**0D**</mark>** for Carriage Return r**
-* <mark style="color:red;">**FF**</mark>** for Form Feed f**
+* <mark style="color:red;">**00**</mark>**&#x20;for NULL**
+* <mark style="color:red;">**0A**</mark>**&#x20;for Line Feed n**
+* <mark style="color:red;">**0D**</mark>**&#x20;for Carriage Return r**
+* <mark style="color:red;">**FF**</mark>**&#x20;for Form Feed f**
 
 Badchar form 1 byte to (0xff)
 

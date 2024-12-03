@@ -1,6 +1,6 @@
 # CSP
 
-> **Content Security Policy** ([CSP](https://developer.mozilla.org/en-US/docs/Glossary/CSP)) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross-Site Scripting ([XSS](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site\_scripting)) and data injection attacks. These attacks are used for everything from data theft, to site defacement, to malware distribution.
+> **Content Security Policy** ([CSP](https://developer.mozilla.org/en-US/docs/Glossary/CSP)) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross-Site Scripting ([XSS](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting)) and data injection attacks. These attacks are used for everything from data theft, to site defacement, to malware distribution.
 
 ### Why is the CSP necessary?
 
@@ -39,7 +39,7 @@ Content-Security-Policy: default-src 'self'; script-src 'self' <https://apis.exa
    * **object-src:** Specifies valid sources for plugins, like Flash.
    * And more.
 3. **Source Expressions:**
-   * Source expressions define the allowed sources for each content type. They can be specific domains (<mark style="color:blue;">**`'self'`**</mark><mark style="color:blue;">**,**</mark><mark style="color:blue;">** **</mark><mark style="color:blue;">**`'example.com'`**</mark><mark style="color:blue;">**)**</mark>, URLs (<mark style="color:red;">**`https://example.com`**</mark>), or other keywords.
+   * Source expressions define the allowed sources for each content type. They can be specific domains (<mark style="color:blue;">**`'self'`**</mark><mark style="color:blue;">**,**</mark><mark style="color:blue;">**&#x20;**</mark><mark style="color:blue;">**`'example.com'`**</mark><mark style="color:blue;">**)**</mark>, URLs (<mark style="color:red;">**`https://example.com`**</mark>), or other keywords.
 
 Examples
 

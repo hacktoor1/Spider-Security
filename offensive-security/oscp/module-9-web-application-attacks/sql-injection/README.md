@@ -33,10 +33,10 @@ To do so you should try to **create a new object named as the "master object"** 
 1. **Find the injection Point.**
 2. **Fix Quary or Balance SQLI**
    1. **in GET we add '--+**
-   2. **in POST we add '--**<mark style="color:red;">**SPACE**</mark>** or '**<mark style="color:red;">**#**</mark>
+   2. **in POST we add '--**<mark style="color:red;">**SPACE**</mark>**&#x20;or '**<mark style="color:red;">**#**</mark>
 3. **Find the total number of vuln Columns**&#x20;
-   1. **Order by **<mark style="color:orange;">**n**</mark>
-   2. **UNION select 1,2,3,4,**<mark style="color:red;">**n-1**</mark>** => look Different number of Columns**
+   1. **Order by&#x20;**<mark style="color:orange;">**n**</mark>
+   2. **UNION select 1,2,3,4,**<mark style="color:red;">**n-1**</mark>**&#x20;=> look Different number of Columns**
    3. **WHERE OR HAVING**
    4. **version() to test**&#x20;
 
@@ -277,7 +277,7 @@ having username='A%'
 
 ### How to test
 
-1. **add **<mark style="color:red;">**`'"`**</mark>
+1. **add&#x20;**<mark style="color:red;">**`'"`**</mark>
 2. <mark style="color:red;">**`" or 1=1#`**</mark>**`   ``|`` `` `**<mark style="color:red;">**`' or 1=1#`**</mark>&#x20;
 
 in DVWA
@@ -290,7 +290,7 @@ in DVWA
 sqlmap -r req.txt --dbs --random-agent --risk 3 --level 5 -p username,password
 ```
 
-\-**`r`   =>**   File name
+-**`r`   =>**   File name
 
 **`-dbs =>`** Enumerate DBMS databases
 
@@ -461,7 +461,7 @@ admin' AND 1=0 UNION ALL SELECT 'admin', '81dc9bdb52d04dc20036dbd8313ed055'
 
 You should use as a username each line of the list and as password _**Pass1234.**_ _(This payloads are also included in the big list mentioned at the beginning of this section)_
 
-[1KBsqli-hashbypass.txt](https://129538173-files.gitbook.io/\~/files/v0/b/gitbook-legacy-files/o/assets%2F-L\_2uGJGU7AVNRcqRvEi%2F-Lgxw4OPe8L5QKmPID0F%2F-Lgy-zrwLPf0cDzTUfoW%2Fsqli-hashbypass.txt?alt=media\&token=0b95f2e0-48b8-422e-a357-53d9ab271bd7)
+[1KBsqli-hashbypass.txt](https://129538173-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-L_2uGJGU7AVNRcqRvEi%2F-Lgxw4OPe8L5QKmPID0F%2F-Lgy-zrwLPf0cDzTUfoW%2Fsqli-hashbypass.txt?alt=media\&token=0b95f2e0-48b8-422e-a357-53d9ab271bd7)
 
 ### GBK Authentication Bypass <a href="#gbk-authentication-bypass" id="gbk-authentication-bypass"></a>
 
@@ -595,8 +595,8 @@ mysql> mysql> select version();
 * MySQL:
   * \[PentestMonkey's mySQL injection cheat sheet] ([http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet](http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet))
   * \[Reiners mySQL injection Filter Evasion Cheatsheet] ([https://websec.wordpress.com/2010/12/04/sqli-filter-evasion-cheat-sheet-mysql/](https://websec.wordpress.com/2010/12/04/sqli-filter-evasion-cheat-sheet-mysql/))
-  * [Alternative for Information\_Schema.Tables in MySQL](https://osandamalith.com/2017/02/03/alternative-for-information\_schema-tables-in-mysql/)
-  * [The SQL Injection Knowledge base](https://websec.ca/kb/sql\_injection)
+  * [Alternative for Information\_Schema.Tables in MySQL](https://osandamalith.com/2017/02/03/alternative-for-information_schema-tables-in-mysql/)
+  * [The SQL Injection Knowledge base](https://websec.ca/kb/sql_injection)
 * MSSQL:
   * \[EvilSQL's Error/Union/Blind MSSQL Cheatsheet] ([http://evilsql.com/main/page2.php](http://evilsql.com/main/page2.php))
   * \[PentestMonkey's MSSQL SQLi injection Cheat Sheet] ([http://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet](http://pentestmonkey.net/cheat-sheet/sql-injection/mssql-sql-injection-cheat-sheet))

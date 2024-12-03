@@ -96,7 +96,7 @@
 
 ## SANS
 
-* [Automating Information Security with Python](sans/automating-information-security-with-python.md)
+* [SEC573](sans/sec573.md)
 
 ## AppSec
 

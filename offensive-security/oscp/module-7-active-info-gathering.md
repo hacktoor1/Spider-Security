@@ -362,7 +362,7 @@ Here is a breakdown of this address.
 
 Moving on to the next set of numbers.
 
-* 1452 – gives the <mark style="color:red;">**name of the organization**</mark>** that **<mark style="color:red;">**manufactured**</mark>** this device.**
+* 1452 – gives the <mark style="color:red;">**name of the organization**</mark>**&#x20;that&#x20;**<mark style="color:red;">**manufactured**</mark>**&#x20;this device.**
 * 1 – Explain the type of device. In this case, it is an alarm clock.
 * 2 – determines that this device is a remote terminal unit.
 

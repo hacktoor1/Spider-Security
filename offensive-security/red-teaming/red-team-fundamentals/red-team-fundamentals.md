@@ -34,7 +34,7 @@ Such limitations include:
 
 ### Red Team Engagements
 
-Red teaming is a term borrowed from the military. In military exercises, a group would take the role of a red team to simulate attack techniques to test the reaction capabilities of a defending team, generally known as a <mark style="color:blue;">**blue team**</mark>, against known adversary strategies. Translated into cybersecurity, red team engagements consist of emulating a real threat actor's <mark style="color:red;">**Tactics**</mark>**, **<mark style="color:red;">**Techniques and Procedures (TTPs)**</mark> so that we can measure how well our blue team responds to them and ultimately improve any security controls in place.
+Red teaming is a term borrowed from the military. In military exercises, a group would take the role of a red team to simulate attack techniques to test the reaction capabilities of a defending team, generally known as a <mark style="color:blue;">**blue team**</mark>, against known adversary strategies. Translated into cybersecurity, red team engagements consist of emulating a real threat actor's <mark style="color:red;">**Tactics**</mark>**,&#x20;**<mark style="color:red;">**Techniques and Procedures (TTPs)**</mark> so that we can measure how well our blue team responds to them and ultimately improve any security controls in place.
 
 {% hint style="success" %}
 Every red team engagement will start by defining clear goals, often referenced as \

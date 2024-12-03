@@ -215,7 +215,7 @@ TITY h3ckt00r SYSTEM "file:///etc/passwd">
 * Using Safe XML Configurations
   * Disable referencing custom <mark style="color:red;">**`Document Type Definitions (DTDs)`**</mark>
   * Disable referencing <mark style="color:red;">**`External XML Entities`**</mark>
-  * Disable <mark style="color:red;">**`Parameter Entity`**</mark><mark style="color:red;">** **</mark><mark style="color:red;">**processing =>**</mark>&#x20;
+  * Disable <mark style="color:red;">**`Parameter Entity`**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**processing =>**</mark>&#x20;
     * ```php
       libxml_disable_entity_loader(true);
       ```

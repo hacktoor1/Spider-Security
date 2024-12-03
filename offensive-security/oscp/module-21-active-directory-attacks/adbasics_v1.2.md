@@ -92,7 +92,7 @@ _Here I have set the password: **abcD12345\***_
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:1050/1*RW7c6XGv4wToWs4HFwU3fw.png" alt="" height="397" width="700"><figcaption><p><em><strong>The flag</strong></em></p></figcaption></figure>
 
-_Now we have taken the flag. So we do not want Sophie to use our given password. We will force Sophie's account to **show a reset option when Sophie will log into her account. The reset option showing process will be done from the Phillips account using this** command**: Set-ADUser -ChangePasswordAtLogon $true -Identity sophie -Verbose**_
+_Now we have taken the flag. So we do not want Sophie to use our given password. We will force Sophie's account to **show a reset option when Sophie will log into her account. The reset option showing process will be done from the Phillips account using this** comman&#x64;**: Set-ADUser -ChangePasswordAtLogon $true -Identity sophie -Verbose**_
 
 <figure><img src="https://miro.medium.com/v2/resize:fit:990/1*X-hUb38caHLtDuHgZFoS5w.png" alt="" height="495" width="660"><figcaption><p><em><strong>Reseting the password</strong></em></p></figcaption></figure>
 

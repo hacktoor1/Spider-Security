@@ -45,7 +45,7 @@ $ABC
 
 ### Debugging in Bash
 
-Errors will inevitably occur when you’re developing bash scripts. Luckily, debugging the script is quite intuitive. An easy way to check for mistakes early is by running the script using the `-n` parameter. This parameter will read the commands in the script but won’t execute them**, so if there are any syntax errors,** they will be shown on the screen. you can think of it as a dry-run method to test validity of syntax:
+Errors will inevitably occur when you’re developing bash scripts. Luckily, debugging the script is quite intuitive. An easy way to check for mistakes early is by running the script using the `-n` parameter. This parameter will read the commands in the script but won’t execute the&#x6D;**, so if there are any syntax errors,** they will be shown on the screen. you can think of it as a dry-run method to test validity of syntax:
 
 > bash -n script.sh
 

@@ -118,7 +118,7 @@ Privilege Escalation: SUID
 We run the command
 
 {% hint style="success" %}
-**If the **<mark style="color:red;">**binary**</mark>** can lead to a **<mark style="color:red;">**privilege escalation**</mark>
+**If the&#x20;**<mark style="color:red;">**binary**</mark>**&#x20;can lead to a&#x20;**<mark style="color:red;">**privilege escalation**</mark>
 {% endhint %}
 
 ```bash
@@ -155,7 +155,7 @@ john passshadow.txt
 Remember&#x20;
 
 {% hint style="success" %}
-**If the** permission of a <mark style="color:red;">**binary**</mark>** can lead to a **<mark style="color:red;">**privilege escalation**</mark>
+**If the** permission of a <mark style="color:red;">**binary**</mark>**&#x20;can lead to a&#x20;**<mark style="color:red;">**privilege escalation**</mark>
 {% endhint %}
 
 We search for this flaw using getcap.
@@ -243,7 +243,7 @@ Network File Sharing (NFS) is a protocol allowing you to share directories and f
 cat /etc/exports
 ```
 
-> Read the <mark style="color:red;">**\_ /etc/exports \_**</mark> file, if you find some directory that is configured as <mark style="color:red;">**no\_root\_squash**</mark>, then you can **access** it from **as a **<mark style="color:red;">**client**</mark> and **write inside** that directory **as** if you were the local <mark style="color:red;">**ro**</mark>**ot** of the machine.
+> Read the <mark style="color:red;">**\_ /etc/exports \_**</mark> file, if you find some directory that is configured as <mark style="color:red;">**no\_root\_squash**</mark>, then you can **access** it from **as a&#x20;**<mark style="color:red;">**client**</mark> and **write inside** that directory **as** if you were the local <mark style="color:red;">**ro**</mark>**ot** of the machine.
 
 {% embed url="https://book.hacktricks.xyz/linux-hardening/privilege-escalation/nfs-no_root_squash-misconfiguration-pe" %}
 

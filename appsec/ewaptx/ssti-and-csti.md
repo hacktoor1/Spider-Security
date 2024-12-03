@@ -81,7 +81,7 @@ public class GreetingController {
 
 #### Identifying and Exploiting SSTI
 
-1. **Initial Testing**: Inject common template syntax like <mark style="color:red;">**`${7*7}`**</mark><mark style="color:red;">**,**</mark><mark style="color:red;">** **</mark><mark style="color:red;">**`{{7*7}}`**</mark><mark style="color:red;">**, or**</mark><mark style="color:red;">** **</mark><mark style="color:red;">**`<%= 7*7 %>`**</mark> into user inputs and observe the output.
+1. **Initial Testing**: Inject common template syntax like <mark style="color:red;">**`${7*7}`**</mark><mark style="color:red;">**,**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**`{{7*7}}`**</mark><mark style="color:red;">**, or**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**`<%= 7*7 %>`**</mark> into user inputs and observe the output.
 2. **Confirming SSTI**: If the application outputs `49` or equivalent computation results, it indicates an SSTI vulnerability.
 3. **Payload Crafting**: Once confirmed, craft payloads to execute more complex expressions or functions. For example, in Jinja2
 

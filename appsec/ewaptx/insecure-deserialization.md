@@ -210,7 +210,7 @@ class MyClass implements Serializable {
   * Uses <mark style="color:red;">**`ObjectOutputStream`**</mark> to serialize `obj` and write it to <mark style="color:red;">**`serialized_object.ser`**</mark>.
 * **Deserialization (main method):**
   * Reads the serialized object from <mark style="color:red;">**`serialized_object.ser`**</mark> using <mark style="color:red;">**`ObjectInputStream`**</mark>.
-  * Casts the read object to <mark style="color:red;">**`MyClass`**</mark><mark style="color:red;">** **</mark><mark style="color:red;">**(**</mark><mark style="color:red;">**`(MyClass) in.readObject()`**</mark><mark style="color:red;">**)**</mark> for type safety.
+  * Casts the read object to <mark style="color:red;">**`MyClass`**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**(**</mark><mark style="color:red;">**`(MyClass) in.readObject()`**</mark><mark style="color:red;">**)**</mark> for type safety.
   * Prints the deserialized object's attributes (<mark style="color:red;">**`name`**</mark> and <mark style="color:red;">**`age`**</mark>) to verify successful deserialization.
 * **Output:**
   * The program outputs messages indicating the serialization and deserialization operations.
@@ -240,7 +240,7 @@ public class item implements Serializable {
 ```
 {% endcode %}
 
-**Item.java is a simple class that  has two fields: **<mark style="color:red;">**id**</mark>** and **<mark style="color:red;">**name**</mark>
+**Item.java is a simple class that  has two fields:&#x20;**<mark style="color:red;">**id**</mark>**&#x20;and&#x20;**<mark style="color:red;">**name**</mark>
 
 Now, we will use another file (in Java one class should be contained in one file)
 
@@ -355,7 +355,7 @@ in search Turn window featuers on or off
 **How to Do Binary Serialization:**
 
 1. **Mark the class as serializable** by adding the `[`<mark style="color:red;">**`Serializable`**</mark>`]` attribute.
-2. **Use the **<mark style="color:red;">**`BinaryFormatter`**</mark> class to perform serialization and deserialization.
+2. **Use the&#x20;**<mark style="color:red;">**`BinaryFormatter`**</mark> class to perform serialization and deserialization.
 
 ```csharp
 using System;
