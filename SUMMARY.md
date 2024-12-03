@@ -77,7 +77,7 @@
   * [Module 19 (Password Attacks)](offensive-security/oscp/module-19-password-attacks.md)
   * [Module 20 (Port Redirection and Tunneling)](offensive-security/oscp/module-20-port-redirection-and-tunneling.md)
   * [Module 21 (Active Directory Attacks)](offensive-security/oscp/module-21-active-directory-attacks/README.md)
-    * [adbasics\_v1.2](offensive-security/oscp/module-21-active-directory-attacks/adbasics\_v1.2.md)
+    * [adbasics\_v1.2](offensive-security/oscp/module-21-active-directory-attacks/adbasics_v1.2.md)
   * [Module 22 (Metasploit Framwork)](offensive-security/oscp/module-22-metasploit-framwork.md)
   * [Module 23 (Powershell Empire)](offensive-security/oscp/module-23-powershell-empire.md)
   * [Course Materials](offensive-security/oscp/course-materials.md)
@@ -94,16 +94,20 @@
   * [Network Security Evasion](offensive-security/red-teaming/network-security-evasion.md)
   * [Compromising Active Directory](offensive-security/red-teaming/compromising-active-directory.md)
 
+## SANS
+
+* [Automating Information Security with Python](sans/automating-information-security-with-python.md)
+
 ## AppSec
 
 * [EWAPTX](appsec/ewaptx/README.md)
   * [PHP Type Juggling](appsec/ewaptx/php-type-juggling.md)
   * [CSP](appsec/ewaptx/csp.md)
   * [SqlI](appsec/ewaptx/sqli/README.md)
-    * [Information\_schema](appsec/ewaptx/sqli/information\_schema.md)
+    * [Information\_schema](appsec/ewaptx/sqli/information_schema.md)
     * [WriteUps](appsec/ewaptx/sqli/writeups.md)
   * [SSTI & CSTI](appsec/ewaptx/ssti-and-csti.md)
-  * [XSS\_HTML Injection](appsec/ewaptx/xss\_html-injection.md)
+  * [XSS\_HTML Injection](appsec/ewaptx/xss_html-injection.md)
   * [CORS Attack](appsec/ewaptx/cors-attack.md)
   * [Clickjacking](appsec/ewaptx/clickjacking.md)
   * [Open redirect](appsec/ewaptx/open-redirect.md)
@@ -151,6 +155,6 @@
 
 ## cheat sheet
 
-* [Pentest\_Notes](cheat-sheet/pentest\_notes.md)
+* [Pentest\_Notes](cheat-sheet/pentest_notes.md)
 * [Linux BOF & Wireless Attacks](cheat-sheet/linux-bof-and-wireless-attacks.md)
 * [WriteUps](cheat-sheet/writeups.md)
